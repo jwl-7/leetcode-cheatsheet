@@ -1,0 +1,66 @@
+.wave
+    background: rgb(255 255 255 / 25%)
+    border-radius: 1000% 1000% 0 0
+    position: fixed
+    width: 200%
+    height: 12em
+    animation: wave 10s -3s linear infinite
+    transform: translate3d(0, 0, 0)
+    opacity: 0.8
+    bottom: 0
+    left: 0
+    z-index: -1
+
+    &:nth-of-type(2)
+        bottom: -1.25em
+        opacity: 0.8
+        animation: wave 18s linear reverse infinite
+
+    &:nth-of-type(3)
+        bottom: -2.5em
+        opacity: 0.9
+        animation: wave 20s -1s reverse infinite
+
+.shape
+    filter: blur(465px)
+    position: absolute
+
+    &:nth-child(1)
+        background-color: #ffb0d8
+        top: -340px
+        width: 300px
+        height: 300px
+
+    &:nth-child(2)
+        left: 100px
+        bottom: -150px
+        background-color: #c26cf3
+        width: 200px
+        height: 210px
+
+    &:nth-child(3)
+        background-color: #87cfdf
+        bottom: -150px
+        right: 100px
+        width: 300px
+        height: 300px
+
+@keyframes gradient
+    0%
+        background-position: 0% 0%
+    50%
+        background-position: 100% 100%
+    100%
+        background-position: 0% 0%
+
+@keyframes wave
+    2%
+        transform: translateX(1)
+    25%
+        transform: translateX(-25%)
+    50%
+        transform: translateX(-50%)
+    75%
+        transform: translateX(-25%)
+    100%
+        transform: translateX(1)

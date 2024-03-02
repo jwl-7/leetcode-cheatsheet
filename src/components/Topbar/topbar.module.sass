@@ -1,0 +1,111 @@
+.topbar
+    background-color: var(--glass-background-color)
+    backdrop-filter: var(--glass-backdrop-filter)
+    border: var(--glass-border)
+    border-radius: var(--glass-border-radius)
+    box-shadow: var(--glass-box-shadow)
+    display: flex
+    flex-direction: column
+    position: fixed
+    overflow: hidden
+    max-height: var(--topbar-height)
+    padding: var(--topbar-padding)
+    left: 4px
+    right: 0
+    top: 4px
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+    width: calc(100% - 8px)
+    z-index: 999
+
+.container
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.buttonContainer
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 12px
+
+.title
+    color: var(--topbar-title-color)
+    text-decoration: none
+    padding: 0
+    transition-duration: var(--style-transition-duration)
+    transition-property: var(--style-transition-property)
+
+    &:hover
+        animation: animated-gradient 3s ease alternate infinite
+        background-image: var(--topbar-title-hover-color)
+        background-size: 300% 300%
+        background-clip: text
+        color: transparent
+
+    &:active
+        color: var(--nav-link-active-color)
+
+.iconLink
+    display: inline-block
+    border: 1px solid var(--nav-icon-link-color)
+    border-radius: var(--button-border-radius)
+    height: 44px
+    width: 44px
+    padding: 4px
+    transition-duration: var(--style-transition-duration)
+    transition-property: var(--style-transition-property)
+
+    svg
+        height: 100%
+        width: 100%
+        vertical-align: middle
+
+    &:hover
+        background-color: var(--nav-icon-link-hover-color)
+
+    &:active
+        background-color: var(--nav-icon-link-active-color)
+
+.hamburger
+    &:hover
+        cursor: pointer
+
+.hamburgerIcon
+    background-color: var(--toggler-icon-color)
+    display: block
+    height: 3px
+    width: 30px
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+
+.hamburgerTop
+    transform: rotate(45deg)
+    transform-origin: 10% 10%
+
+    &.collapsed
+        transform: rotate(0)
+
+.hamburgerMiddle
+    filter: alpha(opacity=0)
+    opacity: 0
+    margin: 5px auto
+
+    &.collapsed
+        opacity: 1
+        filter: alpha(opacity=100)
+
+.hamburgerBottom
+    transform: rotate(-45deg)
+    transform-origin: 10% 90%
+
+    &.collapsed
+        transform: rotate(0)
+
+@keyframes animated-gradient
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%

@@ -1,0 +1,32 @@
+.main
+    display: flex
+    flex-direction: column
+    row-gap: 48px
+    margin-bottom: var(--content-margin-bottom)
+    margin-left: var(--content-margin-left)
+    margin-right: var(--content-margin-right)
+    margin-top: var(--content-margin-top)
+    transition: margin 300ms ease
+
+    &.sidebarHidden
+        margin-left: 4px
+
+    @media (max-width: 768px)
+        margin-left: 4px
+
+.container
+    display: flex
+    flex-direction: column
+    row-gap: 48px
+
+.sectionHeader
+    align-self: flex-start
+    flex-grow: 0
+    background: var(--section-header-background)
+    backdrop-filter: var(--glass-backdrop-filter)
+    border: var(--glass-border)
+    border-radius: var(--glass-border-radius)
+    box-shadow: var(--glass-box-shadow)
+    padding: 20px
+    transition-duration: var(--style-transition-duration)
+    transition-property: var(--style-transition-property)

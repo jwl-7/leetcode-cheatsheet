@@ -1,0 +1,145 @@
+.container
+    display: flex
+    justify-content: center
+
+.input
+    clip: rect(1px, 1px, 1px, 1px)
+    clip-path: inset(50%)
+    height: 1px
+    width: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+
+    &:checked + .label
+        background-color: #8fb5f5
+        border-color: #347cf8
+
+        .indicator
+            background-color: #ecd21f
+            box-shadow: none
+            transform: translate(-50%, -50%) translateX(72%)
+
+            &::before,
+            &::after
+                display: none
+
+        .decoration
+            animation: cloud 8s linear infinite
+            border-radius: 9999px 9999px 0
+            height: 20px
+            width: 20px
+            top: 50%
+            transform: translate(0%, -50%)
+
+            &::before
+                animation: none
+                height: 10px
+                width: 10px
+                bottom: 0
+                left: -8px
+                top: auto
+
+            &::after
+                animation: none
+                border-bottom-right-radius: 9999px
+                height: 15px
+                width: 15px
+                bottom: 0
+                left: 16px
+                top: auto
+
+.label
+    background-color: #2b2b2b
+    border: 5px solid #5b5b5b
+    border-radius: 9999px
+    cursor: pointer
+    display: inline-block
+    position: relative
+    height: 51px
+    width: 102px
+    transition: all 0.4s cubic-bezier(.46, .03, .52, .96)
+
+.indicator
+    background-color: #7b7b7b
+    border-radius: 9999px
+    box-shadow: 10px 0px 0 0 rgba(0, 0, 0, 0.2) inset
+    display: block
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%) translateX(-72%)
+    transition: all 0.4s cubic-bezier(.46, .03, .52, .96)
+    height: 34px
+    width: 34px
+
+    &::before,
+    &::after
+        background-color: white
+        border-radius: 9999px
+        content: ''
+        display: block
+        position: absolute
+
+    &::before
+        background-color: white
+        left: 5px
+        top: 5px
+        opacity: 0.6
+        height: 7px
+        width: 7px
+
+    &::after
+        background-color: white
+        bottom: 6.8px
+        opacity: 0.8
+        height: 11.9px
+        width: 11.9px
+        right: 5.1px
+
+.decoration
+    animation: twinkle 3.4s infinite -0.6s
+    background-color: white
+    border-radius: 9999px
+    display: block
+    height: 4px
+    width: 4px
+    position: absolute
+    left: 50%
+    top: 65%
+
+    &::before,
+    &::after
+        background-color: white
+        border-radius: 9999px
+        content: ''
+        display: block
+        position: absolute
+        height: 5px
+        width: 5px
+
+    &::before
+        top: -17px
+        left: 8px
+        opacity: 1
+        animation: twinkle 3.0s infinite
+
+    &::after
+        top: -6px
+        left: 24px
+        animation: twinkle 3.0s infinite -0.2s
+
+@keyframes cloud
+    0%
+        transform: translate(0%, -50%)
+
+    50%
+        transform: translate(-50%, -50%)
+
+    100%
+        transform: translate(0%, -50%)
+
+@keyframes twinkle
+    50%
+        opacity: 0.2

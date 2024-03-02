@@ -1,0 +1,40 @@
+.accordion
+    display: flex
+    flex-direction: column
+
+.button
+    align-self: flex-start
+    justify-content: space-between
+    background-color: var(--accordion-button-background-color)
+    backdrop-filter: var(--glass-backdrop-filter)
+    border: var(--glass-border)
+    border-radius: 4px
+    box-shadow: var(--glass-box-shadow)
+    font-size: var(--accordion-button-font-size)
+    padding-left: 16px
+    padding-right: 4px
+    width: 100%
+
+    svg
+        stroke: var(--accordion-button-chevron-color)
+        transform: rotate(90deg)
+        transition-property: var(--style-transition-property)
+        transition-duration: var(--style-transition-duration)
+
+    &.open svg
+        transform: rotate(0)
+
+.content
+    background-color: var(--accordion-content-background-color)
+    backdrop-filter: var(--glass-backdrop-filter)
+    border-left: var(--glass-border)
+    border-right: var(--glass-border)
+    border-bottom: var(--glass-border)
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
+    box-shadow: var(--glass-box-shadow)
+    display: flex
+    flex-direction: column
+    margin-left: 2px
+    margin-right: 2px
+    padding: 10px

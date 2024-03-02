@@ -1,0 +1,60 @@
+.sidebar
+    position: fixed
+    top: 72px
+    bottom: 0
+    left: 4px
+    background-color: var(--glass-background-color)
+    backdrop-filter: var(--glass-backdrop-filter)
+    border: var(--glass-border)
+    border-radius: var(--glass-border-radius)
+    box-shadow: var(--glass-box-shadow)
+    padding: 8px
+    margin: 0
+    max-height: var(--sidebar-height)
+    transition-duration: var(--style-transition-duration)
+    transition-property: var(--style-transition-property)
+    width: var(--sidebar-width)
+    z-index: 999
+    transform: translateX(-100%)
+    animation: sidebar-enter 300ms forwards
+
+    &.exit
+        animation: sidebar-exit 300ms forwards
+
+    &.hide
+        display: none
+
+.scrollContainer
+    display: flex
+    position: static
+    z-index: 1
+    row-gap: 4px
+    flex-direction: column
+    overflow-y: auto
+    overscroll-behavior: contain
+    max-height: 100%
+    width: 100%
+    border-radius: 4px
+    transition-duration: var(--style-transition-duration)
+    transition-property: var(--style-transition-property)
+    z-index: 999
+
+@keyframes sidebar-enter
+    from
+        transform: translateX(calc(-1 * (var(--sidebar-width) + 4px)))
+        opacity: 0.7
+        backdrop-filter: blur(20px)
+    to
+        transform: translateX(0)
+        opacity: 1
+        backdrop-filter: var(--glass-backdrop-filter)
+
+@keyframes sidebar-exit
+    from
+        transform: translateX(0)
+        opacity: 1
+        backdrop-filter: var(--glass-backdrop-filter)
+    to
+        transform: translateX(calc(-1 * (var(--sidebar-width) + 4px)))
+        opacity: 0.7
+        backdrop-filter: blur(20px)
