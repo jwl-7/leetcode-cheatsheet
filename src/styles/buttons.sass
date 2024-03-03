@@ -21,3 +21,16 @@ a[role='button']
         height: 1em
         width: 1em
         vertical-align: middle
+
+a:not([role='button'])
+    color: inherit
+    cursor: pointer
+    text-decoration: none
+    transition-duration: var(--style-transition-duration)
+    transition-property: var(--style-transition-property)
+
+    &:hover
+        color: var(--link-hover-color)
+
+    &:active
+        color: inherit

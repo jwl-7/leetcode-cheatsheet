@@ -23,6 +23,7 @@
             "@icons/*": ["src/icons/*"],
             "@images/*": ["src/images/*"],
             "@styles/*": ["src/styles/*"],
+            "@sections/*": ["src/sections/*"],
             "@utils/*": ["src/utils/*"]
         },
 

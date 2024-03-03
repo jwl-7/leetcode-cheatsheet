@@ -48,6 +48,7 @@ export default function Sidebar({ hamburgerButtonRef }: SidebarProps) {
             <div className={styles.scrollContainer}>
                 <Accordion title="Big O">
                     <LinkWithTooltip href="#bigo-chart" description="Time/Space Complexities" />
+                    <LinkWithTooltip href="#bigo-operations-table" description="Data Structure Operations" />
                 </Accordion>
                 <Accordion title="Data Structures">
                     <LinkWithTooltip href="#ds-array" description="Array" />

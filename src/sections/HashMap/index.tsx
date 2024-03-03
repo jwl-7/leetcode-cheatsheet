@@ -1,4 +1,4 @@
-import styles from './content.module.sass'
+import styles from '@sections/section.module.sass'
 
 import Tabs from '@components/Tabs'
 
