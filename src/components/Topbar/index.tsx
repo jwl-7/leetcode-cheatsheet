@@ -43,20 +43,23 @@ export default function Topbar({ forwardedRef }: TopbarProps) {
             </a>
         )
     }
+    const renderGitHubButton = () => {
+        return (
+            <a href="https://github.com/jwl-7/leetcode-cheatsheet" className={styles.iconLink} target="_blank">
+                <Github />
+            </a>
+        )
+    }
     const renderButtons = () => {
         return !isScreenMd ? (
             <div className={styles.buttonContainer}>
-                <a href="https://github.com/jwl-7" className={styles.iconLink} target="_blank">
-                    <Github />
-                </a>
+                {renderGitHubButton()}
                 <ThemeSwitch />
             </div>
         ) : (
             <>
                 <ThemeSwitch />
-                <a href="https://github.com/jwl-7" className={styles.iconLink} target="_blank">
-                    <Github />
-                </a>
+                {renderGitHubButton()}
             </>
         )
     }
