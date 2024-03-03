@@ -34,13 +34,16 @@ export default function Tabs({ title, children }: TabsProps) {
             const LanguageIcon = tab.props.language === 'python'
                 ? SvgPython
                 : SvgJavascript
+            const label = `view ${tab.props.language} code`
 
             return (
                 <button
+                    role="tab"
+                    aria-label={label}
+                    aria-selected={index === activeIndex}
                     className={styles.tabButton}
                     key={index}
                     onClick={() => changeTab(index)}
-                    aria-selected={index === activeIndex}
                 >
                     <LanguageIcon />
                 </button>
@@ -49,15 +52,15 @@ export default function Tabs({ title, children }: TabsProps) {
     }
 
     return (
-        <div className={styles.container}>
+        <div role="tablist" className={styles.container}>
             <h3>{title}</h3>
             <div className={styles.buttonContainer}>
-                <div className={styles.tabButtonContainer}>
+                <div role="tablist" className={styles.tabButtonContainer}>
                     {renderTabButtons()}
                 </div>
                 <CopyButton onClick={handleCopy} />
             </div>
-            <div className="tabs-content">
+            <div role="tabpanel" className="tabs-content">
                 <Code code={code} language={language} />
             </div>
         </div>

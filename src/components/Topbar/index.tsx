@@ -45,7 +45,12 @@ export default function Topbar({ forwardedRef }: TopbarProps) {
     }
     const renderGitHubButton = () => {
         return (
-            <a href="https://github.com/jwl-7/leetcode-cheatsheet" className={styles.iconLink} target="_blank">
+            <a
+                href="https://github.com/jwl-7/leetcode-cheatsheet"
+                aria-label="GitHub source"
+                className={styles.iconLink}
+                target="_blank"
+            >
                 <Github />
             </a>
         )

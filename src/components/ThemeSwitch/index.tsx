@@ -28,7 +28,7 @@ export default function ThemeSwitch() {
         <div className={styles.container}>
             <input
                 className={styles.input}
-                aria-label="theme-switch"
+                aria-label="theme switch"
                 id="theme-switch"
                 type="checkbox"
                 checked={darkMode}
