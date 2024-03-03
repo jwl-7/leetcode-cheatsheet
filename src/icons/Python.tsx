@@ -1,6 +1,6 @@
 export default function SvgPython() {
     return (
-        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 128 128">
             <linearGradient
                 id="python_svg__a"
                 x1={70.252}
