@@ -23,10 +23,16 @@ body
     width: 100%
 
 section
-    padding-left: var(--gutter-spacing)
-    padding-right: var(--gutter-spacing)
     transition-property: var(--style-transition-property)
     transition-duration: var(--style-transition-duration)
+
+    @media (min-width: 768px)
+        padding-left: var(--gutter-spacing)
+        padding-right: var(--gutter-spacing)
+
+    @media (max-width: 768px)
+        padding-left: 0
+        padding-right: 0
 
 main
     height: 100vh
