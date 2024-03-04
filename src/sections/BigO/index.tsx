@@ -2,6 +2,7 @@ import styles from '@sections/section.module.sass'
 
 import Chart from './Chart'
 import OperationsTable from './OperationsTable'
+import SortingAlgorithmsTable from './SortingAlgorithmsTable'
 
 
 export default function BigO() {
@@ -10,6 +11,7 @@ export default function BigO() {
             <h2 className={styles.sectionHeader}>Big O</h2>
             <Chart />
             <OperationsTable />
+            <SortingAlgorithmsTable />
         </div>
     )
 }

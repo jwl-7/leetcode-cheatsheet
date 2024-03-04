@@ -49,6 +49,7 @@ export default function Sidebar({ hamburgerButtonRef }: SidebarProps) {
                 <Accordion title="Big O">
                     <LinkWithTooltip href="#bigo-chart" description="Time/Space Complexities" />
                     <LinkWithTooltip href="#bigo-operations-table" description="Data Structure Operations" />
+                    <LinkWithTooltip href="#bigo-sorting-algorithms-table" description="Array Sorting Algorithms" />
                 </Accordion>
                 <Accordion title="Data Structures">
                     <LinkWithTooltip href="#ds-array" description="Array" />

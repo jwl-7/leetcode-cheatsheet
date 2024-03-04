@@ -10,7 +10,8 @@ export default function OperationsTable() {
 
     const removeFocused = () => {
         if (selectedRow) {
-            const focusedRow = document.querySelector(`tr[data-row-number="${selectedRow}"]`)
+            const tableElement = ref.current
+            const focusedRow = tableElement?.querySelector(`tr[data-row-number="${selectedRow}"]`)
             focusedRow?.removeAttribute('focused')
         }
     }
