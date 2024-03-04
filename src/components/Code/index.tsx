@@ -21,8 +21,9 @@ interface CodeProps {
 
 export default function Code({ code, language }: CodeProps) {
     const ref = useRef<HTMLPreElement>(null)
-    const focused = useRef<string>('')
+    const [selectedLine, setSelectedLine] = useState<string>('')
     const [parsedCode, setParsedCode] = useState<string>('')
+
     const classes = clsx(
         'hljs',
         language,
@@ -37,37 +38,42 @@ export default function Code({ code, language }: CodeProps) {
                 const highlightedLine = hljs.highlight(line, { language: language }).value
                 return `<span class=${styles.line} data-line-number=${index + 1}>${highlightedLine}</span>`
             })
-            setParsedCode(highlighted.join('\n'))
+            const parsed = highlighted.join('\n')
+            setParsedCode(parsed)
         }
     }
 
     const addEventListeners = () => {
-        const spans = document.querySelectorAll(`.${styles.line}`)
+        const preElement = ref.current
+        const spans = preElement?.querySelectorAll('span[data-line-number]')
+        spans?.forEach(span => span.addEventListener('click', handleClick as EventListener))
+    }
 
-        if (spans) {
-            spans.forEach(span => span.addEventListener('click', handleClick as EventListener))
-        }
+    const removeEventListeners = () => {
+        const preElement = ref.current
+        const spans = preElement?.querySelectorAll('span[data-line-number]')
+        spans?.forEach(span => span.removeEventListener('click', handleClick as EventListener))
     }
 
     const removeFocused = () => {
-        if (focused.current) {
-            const focusedLine = `.${styles.line}[data-line-number="${focused.current}"]`
-            const focusedElement = document.querySelector(focusedLine)
-            focusedElement?.removeAttribute('focused')
-        }
+        const preElement = ref.current
+        const focusedLine = preElement?.querySelector(`span[data-line-number="${selectedLine}"]`)
+
+        focusedLine?.removeAttribute('focused')
     }
 
     const handleClick = (event: MouseEvent) => {
-        const span = event.target as HTMLSpanElement
-        const lineNumber = span.getAttribute('data-line-number')
+        const line = event.currentTarget as HTMLSpanElement
+        const lineNumber = line.getAttribute('data-line-number') ?? ''
 
         removeFocused()
 
-        if (!focused.current || lineNumber !== focused.current) {
-            span.setAttribute('focused', '')
-            focused.current = lineNumber ?? ''
+        if (lineNumber === selectedLine) {
+            setSelectedLine('')
+        } else {
+            line.setAttribute('focused', '')
+            setSelectedLine(lineNumber)
         }
-
     }
 
     useClickOutside(ref, removeFocused)
@@ -75,11 +81,8 @@ export default function Code({ code, language }: CodeProps) {
         highlight()
         addEventListeners()
 
-        return () => {
-            const spans = document.querySelectorAll(`.${styles.line}`)
-            spans.forEach(span => span.removeEventListener('click', handleClick as EventListener))
-        }
-    }, [code, parsedCode, focused])
+        return () => removeEventListeners()
+    }, [code, parsedCode, selectedLine])
 
     return (
         <pre ref={ref}>

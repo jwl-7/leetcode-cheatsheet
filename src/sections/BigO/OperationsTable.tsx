@@ -15,7 +15,7 @@ export default function OperationsTable() {
         }
     }
 
-    const handleClick = (event: MouseEvent<HTMLTableRowElement>) => {
+    const handleClick = (event: MouseEvent) => {
         const row = event.currentTarget as HTMLTableRowElement
         const rowNumber = row.getAttribute('data-row-number') ?? ''
 
