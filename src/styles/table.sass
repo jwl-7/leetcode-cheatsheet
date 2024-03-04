@@ -1,21 +1,24 @@
-table
-    border-collapse: collapse
-    width: 100%
-
-th, td
-    border: 2px solid var(--color-white-alpha-7)
-    padding: 8px
-    text-align: center
-
-tr
-    &:hover
-        border: 2px solid var(--color-black-alpha-5)
-        border-style: double
-
-    &[focused]
-        border: 2px solid var(--color-azure)
-        border-style: double
-
 table, th, td, tr
     transition-duration: var(--style-transition-duration)
     transition-property: var(--style-transition-property)
+
+table
+    border-collapse: collapse
+    font-family: var(--table-font-family)
+    font-size: var(--table-font-size)
+    position: relative
+    width: 100%
+
+th, td
+    background-clip: padding-box
+    overflow: hidden
+    padding: 8px
+    text-align: center
+
+    &:not(:last-child)
+        border-right: 4px solid var(--table-border-color)
+
+tr
+    &:not(:last-child)
+        th, td
+            border-bottom: 4px solid var(--table-border-color)

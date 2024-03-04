@@ -13,6 +13,7 @@ export default function Chart() {
     return (
         <section id="bigo-chart">
             <div className={styles.container}>
+                <h3>Big-O Complexity Chart</h3>
                 <svg id="chart" viewBox="0 0 800 500">
                     <path d="M50 450 L 50 0 L 800 0 L 800 450 Z" fill={colors.red}></path>
                     <path d="M50 450 L 800 0 L 800 450 Z" fill={colors.orange}></path>
