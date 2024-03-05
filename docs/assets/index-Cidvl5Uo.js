@@ -313,7 +313,25 @@ class DoublyLinkedList:\r
             current_node.prev.next = current_node.next\r
         if current_node.next:\r
             current_node.next.prev = current_node.prev\r
-`,lv="",ov=`class HashMap:\r
+`,lv=`class Graph:\r
+    def __init__(self):\r
+        self.graph = {}\r
+\r
+    def add_vertex(self, vertex):\r
+        if vertex not in self.graph:\r
+            self.graph[vertex] = []\r
+\r
+    def add_edge(self, vertex1, vertex2):\r
+        if vertex1 in self.graph and vertex2 in self.graph:\r
+            self.graph[vertex1].append(vertex2)\r
+            self.graph[vertex2].append(vertex1)\r
+\r
+    def get_adjacent_vertices(self, vertex):\r
+        if vertex in self.graph:\r
+            return self.graph[vertex]\r
+        else:\r
+            return []\r
+`,ov=`class HashMap:\r
     def __init__(self) -> None:\r
         self.bucket = [None] * 100000\r
 \r
