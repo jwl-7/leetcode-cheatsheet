@@ -2,31 +2,29 @@ class UnionFind:
     def __init__(self, n: int) -> None:
         self.root = list(range(n))
 
-    def __repr__(self) -> str:
-        sets = {}
+    def find(self, a: int) -> int:
+        return a if a == self.root[a] else self.find(self.root[a])
 
-        for i in range(len(self.root)):
+    def union(self, a: int, b: int) -> None:
+        self.root[self.find(a)] = self.find(b)
+
+    def connected(self, a: int, b: int) -> bool:
+        return self.find(a) == self.find(b)
+
+    def __repr__(self) -> str:
+        n = len(self.root)
+        lines = []
+        components = {}
+
+        for i in range(n):
             root = self.find(i)
 
-            if root not in sets:
-                sets[root] = []
+            if root not in components:
+                components[root] = []
 
-            sets[root].append(i)
+            components[root].append(i)
 
-        if not sets:
-            return 'No sets found'
+        for component in components.values():
+            lines.append(' - '.join(f'({node})' for node in component))
 
-        repr_str = ''
-        for root, elements in sets.items():
-            repr_str += f'Set with root {root}: {elements}\n'
-
-        return repr_str
-
-    def find(self, x: int) -> int:
-        return x if x == self.root[x] else self.find(self.root[x])
-
-    def union(self, x: int, y: int) -> None:
-        self.root[self.find(x)] = self.find(y)
-
-    def connected(self, x: int, y: int) -> bool:
-        return self.find(x) == self.find(y)
+        return '\n'.join(lines)
