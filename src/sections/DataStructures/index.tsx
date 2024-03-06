@@ -44,8 +44,8 @@ export default function DataStructures() {
                 </Tabs>
             </section>
             <section id="ds-binary-search-tree">
-                <Tabs title="binary tree">
-                    <Tabs.Tab code={BinaryTreePY} language="python" />
+                <Tabs title="binary search tree">
+                    <Tabs.Tab code={BinarySearchTreePY} language="python" />
                 </Tabs>
             </section>
             <section id="ds-graph">

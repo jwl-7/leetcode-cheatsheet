@@ -56,16 +56,16 @@ export default function SidebarLinks() {
                 <LinkWithTooltip href="#dp-bottom-up" description="bottom-up" />
             </Accordion>
             <Accordion title="Data Structures">
-                <LinkWithTooltip href="#ds-array" description="Array" />
-                <LinkWithTooltip href="#ds-hash-map" description="Hashmap" />
-                <LinkWithTooltip href="#ds-linked-list" description="Linked List" />
-                <LinkWithTooltip href="#ds-doubly-linked-list" description="Doubly Linked List" />
-                <LinkWithTooltip href="#ds-binary-tree" description="Binary Tree" />
-                <LinkWithTooltip href="#ds-binary-search-tree" description="Binary Tree" />
-                <LinkWithTooltip href="#ds-graph" description="Graph" />
-                <LinkWithTooltip href="#ds-union-find" description="Union Find" />
-                <LinkWithTooltip href="#ds-union-find-optimized" description="Union Find Optimized" />
-                <LinkWithTooltip href="#ds-trie" description="Trie" />
+                <LinkWithTooltip href="#ds-array" description="array" />
+                <LinkWithTooltip href="#ds-hash-map" description="hashmap" />
+                <LinkWithTooltip href="#ds-linked-list" description="linked list" />
+                <LinkWithTooltip href="#ds-doubly-linked-list" description="doubly linked list" />
+                <LinkWithTooltip href="#ds-binary-tree" description="binary tree" />
+                <LinkWithTooltip href="#ds-binary-search-tree" description="binary search tree" />
+                <LinkWithTooltip href="#ds-graph" description="graph" />
+                <LinkWithTooltip href="#ds-union-find" description="union find" />
+                <LinkWithTooltip href="#ds-union-find-optimized" description="union find optimized" />
+                <LinkWithTooltip href="#ds-trie" description="trie" />
             </Accordion>
             <Accordion title="Sorting Algorithms">
                 <LinkWithTooltip href="#sort-bubble" description="bubble sort" />
