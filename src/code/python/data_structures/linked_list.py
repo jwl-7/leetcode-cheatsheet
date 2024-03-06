@@ -7,16 +7,7 @@ class ListNode:
         self.next = None
 
     def __repr__(self) -> str:
-        node = self
-        nodes = []
-
-        while node is not None:
-            nodes.append(f'[{node.data}]')
-            node = node.next
-
-        nodes.append('None')
-
-        return ' -> '.join(nodes)
+        return f'[{self.data}]'
 
 
 class LinkedList:
@@ -59,12 +50,22 @@ class LinkedList:
         curr = self.head
 
         while curr:
-            next_node = curr.next
+            nxt = curr.next
             curr.next = prev
             prev = curr
-            curr = next_node
+            curr = nxt
 
         self.head = prev
 
     def __repr__(self) -> str:
-        return repr(self.head)
+        if not self.head:
+            return 'None'
+
+        nodes = []
+        node = self.head
+
+        while node:
+            nodes.append(repr(node))
+            node = node.next
+
+        return ' -> '.join(nodes) + ' -> None'

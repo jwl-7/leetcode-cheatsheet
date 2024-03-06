@@ -1,92 +1,76 @@
+from typing import Any
+
+
 class ListNode:
-    def __init__(self, data=None, prev=None, next=None) -> None:
+    def __init__(self, data: Any) -> None:
         self.data = data
-        self.prev = prev
-        self.next = next
+        self.prev = None
+        self.next = None
+
+    def __repr__(self) -> str:
+        return f'[{self.data}]'
+
 
 class DoublyLinkedList:
     def __init__(self) -> None:
         self.head = None
 
-    def __repr__(self) -> str:
-        elements = []
-        current_node = self.head
-
-        while current_node:
-            elements.append(str(current_node.data))
-            current_node = current_node.next
-
-        return ' <-> '.join(elements) + ' <-> None'
-
-    def append(self, data) -> None:
-        new_node = ListNode(data)
-
+    def append(self, data: Any) -> None:
         if not self.head:
-            self.head = new_node
+            self.head = ListNode(data)
             return
 
-        last_node = self.head
+        curr = self.head
 
-        while last_node.next:
-            last_node = last_node.next
+        while curr.next:
+            curr = curr.next
 
-        last_node.next = new_node
-        new_node.prev = last_node
-
-    def insert(self, data, index: int) -> None:
         new_node = ListNode(data)
+        curr.next = new_node
+        new_node.prev = curr
 
-        if index == 0:
-            new_node.next = self.head
-            new_node.prev = None
-
-            if self.head:
-                self.head.prev = new_node
-            self.head = new_node
-
+    def delete(self, data: Any) -> None:
+        if not self.head:
             return
 
-        current_node = self.head
-        prev_node = None
-
-        for _ in range(index):
-            if not current_node:
-                break
-            prev_node = current_node
-            current_node = current_node.next
-
-        new_node.next = current_node
-        new_node.prev = prev_node
-
-        if prev_node:
-            prev_node.next = new_node
-        else:
-            self.head = new_node
-
-        if current_node:
-            current_node.prev = new_node
-
-    def delete(self, index: int) -> None:
-        if index == 0:
+        if self.head.data == data:
+            self.head = self.head.next
             if self.head:
-                self.head = self.head.next
-                if self.head:
-                    self.head.prev = None
-            else:
-                raise IndexError('List is empty')
+                self.head.prev = None
             return
 
-        current_node = self.head
+        curr = self.head
+        while curr:
+            if curr.data == data:
+                prev_node = curr.prev
+                prev_node.next = curr.next
+                if curr.next:
+                    curr.next.prev = prev_node
+                return
+            curr = curr.next
 
-        for _ in range(index):
-            if not current_node:
-                break
-            current_node = current_node.next
+    def reverse(self) -> None:
+        curr = self.head
+        prev = None
 
-        if not current_node:
-            raise IndexError('Index out of range')
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            curr.prev = nxt
+            prev = curr
+            curr = nxt
 
-        if current_node.prev:
-            current_node.prev.next = current_node.next
-        if current_node.next:
-            current_node.next.prev = current_node.prev
+        self.head = prev
+
+    def __repr__(self) -> str:
+        if not self.head:
+            return 'None'
+
+        nodes = []
+        curr = self.head
+
+        while curr:
+            nodes.append(repr(curr))
+            curr = curr.next
+
+        return ' <-> '.join(nodes) + ' <-> None'
