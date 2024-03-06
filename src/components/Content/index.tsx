@@ -3,7 +3,6 @@ import styles from './content.module.sass'
 import { useSidebar } from '@components/Sidebar/context'
 
 import BigO from '@sections/BigO'
-import DataStructures from '@sections/DataStructures'
 import Array from '@sections/Array'
 import HashMap from '@sections/HashMap'
 import LinkedList from '@sections/LinkedList'
@@ -14,6 +13,8 @@ import Heap from '@sections/Heap'
 import BinarySearch from '@sections/BinarySearch'
 import Backtracking from '@sections/Backtracking'
 import DynamicProgramming from '@sections/DynamicProgramming'
+import DataStructures from '@sections/DataStructures'
+import SortingAlgorithms from '@/sections/SortingAlgorithms'
 
 import clsx from '@utils/clsx'
 
@@ -28,7 +29,6 @@ export default function Content() {
     return (
         <main className={classes}>
             <BigO />
-            <DataStructures />
             <Array />
             <HashMap />
             <LinkedList />
@@ -39,6 +39,8 @@ export default function Content() {
             <BinarySearch />
             <Backtracking />
             <DynamicProgramming />
+            <DataStructures />
+            <SortingAlgorithms />
         </main>
     )
 }

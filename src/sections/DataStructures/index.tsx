@@ -4,6 +4,7 @@ import Tabs from '@components/Tabs'
 
 import ArrayPY from '@code/python/data_structures/array.py?raw'
 import BinaryTreePY from '@code/python/data_structures/binary_tree.py?raw'
+import BinarySearchTreePY from '@code/python/data_structures/binary_search_tree.py?raw'
 import LinkedListPY from '@code/python/data_structures/linked_list.py?raw'
 import DoublyLinkedLisPY from '@code/python/data_structures/doubly_linked_list.py?raw'
 import GraphPY from '@code/python/data_structures/graph.py?raw'
@@ -22,22 +23,27 @@ export default function DataStructures() {
                     <Tabs.Tab code={ArrayPY} language="python" />
                 </Tabs>
             </section>
-            <section id="ds-hashmap">
+            <section id="ds-hash-map">
                 <Tabs title="hash map">
                     <Tabs.Tab code={HashMapPY} language="python" />
                 </Tabs>
             </section>
-            <section id="ds-linkedlist">
+            <section id="ds-linked-list">
                 <Tabs title="linked list">
                     <Tabs.Tab code={LinkedListPY} language="python" />
                 </Tabs>
             </section>
-            <section id="ds-doubly-linkedlist">
+            <section id="ds-doubly-linked-list">
                 <Tabs title="doubly linked list">
                     <Tabs.Tab code={DoublyLinkedLisPY} language="python" />
                 </Tabs>
             </section>
-            <section id="ds-binarytree">
+            <section id="ds-binary-tree">
+                <Tabs title="binary tree">
+                    <Tabs.Tab code={BinaryTreePY} language="python" />
+                </Tabs>
+            </section>
+            <section id="ds-binary-search-tree">
                 <Tabs title="binary tree">
                     <Tabs.Tab code={BinaryTreePY} language="python" />
                 </Tabs>

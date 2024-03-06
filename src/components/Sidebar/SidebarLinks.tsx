@@ -57,14 +57,32 @@ export default function SidebarLinks() {
             </Accordion>
             <Accordion title="Data Structures">
                 <LinkWithTooltip href="#ds-array" description="Array" />
-                <LinkWithTooltip href="#ds-hashmap" description="Hashmap" />
-                <LinkWithTooltip href="#ds-linkedlist" description="Linked List" />
-                <LinkWithTooltip href="#ds-doubly-linkedlist" description="Doubly Linked List" />
-                <LinkWithTooltip href="#ds-binarytree" description="Binary Tree" />
+                <LinkWithTooltip href="#ds-hash-map" description="Hashmap" />
+                <LinkWithTooltip href="#ds-linked-list" description="Linked List" />
+                <LinkWithTooltip href="#ds-doubly-linked-list" description="Doubly Linked List" />
+                <LinkWithTooltip href="#ds-binary-tree" description="Binary Tree" />
+                <LinkWithTooltip href="#ds-binary-search-tree" description="Binary Tree" />
                 <LinkWithTooltip href="#ds-graph" description="Graph" />
                 <LinkWithTooltip href="#ds-union-find" description="Union Find" />
                 <LinkWithTooltip href="#ds-union-find-optimized" description="Union Find Optimized" />
                 <LinkWithTooltip href="#ds-trie" description="Trie" />
+            </Accordion>
+            <Accordion title="Sorting Algorithms">
+                <LinkWithTooltip href="#sort-bubble" description="bubble sort" />
+                <LinkWithTooltip href="#sort-selection" description="selection sort" />
+                <LinkWithTooltip href="#sort-insertion" description="insertion sort" />
+                <LinkWithTooltip href="#sort-shell" description="shell sort" />
+                <LinkWithTooltip href="#sort-merge" description="mergesort" />
+                <LinkWithTooltip href="#sort-quick" description="quicksort" />
+                <LinkWithTooltip href="#sort-tim" description="timsort" />
+                <LinkWithTooltip href="#sort-heap" description="heapsort" />
+                <LinkWithTooltip href="#sort-counting" description="counting sort" />
+                <LinkWithTooltip href="#sort-bucket" description="bucket sort" />
+                <LinkWithTooltip href="#sort-radix" description="radix sort" />
+                <LinkWithTooltip href="#sort-cube" description="cubesort" />
+                <LinkWithTooltip href="#sort-bogo" description="bogo sort" />
+                <LinkWithTooltip href="#sort-pancake" description="pancake sort" />
+                <LinkWithTooltip href="#sort-sleep" description="sleep sort" />
             </Accordion>
         </>
     )
