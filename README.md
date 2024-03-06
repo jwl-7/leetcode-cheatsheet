@@ -1,7 +1,9 @@
 # LeetCode Cheatsheet
-- Big O time/space complexities
-- Common data structure complexities
-- Code templates
+- big O time/space complexities
+- common data structure operation complexities
+- algorithm code templates
+- data structure implementations
+- sorting algorithms
 
 # Code Templates
 - Array

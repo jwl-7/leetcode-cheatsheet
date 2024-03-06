@@ -8,7 +8,7 @@ export default function SidebarLinks() {
             <Accordion title="Big O">
                 <LinkWithTooltip href="#bigo-chart" description="Time/Space Complexities" />
                 <LinkWithTooltip href="#bigo-data-structure-operations-table" description="Data Structure Operations" />
-                <LinkWithTooltip href="#bigo-sorting-algorithms-table" description="Array Sorting Algorithms" />
+                <LinkWithTooltip href="#bigo-sorting-algorithms-table" description="Sorting Algorithms" />
             </Accordion>
             <Accordion title="Array">
                 <LinkWithTooltip href="#array-two-pointers-one-input" description="two pointers: one input, opposite ends" />
