@@ -3,11 +3,11 @@ import styles from './bigo.module.sass'
 
 export default function Chart() {
     const colors = {
-        red: '#ff4d4d',
-        orange: '#ffa116',
-        yellow: '#ffd866',
-        oliveGreen: '#a9dc76',
-        green: '#3fc86f'
+        red: 'rgba(255, 77, 77, 0.7)',
+        orange: 'rgba(255, 161, 22, 0.7)',
+        yellow: 'rgba(255, 216, 102, 0.7)',
+        oliveGreen: 'rgba(169, 220, 118, 0.7)',
+        green: 'rgba(63, 200, 111, 0.7)'
     }
 
     return (
