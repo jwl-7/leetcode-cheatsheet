@@ -4,7 +4,7 @@ import { MouseEvent, useRef, useState } from 'react'
 import { useClickOutside } from '@/hooks/useClickOutside'
 
 
-export default function OperationsTable() {
+export default function DataStructureOperationsTable() {
     const ref = useRef<HTMLTableElement>(null)
     const [selectedRow, setSelectedRow] = useState<string>('')
 
@@ -33,9 +33,9 @@ export default function OperationsTable() {
     useClickOutside(ref, removeFocused)
 
     return (
-        <section id="bigo-operations-table">
+        <section id="bigo-data-structure-operations-table">
             <div className={styles.container}>
-                <h3>Common Data Structure Operations</h3>
+                <h3>Data Structure Operations</h3>
                 <div className={styles.tableWrapper}>
                     <table ref={ref}>
                         <tbody>
