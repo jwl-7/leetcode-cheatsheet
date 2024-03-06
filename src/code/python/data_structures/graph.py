@@ -1,18 +1,24 @@
 class Graph:
-    def __init__(self):
+    def __init__(self) -> None:
         self.graph = {}
 
-    def add_vertex(self, vertex):
+    def add_vertex(self, vertex: str) -> None:
         if vertex not in self.graph:
             self.graph[vertex] = []
 
-    def add_edge(self, vertex1, vertex2):
-        if vertex1 in self.graph and vertex2 in self.graph:
-            self.graph[vertex1].append(vertex2)
-            self.graph[vertex2].append(vertex1)
+    def add_edge(self, a: str, b: str) -> None:
+        self.add_vertex(a)
+        self.add_vertex(b)
+        self.graph[a].append(b)
+        self.graph[b].append(a)
 
-    def get_adjacent_vertices(self, vertex):
-        if vertex in self.graph:
-            return self.graph[vertex]
-        else:
-            return []
+    def get_neighbors(self, vertex: str) -> list[str]:
+        return self.graph.get(vertex, [])
+
+    def __repr__(self) -> str:
+        output = ''
+
+        for vertex, neighbors in self.graph.items():
+            output += f'{vertex} - {' - '.join(neighbors)}\n'
+
+        return output
