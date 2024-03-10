@@ -53,7 +53,8 @@ Valid keys: `+JSON.stringify(Object.keys(A),null,"  "));var Z=M(ne,le,K,ie,V+"."
 https://github.com/highlightjs/highlight.js/issues/2277`),U=C,I=S),R===void 0&&(R=!0);const X={code:I,language:U};ye("before:highlight",X);const ke=X.result?X.result:v(X.language,X.code,R);return ke.code=X.code,ye("after:highlight",ke),ke}function v(C,S,R,I){const U=Object.create(null);function X(z,H){return z.keywords[H]}function ke(){if(!D.keywords){M.addText(Z);return}let z=0;D.keywordPatternRe.lastIndex=0;let H=D.keywordPatternRe.exec(Z),ee="";for(;H;){ee+=Z.substring(z,H.index);const ue=V.case_insensitive?H[0].toLowerCase():H[0],De=X(D,ue);if(De){const[Tn,Wd]=De;if(M.addText(ee),ee="",U[ue]=(U[ue]||0)+1,U[ue]<=Im&&(Ie+=Wd),Tn.startsWith("_"))ee+=H[0];else{const Gd=V.classNameAliases[Tn]||Tn;se(H[0],Gd)}}else ee+=H[0];z=D.keywordPatternRe.lastIndex,H=D.keywordPatternRe.exec(Z)}ee+=Z.substring(z),M.addText(ee)}function Ee(){if(Z==="")return;let z=null;if(typeof D.subLanguage=="string"){if(!n[D.subLanguage]){M.addText(Z);return}z=v(D.subLanguage,Z,!0,le[D.subLanguage]),le[D.subLanguage]=z._top}else z=m(Z,D.subLanguage.length?D.subLanguage:null);D.relevance>0&&(Ie+=z.relevance),M.__addSublanguage(z._emitter,z.language)}function ae(){D.subLanguage!=null?Ee():ke(),Z=""}function se(z,H){z!==""&&(M.startScope(H),M.addText(z),M.endScope())}function de(z,H){let ee=1;const ue=H.length-1;for(;ee<=ue;){if(!z._emit[ee]){ee++;continue}const De=V.classNameAliases[z[ee]]||z[ee],Tn=H[ee];De?se(Tn,De):(Z=Tn,ke(),Z=""),ee++}}function Ne(z,H){return z.scope&&typeof z.scope=="string"&&M.openNode(V.classNameAliases[z.scope]||z.scope),z.beginScope&&(z.beginScope._wrap?(se(Z,V.classNameAliases[z.beginScope._wrap]||z.beginScope._wrap),Z=""):z.beginScope._multi&&(de(z.beginScope,H),Z="")),D=Object.create(z,{parent:{value:D}}),D}function fn(z,H,ee){let ue=Jg(z.endRe,ee);if(ue){if(z["on:end"]){const De=new ru(z);z["on:end"](H,De),De.isMatchIgnored&&(ue=!1)}if(ue){for(;z.endsParent&&z.parent;)z=z.parent;return z}}if(z.endsWithParent)return fn(z.parent,H,ee)}function A(z){return D.matcher.regexIndex===0?(Z+=z[0],1):(vl=!0,0)}function B(z){const H=z[0],ee=z.rule,ue=new ru(ee),De=[ee.__beforeBegin,ee["on:begin"]];for(const Tn of De)if(Tn&&(Tn(z,ue),ue.isMatchIgnored))return A(H);return ee.skip?Z+=H:(ee.excludeBegin&&(Z+=H),ae(),!ee.returnBegin&&!ee.excludeBegin&&(Z=H)),Ne(ee,z),ee.returnBegin?0:H.length}function q(z){const H=z[0],ee=S.substring(z.index),ue=fn(D,z,ee);if(!ue)return uu;const De=D;D.endScope&&D.endScope._wrap?(ae(),se(H,D.endScope._wrap)):D.endScope&&D.endScope._multi?(ae(),de(D.endScope,z)):De.skip?Z+=H:(De.returnEnd||De.excludeEnd||(Z+=H),ae(),De.excludeEnd&&(Z=H));do D.scope&&M.closeNode(),!D.skip&&!D.subLanguage&&(Ie+=D.relevance),D=D.parent;while(D!==ue.parent);return ue.starts&&Ne(ue.starts,z),De.returnEnd?0:H.length}function J(){const z=[];for(let H=D;H!==V;H=H.parent)H.scope&&z.unshift(H.scope);z.forEach(H=>M.openNode(H))}let K={};function ie(z,H){const ee=H&&H[0];if(Z+=z,ee==null)return ae(),0;if(K.type==="begin"&&H.type==="end"&&K.index===H.index&&ee===""){if(Z+=S.slice(H.index,H.index+1),!i){const ue=new Error(`0 width match regex (${C})`);throw ue.languageName=C,ue.badRule=K.rule,ue}return 1}if(K=H,H.type==="begin")return B(H);if(H.type==="illegal"&&!R){const ue=new Error('Illegal lexeme "'+ee+'" for mode "'+(D.scope||"<unnamed>")+'"');throw ue.mode=D,ue}else if(H.type==="end"){const ue=q(H);if(ue!==uu)return ue}if(H.type==="illegal"&&ee==="")return 1;if(ml>1e5&&ml>H.index*3)throw new Error("potential infinite loop, way more iterations than matches");return Z+=ee,ee.length}const V=T(C);if(!V)throw ht(l.replace("{}",C)),new Error('Unknown language: "'+C+'"');const ne=Am(V);let te="",D=I||ne;const le={},M=new a.__emitter(a);J();let Z="",Ie=0,wn=0,ml=0,vl=!1;try{if(V.__emitTokens)V.__emitTokens(S,M);else{for(D.matcher.considerAll();;){ml++,vl?vl=!1:D.matcher.considerAll(),D.matcher.lastIndex=wn;const z=D.matcher.exec(S);if(!z)break;const H=S.substring(wn,z.index),ee=ie(H,z);wn=z.index+ee}ie(S.substring(wn))}return M.finalize(),te=M.toHTML(),{language:C,value:te,relevance:Ie,illegal:!1,_emitter:M,_top:D}}catch(z){if(z.message&&z.message.includes("Illegal"))return{language:C,value:Yl(S),illegal:!0,relevance:0,_illegalBy:{message:z.message,index:wn,context:S.slice(wn-100,wn+100),mode:z.mode,resultSoFar:te},_emitter:M};if(i)return{language:C,value:Yl(S),illegal:!1,relevance:0,errorRaised:z,_emitter:M,_top:D};throw z}}function h(C){const S={value:Yl(C),illegal:!1,relevance:0,_top:s,_emitter:new a.__emitter(a)};return S._emitter.addText(C),S}function m(C,S){S=S||a.languages||Object.keys(n);const R=h(C),I=S.filter(T).filter(W).map(ae=>v(ae,C,!1));I.unshift(R);const U=I.sort((ae,se)=>{if(ae.relevance!==se.relevance)return se.relevance-ae.relevance;if(ae.language&&se.language){if(T(ae.language).supersetOf===se.language)return 1;if(T(se.language).supersetOf===ae.language)return-1}return 0}),[X,ke]=U,Ee=X;return Ee.secondBest=ke,Ee}function x(C,S,R){const I=S&&t[S]||R;C.classList.add("hljs"),C.classList.add(`language-${I}`)}function w(C){let S=null;const R=c(C);if(u(R))return;if(ye("before:highlightElement",{el:C,language:R}),C.dataset.highlighted){console.log("Element previously highlighted. To highlight again, first unset `dataset.highlighted`.",C);return}if(C.children.length>0&&(a.ignoreUnescapedHTML||(console.warn("One of your code blocks includes unescaped HTML. This is a potentially serious security risk."),console.warn("https://github.com/highlightjs/highlight.js/wiki/security"),console.warn("The element with unescaped HTML:"),console.warn(C)),a.throwUnescapedHTML))throw new Lm("One of your code blocks includes unescaped HTML.",C.innerHTML);S=C;const I=S.textContent,U=R?g(I,{language:R,ignoreIllegals:!0}):m(I);C.innerHTML=U.value,C.dataset.highlighted="yes",x(C,R,U.language),C.result={language:U.language,re:U.relevance,relevance:U.relevance},U.secondBest&&(C.secondBest={language:U.secondBest.language,relevance:U.secondBest.relevance}),ye("after:highlightElement",{el:C,result:U,text:I})}function b(C){a=au(a,C)}const f=()=>{_(),kt("10.6.0","initHighlighting() deprecated.  Use highlightAll() now.")};function d(){_(),kt("10.6.0","initHighlightingOnLoad() deprecated.  Use highlightAll() now.")}let p=!1;function _(){if(document.readyState==="loading"){p=!0;return}document.querySelectorAll(a.cssSelector).forEach(w)}function k(){p&&_()}typeof window<"u"&&window.addEventListener&&window.addEventListener("DOMContentLoaded",k,!1);function E(C,S){let R=null;try{R=S(e)}catch(I){if(ht("Language definition for '{}' could not be registered.".replace("{}",C)),i)ht(I);else throw I;R=s}R.name||(R.name=C),n[C]=R,R.rawDefinition=S.bind(null,e),R.aliases&&L(R.aliases,{languageName:C})}function N(C){delete n[C];for(const S of Object.keys(t))t[S]===C&&delete t[S]}function P(){return Object.keys(n)}function T(C){return C=(C||"").toLowerCase(),n[C]||n[t[C]]}function L(C,{languageName:S}){typeof C=="string"&&(C=[C]),C.forEach(R=>{t[R.toLowerCase()]=S})}function W(C){const S=T(C);return S&&!S.disableAutodetect}function Q(C){C["before:highlightBlock"]&&!C["before:highlightElement"]&&(C["before:highlightElement"]=S=>{C["before:highlightBlock"](Object.assign({block:S.el},S))}),C["after:highlightBlock"]&&!C["after:highlightElement"]&&(C["after:highlightElement"]=S=>{C["after:highlightBlock"](Object.assign({block:S.el},S))})}function $(C){Q(C),r.push(C)}function fe(C){const S=r.indexOf(C);S!==-1&&r.splice(S,1)}function ye(C,S){const R=C;r.forEach(function(I){I[R]&&I[R](S)})}function Se(C){return kt("10.7.0","highlightBlock will be removed entirely in v12.0"),kt("10.7.0","Please use highlightElement now."),w(C)}Object.assign(e,{highlight:g,highlightAuto:m,highlightAll:_,highlightElement:w,highlightBlock:Se,configure:b,initHighlighting:f,initHighlightingOnLoad:d,registerLanguage:E,unregisterLanguage:N,listLanguages:P,getLanguage:T,registerAliases:L,autoDetection:W,inherit:au,addPlugin:$,removePlugin:fe}),e.debugMode=function(){i=!1},e.safeMode=function(){i=!0},e.versionString=Mm,e.regex={concat:St,lookahead:Rd,either:zs,optional:Xg,anyNumberOfTimes:Kg};for(const C in pi)typeof pi[C]=="object"&&Od(pi[C]);return Object.assign(e,pi),e},Xt=Fd({});Xt.newInstance=()=>Fd({});var Dm=Xt;Xt.HighlightJS=Xt;Xt.default=Xt;const Us=Uo(Dm),cu="[A-Za-z$_][0-9A-Za-z$_]*",zm=["as","in","of","if","for","while","finally","var","new","function","do","return","void","else","break","catch","instanceof","with","throw","case","default","try","switch","continue","typeof","delete","let","yield","const","class","debugger","async","await","static","import","from","export","extends"],Bm=["true","false","null","undefined","NaN","Infinity"],Ud=["Object","Function","Boolean","Symbol","Math","Date","Number","BigInt","String","RegExp","Array","Float32Array","Float64Array","Int8Array","Uint8Array","Uint8ClampedArray","Int16Array","Int32Array","Uint16Array","Uint32Array","BigInt64Array","BigUint64Array","Set","Map","WeakSet","WeakMap","ArrayBuffer","SharedArrayBuffer","Atomics","DataView","JSON","Promise","Generator","GeneratorFunction","AsyncFunction","Reflect","Proxy","Intl","WebAssembly"],Hd=["Error","EvalError","InternalError","RangeError","ReferenceError","SyntaxError","TypeError","URIError"],$d=["setInterval","setTimeout","clearInterval","clearTimeout","require","exports","eval","isFinite","isNaN","parseFloat","parseInt","decodeURI","decodeURIComponent","encodeURI","encodeURIComponent","escape","unescape"],Fm=["arguments","this","super","console","window","document","localStorage","sessionStorage","module","global"],Um=[].concat($d,Ud,Hd);function Hm(e){const n=e.regex,t=(S,{after:R})=>{const I="</"+S[0].slice(1);return S.input.indexOf(I,R)!==-1},r=cu,i={begin:"<>",end:"</>"},l=/<[A-Za-z0-9\\._:-]+\s*\/>/,s={begin:/<[A-Za-z0-9\\._:-]+/,end:/\/[A-Za-z0-9\\._:-]+>|\/>/,isTrulyOpeningTag:(S,R)=>{const I=S[0].length+S.index,U=S.input[I];if(U==="<"||U===","){R.ignoreMatch();return}U===">"&&(t(S,{after:I})||R.ignoreMatch());let X;const ke=S.input.substring(I);if(X=ke.match(/^\s*=/)){R.ignoreMatch();return}if((X=ke.match(/^\s+extends\s+/))&&X.index===0){R.ignoreMatch();return}}},a={$pattern:cu,keyword:zm,literal:Bm,built_in:Um,"variable.language":Fm},u="[0-9](_?[0-9])*",c=`\\.(${u})`,g="0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*",v={className:"number",variants:[{begin:`(\\b(${g})((${c})|\\.)?|(${c}))[eE][+-]?(${u})\\b`},{begin:`\\b(${g})\\b((${c})\\b|\\.)?|(${c})\\b`},{begin:"\\b(0|[1-9](_?[0-9])*)n\\b"},{begin:"\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*n?\\b"},{begin:"\\b0[bB][0-1](_?[0-1])*n?\\b"},{begin:"\\b0[oO][0-7](_?[0-7])*n?\\b"},{begin:"\\b0[0-7]+n?\\b"}],relevance:0},h={className:"subst",begin:"\\$\\{",end:"\\}",keywords:a,contains:[]},m={begin:"html`",end:"",starts:{end:"`",returnEnd:!1,contains:[e.BACKSLASH_ESCAPE,h],subLanguage:"xml"}},x={begin:"css`",end:"",starts:{end:"`",returnEnd:!1,contains:[e.BACKSLASH_ESCAPE,h],subLanguage:"css"}},w={begin:"gql`",end:"",starts:{end:"`",returnEnd:!1,contains:[e.BACKSLASH_ESCAPE,h],subLanguage:"graphql"}},b={className:"string",begin:"`",end:"`",contains:[e.BACKSLASH_ESCAPE,h]},d={className:"comment",variants:[e.COMMENT(/\/\*\*(?!\/)/,"\\*/",{relevance:0,contains:[{begin:"(?=@[A-Za-z]+)",relevance:0,contains:[{className:"doctag",begin:"@[A-Za-z]+"},{className:"type",begin:"\\{",end:"\\}",excludeEnd:!0,excludeBegin:!0,relevance:0},{className:"variable",begin:r+"(?=\\s*(-)|$)",endsParent:!0,relevance:0},{begin:/(?=[^\n])\s/,relevance:0}]}]}),e.C_BLOCK_COMMENT_MODE,e.C_LINE_COMMENT_MODE]},p=[e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,m,x,w,b,{match:/\$\d+/},v];h.contains=p.concat({begin:/\{/,end:/\}/,keywords:a,contains:["self"].concat(p)});const _=[].concat(d,h.contains),k=_.concat([{begin:/\(/,end:/\)/,keywords:a,contains:["self"].concat(_)}]),E={className:"params",begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:a,contains:k},N={variants:[{match:[/class/,/\s+/,r,/\s+/,/extends/,/\s+/,n.concat(r,"(",n.concat(/\./,r),")*")],scope:{1:"keyword",3:"title.class",5:"keyword",7:"title.class.inherited"}},{match:[/class/,/\s+/,r],scope:{1:"keyword",3:"title.class"}}]},P={relevance:0,match:n.either(/\bJSON/,/\b[A-Z][a-z]+([A-Z][a-z]*|\d)*/,/\b[A-Z]{2,}([A-Z][a-z]+|\d)+([A-Z][a-z]*)*/,/\b[A-Z]{2,}[a-z]+([A-Z][a-z]+|\d)*([A-Z][a-z]*)*/),className:"title.class",keywords:{_:[...Ud,...Hd]}},T={label:"use_strict",className:"meta",relevance:10,begin:/^\s*['"]use (strict|asm)['"]/},L={variants:[{match:[/function/,/\s+/,r,/(?=\s*\()/]},{match:[/function/,/\s*(?=\()/]}],className:{1:"keyword",3:"title.function"},label:"func.def",contains:[E],illegal:/%/},W={relevance:0,match:/\b[A-Z][A-Z_0-9]+\b/,className:"variable.constant"};function Q(S){return n.concat("(?!",S.join("|"),")")}const $={match:n.concat(/\b/,Q([...$d,"super","import"]),r,n.lookahead(/\(/)),className:"title.function",relevance:0},fe={begin:n.concat(/\./,n.lookahead(n.concat(r,/(?![0-9A-Za-z$_(])/))),end:r,excludeBegin:!0,keywords:"prototype",className:"property",relevance:0},ye={match:[/get|set/,/\s+/,r,/(?=\()/],className:{1:"keyword",3:"title.function"},contains:[{begin:/\(\)/},E]},Se="(\\([^()]*(\\([^()]*(\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)|"+e.UNDERSCORE_IDENT_RE+")\\s*=>",C={match:[/const|var|let/,/\s+/,r,/\s*/,/=\s*/,/(async\s*)?/,n.lookahead(Se)],keywords:"async",className:{1:"keyword",3:"title.function"},contains:[E]};return{name:"JavaScript",aliases:["js","jsx","mjs","cjs"],keywords:a,exports:{PARAMS_CONTAINS:k,CLASS_REFERENCE:P},illegal:/#(?![$_A-z])/,contains:[e.SHEBANG({label:"shebang",binary:"node",relevance:5}),T,e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,m,x,w,b,d,{match:/\$\d+/},v,P,{className:"attr",begin:r+n.lookahead(":"),relevance:0},C,{begin:"("+e.RE_STARTERS_RE+"|\\b(case|return|throw)\\b)\\s*",keywords:"return throw case",relevance:0,contains:[d,e.REGEXP_MODE,{className:"function",begin:Se,returnBegin:!0,end:"\\s*=>",contains:[{className:"params",variants:[{begin:e.UNDERSCORE_IDENT_RE,relevance:0},{className:null,begin:/\(\s*\)/,skip:!0},{begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:a,contains:k}]}]},{begin:/,/,relevance:0},{match:/\s+/,relevance:0},{variants:[{begin:i.begin,end:i.end},{match:l},{begin:s.begin,"on:begin":s.isTrulyOpeningTag,end:s.end}],subLanguage:"xml",contains:[{begin:s.begin,end:s.end,skip:!0,contains:["self"]}]}]},L,{beginKeywords:"while if switch catch for"},{begin:"\\b(?!function)"+e.UNDERSCORE_IDENT_RE+"\\([^()]*(\\([^()]*(\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)\\s*\\{",returnBegin:!0,label:"func.def",contains:[E,e.inherit(e.TITLE_MODE,{begin:r,className:"title.function"})]},{match:/\.\.\./,relevance:0},fe,{match:"\\$"+r,relevance:0},{match:[/\bconstructor(?=\s*\()/],className:{1:"title.function"},contains:[E]},$,W,N,ye,{match:/\$[(.]/}]}}function $m(e){const n=e.regex,t=new RegExp("[\\p{XID_Start}_]\\p{XID_Continue}*","u"),r=["and","as","assert","async","await","break","case","class","continue","def","del","elif","else","except","finally","for","from","global","if","import","in","is","lambda","match","nonlocal|10","not","or","pass","raise","return","try","while","with","yield"],a={$pattern:/[A-Za-z]\w+|__\w+__/,keyword:r,built_in:["__import__","abs","all","any","ascii","bin","bool","breakpoint","bytearray","bytes","callable","chr","classmethod","compile","complex","delattr","dict","dir","divmod","enumerate","eval","exec","filter","float","format","frozenset","getattr","globals","hasattr","hash","help","hex","id","input","int","isinstance","issubclass","iter","len","list","locals","map","max","memoryview","min","next","object","oct","open","ord","pow","print","property","range","repr","reversed","round","set","setattr","slice","sorted","staticmethod","str","sum","super","tuple","type","vars","zip"],literal:["__debug__","Ellipsis","False","None","NotImplemented","True"],type:["Any","Callable","Coroutine","Dict","List","Literal","Generic","Optional","Sequence","Set","Tuple","Type","Union"]},u={className:"meta",begin:/^(>>>|\.\.\.) /},c={className:"subst",begin:/\{/,end:/\}/,keywords:a,illegal:/#/},g={begin:/\{\{/,relevance:0},v={className:"string",contains:[e.BACKSLASH_ESCAPE],variants:[{begin:/([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''/,end:/'''/,contains:[e.BACKSLASH_ESCAPE,u],relevance:10},{begin:/([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?"""/,end:/"""/,contains:[e.BACKSLASH_ESCAPE,u],relevance:10},{begin:/([fF][rR]|[rR][fF]|[fF])'''/,end:/'''/,contains:[e.BACKSLASH_ESCAPE,u,g,c]},{begin:/([fF][rR]|[rR][fF]|[fF])"""/,end:/"""/,contains:[e.BACKSLASH_ESCAPE,u,g,c]},{begin:/([uU]|[rR])'/,end:/'/,relevance:10},{begin:/([uU]|[rR])"/,end:/"/,relevance:10},{begin:/([bB]|[bB][rR]|[rR][bB])'/,end:/'/},{begin:/([bB]|[bB][rR]|[rR][bB])"/,end:/"/},{begin:/([fF][rR]|[rR][fF]|[fF])'/,end:/'/,contains:[e.BACKSLASH_ESCAPE,g,c]},{begin:/([fF][rR]|[rR][fF]|[fF])"/,end:/"/,contains:[e.BACKSLASH_ESCAPE,g,c]},e.APOS_STRING_MODE,e.QUOTE_STRING_MODE]},h="[0-9](_?[0-9])*",m=`(\\b(${h}))?\\.(${h})|\\b(${h})\\.`,x=`\\b|${r.join("|")}`,w={className:"number",relevance:0,variants:[{begin:`(\\b(${h})|(${m}))[eE][+-]?(${h})[jJ]?(?=${x})`},{begin:`(${m})[jJ]?`},{begin:`\\b([1-9](_?[0-9])*|0+(_?0)*)[lLjJ]?(?=${x})`},{begin:`\\b0[bB](_?[01])+[lL]?(?=${x})`},{begin:`\\b0[oO](_?[0-7])+[lL]?(?=${x})`},{begin:`\\b0[xX](_?[0-9a-fA-F])+[lL]?(?=${x})`},{begin:`\\b(${h})[jJ](?=${x})`}]},b={className:"comment",begin:n.lookahead(/# type:/),end:/$/,keywords:a,contains:[{begin:/# type:/},{begin:/#/,end:/\b\B/,endsWithParent:!0}]},f={className:"params",variants:[{className:"",begin:/\(\s*\)/,skip:!0},{begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:a,contains:["self",u,w,v,e.HASH_COMMENT_MODE]}]};return c.contains=[v,w,u],{name:"Python",aliases:["py","gyp","ipython"],unicodeRegex:!0,keywords:a,illegal:/(<\/|\?)|=>/,contains:[u,w,{begin:/\bself\b/},{beginKeywords:"if",relevance:0},v,b,e.HASH_COMMENT_MODE,{match:[/\bdef/,/\s+/,t],scope:{1:"keyword",3:"title.function"},contains:[f]},{variants:[{match:[/\bclass/,/\s+/,t,/\s*/,/\(\s*/,t,/\s*\)/]},{match:[/\bclass/,/\s+/,t]}],scope:{1:"keyword",3:"title.class",6:"title.class.inherited"}},{className:"meta",begin:/^[\t ]*@/,end:/(?=#)|$/,contains:[w,f,v]}]}}Us.registerLanguage("python",$m);Us.registerLanguage("javascript",Hm);function Wm({code:e,language:n}){const t=G.useRef(null),[r,i]=G.useState(""),[l,s]=G.useState(""),a=en("hljs",n,tu.code),u=()=>{if(t.current){const w=e.split(`
 `).map((b,f)=>{const d=Us.highlight(b,{language:n}).value;return`<span class=${tu.line} data-line-number=${f+1}>${d}</span>`}).join(`
 `);s(w)}},c=()=>{const m=t.current,x=m==null?void 0:m.querySelectorAll("span[data-line-number]");x==null||x.forEach(w=>w.addEventListener("click",h))},g=()=>{const m=t.current,x=m==null?void 0:m.querySelectorAll("span[data-line-number]");x==null||x.forEach(w=>w.removeEventListener("click",h))},v=()=>{const m=t.current,x=m==null?void 0:m.querySelector(`span[data-line-number="${r}"]`);x==null||x.removeAttribute("focused")},h=m=>{const x=m.currentTarget,w=x.getAttribute("data-line-number")??"";v(),w===r?i(""):(x.setAttribute("focused",""),i(w))};return hl(t,v),G.useEffect(()=>(u(),c(),()=>g()),[e,l,r]),o.jsx("pre",{ref:t,children:o.jsx("code",{className:a,dangerouslySetInnerHTML:{__html:l}})})}const Gm="_copyButton_1hjzm_1",Ym="_copySvg_1hjzm_25",Qm="_checkSvg_1hjzm_32",Vm="_checkSvgPath_1hjzm_37",Km="_draw_1hjzm_1",Xm="_enter_1hjzm_48",Zm="_exit_1hjzm_52",ot={copyButton:Gm,copySvg:Ym,checkSvg:Qm,checkSvgPath:Vm,draw:Km,enter:Xm,"fade-in":"_fade-in_1hjzm_1",exit:Zm,"fade-out":"_fade-out_1hjzm_1"};function Jm({onClick:e}){const[n,t]=G.useState("show"),[r,i]=G.useState("hide"),l=en(ot.copySvg,n==="enter"&&ot.enter,n==="exit"&&ot.exit),s=en(ot.checkSvg,r==="exit"&&ot.exit),a=en(ot.checkSvgPath),u=()=>{n==="show"&&r==="hide"&&(t("exit"),e())},c=()=>{n==="enter"&&t("show"),n==="exit"&&(t("hide"),i("show"))},g=()=>{r==="show"&&setTimeout(()=>{i("exit")},500),r==="exit"&&(i("hide"),t("enter"))},v=()=>n!=="hide"&&o.jsx("svg",{className:l,viewBox:"0 0 512 512",onAnimationEnd:c,children:o.jsx("path",{d:"M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"})}),h=()=>r!=="hide"&&o.jsx("svg",{className:s,viewBox:"0 0 16 16",onAnimationEnd:g,children:o.jsx("path",{className:a,d:"M3.428571,9.14285714 L6.85714286,12.57142857 L12.5714286,3.42857143"})});return o.jsxs("button",{"aria-label":"copy button",className:ot.copyButton,onClick:u,children:[v(),h()]})}function qm(){return o.jsxs("svg",{viewBox:"0 0 128 128",children:[o.jsxs("linearGradient",{id:"python_svg__a",x1:70.252,x2:170.659,y1:1237.476,y2:1151.089,gradientTransform:"matrix(.563 0 0 -.568 -29.215 707.817)",gradientUnits:"userSpaceOnUse",children:[o.jsx("stop",{offset:0,stopColor:"#5A9FD4"}),o.jsx("stop",{offset:1,stopColor:"#306998"})]}),o.jsxs("linearGradient",{id:"python_svg__b",x1:209.474,x2:173.62,y1:1098.811,y2:1149.537,gradientTransform:"matrix(.563 0 0 -.568 -29.215 707.817)",gradientUnits:"userSpaceOnUse",children:[o.jsx("stop",{offset:0,stopColor:"#FFD43B"}),o.jsx("stop",{offset:1,stopColor:"#FFE873"})]}),o.jsx("path",{fill:"url(#python_svg__a)",d:"M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008M50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721",transform:"translate(0 10.26)"}),o.jsx("path",{fill:"url(#python_svg__b)",d:"M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692",transform:"translate(0 10.26)"}),o.jsxs("radialGradient",{id:"python_svg__c",cx:1825.678,cy:444.45,r:26.743,gradientTransform:"matrix(0 -.24 -1.055 0 532.979 557.576)",gradientUnits:"userSpaceOnUse",children:[o.jsx("stop",{offset:0,stopColor:"#B8B8B8",stopOpacity:.498}),o.jsx("stop",{offset:1,stopColor:"#7F7F7F",stopOpacity:0})]}),o.jsx("path",{fill:"url(#python_svg__c)",d:"M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416s14.815-6.417 33.092-6.417c18.275 0 33.091 2.872 33.091 6.417",opacity:.444})]})}function ev(){return o.jsxs("svg",{viewBox:"0 0 128 128",children:[o.jsx("path",{fill:"#F0DB4F",d:"M1.408 1.408h125.184v125.185H1.408z"}),o.jsx("path",{fill:"#323330",d:"M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581M69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237"})]})}function j({title:e,children:n}){const[t,r]=G.useState(0),i=G.Children.toArray(n),l=i[t].props.code,s=i[t].props.language,a=g=>r(g),u=()=>navigator.clipboard.writeText(l),c=()=>i.map((g,v)=>{const h=g.props.language==="python"?qm:ev,m=`view ${g.props.language} code`;return o.jsx("button",{role:"tab","aria-label":m,"aria-selected":v===t,className:fi.tabButton,onClick:()=>a(v),children:o.jsx(h,{})},v)});return o.jsxs("div",{role:"tablist",className:fi.container,children:[o.jsx("h3",{children:e}),o.jsxs("div",{className:fi.buttonContainer,children:[o.jsx("div",{role:"tablist",className:fi.tabButtonContainer,children:c()}),o.jsx(Jm,{onClick:u})]}),o.jsx("div",{role:"tabpanel",className:"tabs-content",children:o.jsx(Wm,{code:l,language:s})})]})}j.Tab=e=>o.jsx(o.Fragment,{children:e});const nv=`def fn(arr):\r
-    left = ans = 0\r
+    ans = 0\r
+    left = 0\r
     right = len(arr) - 1\r
 \r
     while left < right:\r
@@ -65,7 +66,9 @@ https://github.com/highlightjs/highlight.js/issues/2277`),U=C,I=S),R===void 0&&(
 \r
     return ans\r
 `,tv=`def fn(arr1, arr2):\r
-    i = j = ans = 0\r
+    i = 0\r
+    j = 0\r
+    ans = 0\r
 \r
     while i < len(arr1) and j < len(arr2):\r
         # do some logic here\r
@@ -84,9 +87,12 @@ https://github.com/highlightjs/highlight.js/issues/2277`),U=C,I=S),R===void 0&&(
 \r
     return ans\r
 `,rv=`def fn(arr):\r
-    left = ans = curr = 0\r
+    n = len(arr)\r
+    left = 0\r
+    curr = 0\r
+    ans = 0\r
 \r
-    for right in range(len(arr)):\r
+    for right in range(n):\r
         # do logic here to add arr[right] to curr\r
 \r
         while WINDOW_CONDITION_BROKEN:\r
@@ -97,18 +103,20 @@ https://github.com/highlightjs/highlight.js/issues/2277`),U=C,I=S),R===void 0&&(
 \r
     return ans\r
 `,iv=`def fn(arr):\r
+    n = len(arr)\r
     prefix = [arr[0]]\r
-    for i in range(1, len(arr)):\r
+\r
+    for i in range(1, n):\r
         prefix.append(prefix[-1] + arr[i])\r
 \r
     return prefix\r
-`,lv=`# arr is a list of characters\r
-def fn(arr):\r
+`,lv=`def fn(strs: list[str]):\r
     ans = []\r
-    for c in arr:\r
-        ans.append(c)\r
 \r
-    return "".join(ans)\r
+    for char in strs:\r
+        ans.append(char)\r
+\r
+    return ''.join(ans)\r
 `,ov=`const fn = (arr) => {\r
     let ans = 0\r
     let left = 0\r
@@ -199,6 +207,7 @@ const fn = (arr) => {\r
 }\r
 `;function dv(){return o.jsxs("div",{className:he.container,children:[o.jsx("h2",{className:he.sectionHeader,children:"Array"}),o.jsx("section",{id:"array-two-pointers-one-input",children:o.jsxs(j,{title:"two pointers: one input, opposite ends",children:[o.jsx(j.Tab,{code:nv,language:"python"}),o.jsx(j.Tab,{code:ov,language:"javascript"})]})}),o.jsx("section",{id:"array-two-pointers-two-inputs",children:o.jsxs(j,{title:"two pointers: two inputs, exhaust both",children:[o.jsx(j.Tab,{code:tv,language:"python"}),o.jsx(j.Tab,{code:sv,language:"javascript"})]})}),o.jsx("section",{id:"array-sliding-window",children:o.jsxs(j,{title:"sliding window",children:[o.jsx(j.Tab,{code:rv,language:"python"}),o.jsx(j.Tab,{code:av,language:"javascript"})]})}),o.jsx("section",{id:"array-prefix-sum",children:o.jsxs(j,{title:"prefix sum",children:[o.jsx(j.Tab,{code:iv,language:"python"}),o.jsx(j.Tab,{code:uv,language:"javascript"})]})}),o.jsx("section",{id:"array-string-building",children:o.jsxs(j,{title:"efficient string building",children:[o.jsx(j.Tab,{code:lv,language:"python"}),o.jsx(j.Tab,{code:cv,language:"javascript"})]})})]})}const fv=`from collections import defaultdict\r
 \r
+\r
 def fn(arr, k):\r
     counts = defaultdict(int)\r
     counts[0] = 1\r
@@ -238,6 +247,7 @@ def fn(arr, k):\r
 `,mv=`def fn(head):\r
     curr = head\r
     prev = None\r
+\r
     while curr:\r
         next_node = curr.next\r
         curr.next = prev\r
@@ -308,6 +318,7 @@ def fn(arr, k):\r
     # do logic\r
     dfs(root.left)\r
     dfs(root.right)\r
+\r
     return ans\r
 `,kv=`def dfs(root):\r
     stack = [root]\r
@@ -323,6 +334,7 @@ def fn(arr, k):\r
 \r
     return ans\r
 `,Ev=`from collections import deque\r
+\r
 \r
 def fn(root):\r
     queue = deque([root])\r
@@ -409,6 +421,7 @@ def fn(root):\r
         return ans\r
 \r
     seen = {START_NODE}\r
+\r
     return dfs(START_NODE)\r
 `,Rv=`def fn(graph):\r
     stack = [START_NODE]\r
@@ -426,6 +439,7 @@ def fn(root):\r
     return ans\r
 `,Av=`from collections import deque\r
 \r
+\r
 def fn(graph):\r
     queue = deque([START_NODE])\r
     seen = {START_NODE}\r
@@ -440,20 +454,22 @@ def fn(graph):\r
                 queue.append(neighbor)\r
 \r
     return ans\r
-`,Pv=`from math import inf\r
-from heapq import *\r
+`,Pv=`from heapq import *\r
 \r
-distances = [inf] * n\r
+\r
+distances = [float('inf')] * n\r
 distances[source] = 0\r
 heap = [(0, source)]\r
 \r
 while heap:\r
     curr_dist, node = heappop(heap)\r
+\r
     if curr_dist > distances[node]:\r
         continue\r
 \r
     for nei, weight in graph[node]:\r
         dist = curr_dist + weight\r
+\r
         if dist < distances[nei]:\r
             distances[nei] = dist\r
             heappush(heap, (dist, nei))\r
@@ -472,6 +488,7 @@ while heap:\r
     }\r
 \r
     let seen = new Set([START_NODE])\r
+\r
     return dfs(START_NODE)\r
 }\r
 `,Lv=`const fn = (graph) => {\r
@@ -521,15 +538,18 @@ while heap:\r
     JavaScript lacks built-in support for heaps.\r
     Try using a language that doesn't hate you, like Python.\r
 */\r
-`;function zv(){return o.jsxs("div",{className:he.container,children:[o.jsx("h2",{className:he.sectionHeader,children:"Graph"}),o.jsx("section",{id:"graph-dfs-recursive",children:o.jsxs(j,{title:"DFS (recursive)",children:[o.jsx(j.Tab,{code:bv,language:"python"}),o.jsx(j.Tab,{code:Mv,language:"javascript"})]})}),o.jsx("section",{id:"graph-dfs-iterative",children:o.jsxs(j,{title:"DFS (iterative)",children:[o.jsx(j.Tab,{code:Rv,language:"python"}),o.jsx(j.Tab,{code:Lv,language:"javascript"})]})}),o.jsx("section",{id:"graph-bfs",children:o.jsxs(j,{title:"BFS",children:[o.jsx(j.Tab,{code:Av,language:"python"}),o.jsx(j.Tab,{code:Iv,language:"javascript"})]})}),o.jsx("section",{id:"graph-dijkstra",children:o.jsxs(j,{title:"Dijkstra",children:[o.jsx(j.Tab,{code:Pv,language:"python"}),o.jsx(j.Tab,{code:Dv,language:"javascript"})]})})]})}const Bv=`import heapq\r
+`;function zv(){return o.jsxs("div",{className:he.container,children:[o.jsx("h2",{className:he.sectionHeader,children:"Graph"}),o.jsx("section",{id:"graph-dfs-recursive",children:o.jsxs(j,{title:"DFS (recursive)",children:[o.jsx(j.Tab,{code:bv,language:"python"}),o.jsx(j.Tab,{code:Mv,language:"javascript"})]})}),o.jsx("section",{id:"graph-dfs-iterative",children:o.jsxs(j,{title:"DFS (iterative)",children:[o.jsx(j.Tab,{code:Rv,language:"python"}),o.jsx(j.Tab,{code:Lv,language:"javascript"})]})}),o.jsx("section",{id:"graph-bfs",children:o.jsxs(j,{title:"BFS",children:[o.jsx(j.Tab,{code:Av,language:"python"}),o.jsx(j.Tab,{code:Iv,language:"javascript"})]})}),o.jsx("section",{id:"graph-dijkstra",children:o.jsxs(j,{title:"Dijkstra",children:[o.jsx(j.Tab,{code:Pv,language:"python"}),o.jsx(j.Tab,{code:Dv,language:"javascript"})]})})]})}const Bv=`from heapq import *\r
+\r
 \r
 def fn(arr, k):\r
     heap = []\r
+\r
     for num in arr:\r
         # do some logic to push onto heap according to problem's criteria\r
-        heapq.heappush(heap, (CRITERIA, num))\r
+        heappush(heap, (CRITERIA, num))\r
+\r
         if len(heap) > k:\r
-            heapq.heappop(heap)\r
+            heappop(heap)\r
 \r
     return [num for num in heap]\r
 `,Fv=`/*\r
@@ -539,6 +559,7 @@ def fn(arr, k):\r
 `;function Uv(){return o.jsxs("div",{className:he.container,children:[o.jsx("h2",{className:he.sectionHeader,children:"Heap"}),o.jsx("section",{id:"heap-find-top-k-elements",children:o.jsxs(j,{title:"find top k elements",children:[o.jsx(j.Tab,{code:Bv,language:"python"}),o.jsx(j.Tab,{code:Fv,language:"javascript"})]})})]})}const Hv=`def fn(arr, target):\r
     left = 0\r
     right = len(arr) - 1\r
+\r
     while left <= right:\r
         mid = (left + right) // 2\r
         if arr[mid] == target:\r
@@ -554,8 +575,10 @@ def fn(arr, k):\r
 `,$v=`def fn(arr, target):\r
     left = 0\r
     right = len(arr)\r
+\r
     while left < right:\r
         mid = (left + right) // 2\r
+\r
         if arr[mid] >= target:\r
             right = mid\r
         else:\r
@@ -565,8 +588,10 @@ def fn(arr, k):\r
 `,Wv=`def fn(arr, target):\r
     left = 0\r
     right = len(arr)\r
+\r
     while left < right:\r
         mid = (left + right) // 2\r
+\r
         if arr[mid] > target:\r
             right = mid\r
         else:\r
@@ -580,8 +605,10 @@ def fn(arr, k):\r
 \r
     left = MINIMUM_POSSIBLE_ANSWER\r
     right = MAXIMUM_POSSIBLE_ANSWER\r
+\r
     while left <= right:\r
         mid = (left + right) // 2\r
+\r
         if check(mid):\r
             right = mid - 1\r
         else:\r
@@ -595,8 +622,10 @@ def fn(arr, k):\r
 \r
     left = MINIMUM_POSSIBLE_ANSWER\r
     right = MAXIMUM_POSSIBLE_ANSWER\r
+\r
     while left <= right:\r
         mid = (left + right) // 2\r
+\r
         if check(mid):\r
             left = mid + 1\r
         else:\r
@@ -609,10 +638,12 @@ def fn(arr, k):\r
 \r
     while (left <= right) {\r
         let mid = Math.floor((left + right) / 2)\r
+\r
         if (arr[mid] == target) {\r
             // do something\r
             return\r
         }\r
+\r
         if (arr[mid] > target) {\r
             right = mid - 1\r
         } else {\r
@@ -629,6 +660,7 @@ def fn(arr, k):\r
 \r
     while (left < right) {\r
         let mid = Math.floor((left + right) / 2)\r
+\r
         if (arr[mid] >= target) {\r
             right = mid\r
         } else {\r
@@ -644,6 +676,7 @@ def fn(arr, k):\r
 \r
     while (left < right) {\r
         let mid = Math.floor((left + right) / 2)\r
+\r
         if (arr[mid] > target) {\r
             right = mid\r
         } else {\r
@@ -733,9 +766,11 @@ def fn(arr, k):\r
 \r
         ans = RECURRENCE_RELATION(STATE)\r
         memo[STATE] = ans\r
+\r
         return ans\r
 \r
     memo = {}\r
+\r
     return dp(STATE_FOR_WHOLE_INPUT)\r
 `,ry=`def fn(arr):\r
     if BASE_CASE:\r
@@ -762,10 +797,12 @@ def fn(arr, k):\r
 \r
         let ans = RECURRENCE_RELATION(STATE)\r
         memo[STATE] = ans\r
+\r
         return ans\r
     }\r
 \r
     let memo = ARRAY_SIZED_ACCORDING_TO_STATE\r
+\r
     return dp(STATE_FOR_WHOLE_INPUT)\r
 }\r
 `,ly=`const fn = (arr) => {\r
@@ -1233,61 +1270,61 @@ class Trie:\r
 `;function vy(){return o.jsxs("div",{className:he.container,children:[o.jsx("h2",{className:he.sectionHeader,children:"Data Structures"}),o.jsx("section",{id:"ds-array",children:o.jsx(j,{title:"array",children:o.jsx(j.Tab,{code:sy,language:"python"})})}),o.jsx("section",{id:"ds-hash-map",children:o.jsx(j,{title:"hash map",children:o.jsx(j.Tab,{code:py,language:"python"})})}),o.jsx("section",{id:"ds-linked-list",children:o.jsx(j,{title:"linked list",children:o.jsx(j.Tab,{code:cy,language:"python"})})}),o.jsx("section",{id:"ds-doubly-linked-list",children:o.jsx(j,{title:"doubly linked list",children:o.jsx(j.Tab,{code:dy,language:"python"})})}),o.jsx("section",{id:"ds-binary-tree",children:o.jsx(j,{title:"binary tree",children:o.jsx(j.Tab,{code:ay,language:"python"})})}),o.jsx("section",{id:"ds-binary-search-tree",children:o.jsx(j,{title:"binary search tree",children:o.jsx(j.Tab,{code:uy,language:"python"})})}),o.jsx("section",{id:"ds-graph",children:o.jsx(j,{title:"graph",children:o.jsx(j.Tab,{code:fy,language:"python"})})}),o.jsx("section",{id:"ds-union-find",children:o.jsx(j,{title:"union find",children:o.jsx(j.Tab,{code:gy,language:"python"})})}),o.jsx("section",{id:"ds-union-find-optimized",children:o.jsx(j,{title:"union find optimized",children:o.jsx(j.Tab,{code:my,language:"python"})})}),o.jsx("section",{id:"ds-trie",children:o.jsx(j,{title:"trie",children:o.jsx(j.Tab,{code:hy,language:"python"})})})]})}const yy=`import random\r
 \r
 \r
-def bogo_sort(nums: list) -> None:\r
-    target = sorted(nums)\r
+def bogo_sort(arr: list) -> None:\r
+    target = sorted(arr)\r
 \r
-    while nums != target:\r
-        random.shuffle(nums)\r
-`,xy=`def bubble_sort(nums: list) -> None:\r
-    n = len(nums)\r
+    while arr != target:\r
+        random.shuffle(arr)\r
+`,xy=`def bubble_sort(arr: list) -> None:\r
+    n = len(arr)\r
 \r
     for i in range(n):\r
         swapped = False\r
 \r
         for j in range(0, n - i - 1):\r
-            if nums[j] > nums[j + 1]:\r
-                nums[j], nums[j + 1] = nums[j + 1], nums[j]\r
+            if arr[j] > arr[j + 1]:\r
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]\r
                 swapped = True\r
 \r
         if not swapped:\r
             break\r
-`,_y=`def bucket_sort(nums: list) -> list:\r
+`,_y=`def bucket_sort(arr: list) -> list:\r
     num_buckets = 10\r
-    min_num = min(nums)\r
-    max_num = max(nums)\r
+    min_num = min(arr)\r
+    max_num = max(arr)\r
     bucket_size = (max_num - min_num) / num_buckets\r
     buckets = [[] for _ in range(num_buckets)]\r
 \r
-    for num in nums:\r
+    for num in arr:\r
         index = min(int((num - min_num) / bucket_size), num_buckets - 1)\r
         buckets[index].append(num)\r
 \r
     return [num for bucket in buckets for num in sorted(bucket)]\r
-`,wy=`def counting_sort(nums: list) -> list:\r
-    max_num = max(nums)\r
-    min_num = min(nums)\r
+`,wy=`def counting_sort(arr: list) -> list:\r
+    max_num = max(arr)\r
+    min_num = min(arr)\r
     count_range = max_num - min_num + 1\r
     count = [0] * count_range\r
-    output = [0] * len(nums)\r
+    output = [0] * len(arr)\r
 \r
-    for num in nums:\r
+    for num in arr:\r
         count[num - min_num] += 1\r
 \r
     for i in range(1, count_range):\r
         count[i] += count[i - 1]\r
 \r
-    for num in nums[::-1]:\r
+    for num in arr[::-1]:\r
         output[count[num - min_num] - 1] = num\r
         count[num - min_num] -= 1\r
 \r
     return output\r
-`,Sy=`def cube_sort(nums: list, processors: int) -> None:\r
-    n = len(nums)\r
+`,Sy=`def cube_sort(arr: list, processors: int) -> None:\r
+    n = len(arr)\r
     subarrays = []\r
     subarray_size = n // processors\r
 \r
     for i in range(processors):\r
-        subarray = nums[i * subarray_size : (i + 1) * subarray_size]\r
+        subarray = arr[i * subarray_size : (i + 1) * subarray_size]\r
         subarrays.append(subarray)\r
 \r
     for subarray in subarrays:\r
@@ -1304,50 +1341,50 @@ def bogo_sort(nums: list) -> None:\r
             subarrays[i] = merged[:subarray_size]\r
             subarrays[partner] = merged[subarray_size:]\r
 \r
-    nums[:] = [num for subarray in subarrays for num in subarray]\r
-`,jy=`def heap_sort(nums: list) -> list:\r
-    n = len(nums)\r
+    arr[:] = [num for subarray in subarrays for num in subarray]\r
+`,jy=`def heap_sort(arr: list) -> list:\r
+    n = len(arr)\r
 \r
     for i in range(n // 2 - 1, -1, -1):\r
-        heapify(nums, n, i)\r
+        heapify(arr, n, i)\r
     for i in range(n - 1, 0, -1):\r
-        nums[i], nums[0] = nums[0], nums[i]\r
-        heapify(nums, i, 0)\r
+        arr[i], arr[0] = arr[0], arr[i]\r
+        heapify(arr, i, 0)\r
 \r
-    return nums\r
+    return arr\r
 \r
-def heapify(nums: list, n: int, i: int) -> None:\r
+def heapify(arr: list, n: int, i: int) -> None:\r
     largest = i\r
     left = 2 * i + 1\r
     right = 2 * i + 2\r
 \r
-    if left < n and nums[left] > nums[largest]:\r
+    if left < n and arr[left] > arr[largest]:\r
         largest = left\r
-    if right < n and nums[right] > nums[largest]:\r
+    if right < n and arr[right] > arr[largest]:\r
         largest = right\r
     if largest != i:\r
-        nums[i], nums[largest] = nums[largest], nums[i]\r
-        heapify(nums, n, largest)\r
-`,ky=`def insertion_sort(nums: list) -> None:\r
-    n = len(nums)\r
+        arr[i], arr[largest] = arr[largest], arr[i]\r
+        heapify(arr, n, largest)\r
+`,ky=`def insertion_sort(arr: list) -> None:\r
+    n = len(arr)\r
 \r
     for i in range(1, n):\r
-        key = nums[i]\r
+        key = arr[i]\r
 \r
-        while i > 0 and key < nums[i - 1]:\r
-            nums[i] = nums[i - 1]\r
+        while i > 0 and key < arr[i - 1]:\r
+            arr[i] = arr[i - 1]\r
             i -= 1\r
 \r
-        nums[i] = key\r
-`,Ey=`def merge_sort(nums: list) -> list:\r
-    n = len(nums)\r
+        arr[i] = key\r
+`,Ey=`def merge_sort(arr: list) -> list:\r
+    n = len(arr)\r
 \r
     if n <= 1:\r
-        return nums\r
+        return arr\r
 \r
     mid = n // 2\r
-    left = merge_sort(nums[:mid])\r
-    right = merge_sort(nums[mid:])\r
+    left = merge_sort(arr[:mid])\r
+    right = merge_sort(arr[mid:])\r
 \r
     return merge(left, right)\r
 \r
@@ -1362,58 +1399,58 @@ def merge(left: list, right: list) -> list:\r
     output.extend(right)\r
 \r
     return output\r
-`,Ny=`def pancake_sort(nums: list) -> None:\r
-    n = len(nums)\r
+`,Ny=`def pancake_sort(arr: list) -> None:\r
+    n = len(arr)\r
 \r
     for size in range(n, 1, -1):\r
-        max_index = find_max_index(nums, size)\r
+        max_index = find_max_index(arr, size)\r
 \r
         if max_index != size - 1:\r
-            flip(nums, max_index)\r
-            flip(nums, size - 1)\r
+            flip(arr, max_index)\r
+            flip(arr, size - 1)\r
 \r
-def flip(nums: list, i: int) -> None:\r
+def flip(arr: list, i: int) -> None:\r
     left = 0\r
 \r
     while left < i:\r
-        nums[left], nums[i] = nums[i], nums[left]\r
+        arr[left], arr[i] = arr[i], arr[left]\r
         left += 1\r
         i -= 1\r
 \r
-def find_max_index(nums: list, n: int) -> int:\r
+def find_max_index(arr: list, n: int) -> int:\r
     max_idx = 0\r
 \r
     for i in range(n):\r
-        if nums[i] > nums[max_idx]:\r
+        if arr[i] > arr[max_idx]:\r
             max_idx = i\r
 \r
     return max_idx\r
-`,Ty=`def quick_sort(nums: list) -> list:\r
-    n = len(nums)\r
+`,Ty=`def quick_sort(arr: list) -> list:\r
+    n = len(arr)\r
 \r
     if n <= 1:\r
-        return nums\r
+        return arr\r
 \r
-    pivot = nums[n // 2]\r
-    left = [x for x in nums if x < pivot]\r
-    right = [x for x in nums if x > pivot]\r
+    pivot = arr[n // 2]\r
+    left = [x for x in arr if x < pivot]\r
+    right = [x for x in arr if x > pivot]\r
 \r
     return quick_sort(left) + [pivot] + quick_sort(right)\r
-`,Cy=`def radix_sort(nums: list) -> None:\r
-    max_val = max(nums)\r
+`,Cy=`def radix_sort(arr: list) -> None:\r
+    max_val = max(arr)\r
     exp = 1\r
 \r
     while max_val // exp > 0:\r
-        counting_sort(nums, exp)\r
+        counting_sort(arr, exp)\r
         exp *= 10\r
 \r
-def counting_sort(nums: list, exp: int) -> None:\r
-    n = len(nums)\r
+def counting_sort(arr: list, exp: int) -> None:\r
+    n = len(arr)\r
     output = [0] * n\r
     count = [0] * 10\r
 \r
     for i in range(n):\r
-        idx = nums[i] // exp\r
+        idx = arr[i] // exp\r
         count[idx % 10] += 1\r
 \r
     for i in range(1, 10):\r
@@ -1422,50 +1459,50 @@ def counting_sort(nums: list, exp: int) -> None:\r
     i = n - 1\r
 \r
     while i >= 0:\r
-        idx = nums[i] // exp\r
-        output[count[idx % 10] - 1] = nums[i]\r
+        idx = arr[i] // exp\r
+        output[count[idx % 10] - 1] = arr[i]\r
         count[idx % 10] -= 1\r
         i -= 1\r
 \r
     for i in range(n):\r
-        nums[i] = output[i]\r
-`,Oy=`def selection_sort(nums: list) -> None:\r
-    n = len(nums)\r
+        arr[i] = output[i]\r
+`,Oy=`def selection_sort(arr: list) -> None:\r
+    n = len(arr)\r
 \r
     for i in range(n):\r
         min_i = i\r
 \r
         for j in range(i + 1, n):\r
-            if nums[j] < nums[min_i]:\r
+            if arr[j] < arr[min_i]:\r
                 min_i = j\r
 \r
         if min_i != i:\r
-            nums[i], nums[min_i] = nums[min_i], nums[i]\r
-`,by=`def shell_sort(nums: list) -> None:\r
-    n = len(nums)\r
+            arr[i], arr[min_i] = arr[min_i], arr[i]\r
+`,by=`def shell_sort(arr: list) -> None:\r
+    n = len(arr)\r
     gaps = [701, 301, 132, 57, 23, 10, 4, 1]\r
 \r
     for gap in gaps:\r
         for i in range(gap, n):\r
-            tmp = nums[i]\r
+            tmp = arr[i]\r
             j = i\r
 \r
-            while j >= gap and nums[j - gap] > tmp:\r
-                nums[j] = nums[j - gap]\r
+            while j >= gap and arr[j - gap] > tmp:\r
+                arr[j] = arr[j - gap]\r
                 j -= gap\r
 \r
             if j != i:\r
-                nums[j] = tmp\r
+                arr[j] = tmp\r
 `,Ry=`from threading import Thread\r
 from time import sleep\r
 \r
 \r
-def sleep_sort(nums: list ) -> list:\r
-    sorted_nums = []\r
+def sleep_sort(arr: list ) -> list:\r
+    sorted_arr = []\r
     threads = []\r
 \r
-    for num in nums:\r
-        thread = Thread(target=snorlax, args=(num, sorted_nums))\r
+    for num in arr:\r
+        thread = Thread(target=snorlax, args=(num, sorted_arr))\r
         threads.append(thread)\r
 \r
     for thread in threads:\r
@@ -1474,18 +1511,18 @@ def sleep_sort(nums: list ) -> list:\r
     for thread in threads:\r
         thread.join()\r
 \r
-    return sorted_nums\r
+    return sorted_arr\r
 \r
-def snorlax(num: float, nums: list) -> None:\r
+def snorlax(num: float, arr: list) -> None:\r
     sleep(num / 1000.0)\r
-    nums.append(num)\r
-`,Ay=`def tim_sort(nums: list) -> list:\r
-    n = len(nums)\r
+    arr.append(num)\r
+`,Ay=`def tim_sort(arr: list) -> list:\r
+    n = len(arr)\r
     min_run = 32\r
 \r
     for start in range(0, n, min_run):\r
         end = min(start + min_run - 1, n - 1)\r
-        insertion_sort(nums, start, end)\r
+        insertion_sort(arr, start, end)\r
 \r
     size = min_run\r
 \r
@@ -1493,30 +1530,30 @@ def snorlax(num: float, nums: list) -> None:\r
         for left in range(0, n, 2 * size):\r
             mid = min(n - 1, left + size - 1)\r
             right = min((left + 2 * size - 1), (n - 1))\r
-            nums[left : right + 1] = merge(nums[left : mid + 1], nums[mid + 1 : right + 1])\r
+            arr[left : right + 1] = merge(arr[left : mid + 1], arr[mid + 1 : right + 1])\r
         size *= 2\r
 \r
-    return nums\r
+    return arr\r
 \r
-def insertion_sort(nums: list, left: int, right: int) -> None:\r
+def insertion_sort(arr: list, left: int, right: int) -> None:\r
     for i in range(left + 1, right + 1):\r
-        key = nums[i]\r
+        key = arr[i]\r
 \r
-        while i > 0 and key < nums[i - 1]:\r
-            nums[i] = nums[i - 1]\r
+        while i > 0 and key < arr[i - 1]:\r
+            arr[i] = arr[i - 1]\r
             i -= 1\r
 \r
-        nums[i] = key\r
+        arr[i] = key\r
 \r
-def merge_sort(nums: list) -> list:\r
-    n = len(nums)\r
+def merge_sort(arr: list) -> list:\r
+    n = len(arr)\r
 \r
     if n <= 1:\r
-        return nums\r
+        return arr\r
 \r
     mid = n // 2\r
-    left = merge_sort(nums[:mid])\r
-    right = merge_sort(nums[mid:])\r
+    left = merge_sort(arr[:mid])\r
+    right = merge_sort(arr[mid:])\r
 \r
     return merge(left, right)\r
 \r
