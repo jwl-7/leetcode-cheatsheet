@@ -1,10 +1,10 @@
-def tim_sort(nums: list) -> list:
-    n = len(nums)
+def tim_sort(arr: list) -> list:
+    n = len(arr)
     min_run = 32
 
     for start in range(0, n, min_run):
         end = min(start + min_run - 1, n - 1)
-        insertion_sort(nums, start, end)
+        insertion_sort(arr, start, end)
 
     size = min_run
 
@@ -12,30 +12,30 @@ def tim_sort(nums: list) -> list:
         for left in range(0, n, 2 * size):
             mid = min(n - 1, left + size - 1)
             right = min((left + 2 * size - 1), (n - 1))
-            nums[left : right + 1] = merge(nums[left : mid + 1], nums[mid + 1 : right + 1])
+            arr[left : right + 1] = merge(arr[left : mid + 1], arr[mid + 1 : right + 1])
         size *= 2
 
-    return nums
+    return arr
 
-def insertion_sort(nums: list, left: int, right: int) -> None:
+def insertion_sort(arr: list, left: int, right: int) -> None:
     for i in range(left + 1, right + 1):
-        key = nums[i]
+        key = arr[i]
 
-        while i > 0 and key < nums[i - 1]:
-            nums[i] = nums[i - 1]
+        while i > 0 and key < arr[i - 1]:
+            arr[i] = arr[i - 1]
             i -= 1
 
-        nums[i] = key
+        arr[i] = key
 
-def merge_sort(nums: list) -> list:
-    n = len(nums)
+def merge_sort(arr: list) -> list:
+    n = len(arr)
 
     if n <= 1:
-        return nums
+        return arr
 
     mid = n // 2
-    left = merge_sort(nums[:mid])
-    right = merge_sort(nums[mid:])
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
 
     return merge(left, right)
 

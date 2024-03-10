@@ -8,7 +8,9 @@ def fn(arr):
 
         ans = RECURRENCE_RELATION(STATE)
         memo[STATE] = ans
+
         return ans
 
     memo = {}
+
     return dp(STATE_FOR_WHOLE_INPUT)

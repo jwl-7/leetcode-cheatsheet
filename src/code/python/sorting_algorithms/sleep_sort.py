@@ -2,12 +2,12 @@ from threading import Thread
 from time import sleep
 
 
-def sleep_sort(nums: list ) -> list:
-    sorted_nums = []
+def sleep_sort(arr: list ) -> list:
+    sorted_arr = []
     threads = []
 
-    for num in nums:
-        thread = Thread(target=snorlax, args=(num, sorted_nums))
+    for num in arr:
+        thread = Thread(target=snorlax, args=(num, sorted_arr))
         threads.append(thread)
 
     for thread in threads:
@@ -16,8 +16,8 @@ def sleep_sort(nums: list ) -> list:
     for thread in threads:
         thread.join()
 
-    return sorted_nums
+    return sorted_arr
 
-def snorlax(num: float, nums: list) -> None:
+def snorlax(num: float, arr: list) -> None:
     sleep(num / 1000.0)
-    nums.append(num)
+    arr.append(num)

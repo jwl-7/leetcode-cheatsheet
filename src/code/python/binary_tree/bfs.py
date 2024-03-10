@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def fn(root):
     queue = deque([root])
     ans = 0

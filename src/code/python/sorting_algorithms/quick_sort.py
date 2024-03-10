@@ -1,11 +1,11 @@
-def quick_sort(nums: list) -> list:
-    n = len(nums)
+def quick_sort(arr: list) -> list:
+    n = len(arr)
 
     if n <= 1:
-        return nums
+        return arr
 
-    pivot = nums[n // 2]
-    left = [x for x in nums if x < pivot]
-    right = [x for x in nums if x > pivot]
+    pivot = arr[n // 2]
+    left = [x for x in arr if x < pivot]
+    right = [x for x in arr if x > pivot]
 
     return quick_sort(left) + [pivot] + quick_sort(right)

@@ -1,12 +1,12 @@
-def merge_sort(nums: list) -> list:
-    n = len(nums)
+def merge_sort(arr: list) -> list:
+    n = len(arr)
 
     if n <= 1:
-        return nums
+        return arr
 
     mid = n // 2
-    left = merge_sort(nums[:mid])
-    right = merge_sort(nums[mid:])
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
 
     return merge(left, right)
 

@@ -10,4 +10,5 @@ def fn(graph):
         return ans
 
     seen = {START_NODE}
+
     return dfs(START_NODE)

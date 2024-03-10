@@ -1,11 +1,11 @@
-def insertion_sort(nums: list) -> None:
-    n = len(nums)
+def insertion_sort(arr: list) -> None:
+    n = len(arr)
 
     for i in range(1, n):
-        key = nums[i]
+        key = arr[i]
 
-        while i > 0 and key < nums[i - 1]:
-            nums[i] = nums[i - 1]
+        while i > 0 and key < arr[i - 1]:
+            arr[i] = arr[i - 1]
             i -= 1
 
-        nums[i] = key
+        arr[i] = key

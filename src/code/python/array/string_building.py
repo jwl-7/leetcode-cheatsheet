@@ -1,7 +1,7 @@
-# arr is a list of characters
-def fn(arr):
+def fn(strs: list[str]):
     ans = []
-    for c in arr:
-        ans.append(c)
 
-    return "".join(ans)
+    for char in strs:
+        ans.append(char)
+
+    return ''.join(ans)

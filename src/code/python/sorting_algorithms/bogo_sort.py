@@ -1,8 +1,8 @@
 import random
 
 
-def bogo_sort(nums: list) -> None:
-    target = sorted(nums)
+def bogo_sort(arr: list) -> None:
+    target = sorted(arr)
 
-    while nums != target:
-        random.shuffle(nums)
+    while arr != target:
+        random.shuffle(arr)

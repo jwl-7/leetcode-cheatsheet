@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def fn(graph):
     queue = deque([START_NODE])
     seen = {START_NODE}

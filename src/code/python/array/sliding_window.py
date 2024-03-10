@@ -1,7 +1,10 @@
 def fn(arr):
-    left = ans = curr = 0
+    n = len(arr)
+    left = 0
+    curr = 0
+    ans = 0
 
-    for right in range(len(arr)):
+    for right in range(n):
         # do logic here to add arr[right] to curr
 
         while WINDOW_CONDITION_BROKEN:

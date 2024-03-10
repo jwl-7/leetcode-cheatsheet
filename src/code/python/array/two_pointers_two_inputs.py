@@ -1,5 +1,7 @@
 def fn(arr1, arr2):
-    i = j = ans = 0
+    i = 0
+    j = 0
+    ans = 0
 
     while i < len(arr1) and j < len(arr2):
         # do some logic here

@@ -1,10 +1,10 @@
-def cube_sort(nums: list, processors: int) -> None:
-    n = len(nums)
+def cube_sort(arr: list, processors: int) -> None:
+    n = len(arr)
     subarrays = []
     subarray_size = n // processors
 
     for i in range(processors):
-        subarray = nums[i * subarray_size : (i + 1) * subarray_size]
+        subarray = arr[i * subarray_size : (i + 1) * subarray_size]
         subarrays.append(subarray)
 
     for subarray in subarrays:
@@ -21,4 +21,4 @@ def cube_sort(nums: list, processors: int) -> None:
             subarrays[i] = merged[:subarray_size]
             subarrays[partner] = merged[subarray_size:]
 
-    nums[:] = [num for subarray in subarrays for num in subarray]
+    arr[:] = [num for subarray in subarrays for num in subarray]

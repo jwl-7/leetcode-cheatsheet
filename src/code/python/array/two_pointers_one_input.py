@@ -1,5 +1,6 @@
 def fn(arr):
-    left = ans = 0
+    ans = 0
+    left = 0
     right = len(arr) - 1
 
     while left < right:

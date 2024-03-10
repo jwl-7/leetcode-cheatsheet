@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 def fn(arr, k):
     counts = defaultdict(int)
     counts[0] = 1

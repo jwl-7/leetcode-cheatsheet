@@ -1,18 +1,18 @@
-def radix_sort(nums: list) -> None:
-    max_val = max(nums)
+def radix_sort(arr: list) -> None:
+    max_val = max(arr)
     exp = 1
 
     while max_val // exp > 0:
-        counting_sort(nums, exp)
+        counting_sort(arr, exp)
         exp *= 10
 
-def counting_sort(nums: list, exp: int) -> None:
-    n = len(nums)
+def counting_sort(arr: list, exp: int) -> None:
+    n = len(arr)
     output = [0] * n
     count = [0] * 10
 
     for i in range(n):
-        idx = nums[i] // exp
+        idx = arr[i] // exp
         count[idx % 10] += 1
 
     for i in range(1, 10):
@@ -21,10 +21,10 @@ def counting_sort(nums: list, exp: int) -> None:
     i = n - 1
 
     while i >= 0:
-        idx = nums[i] // exp
-        output[count[idx % 10] - 1] = nums[i]
+        idx = arr[i] // exp
+        output[count[idx % 10] - 1] = arr[i]
         count[idx % 10] -= 1
         i -= 1
 
     for i in range(n):
-        nums[i] = output[i]
+        arr[i] = output[i]
