@@ -10,9 +10,11 @@ const fn = (arr) => {
 
         let ans = RECURRENCE_RELATION(STATE)
         memo[STATE] = ans
+
         return ans
     }
 
     let memo = ARRAY_SIZED_ACCORDING_TO_STATE
+
     return dp(STATE_FOR_WHOLE_INPUT)
 }

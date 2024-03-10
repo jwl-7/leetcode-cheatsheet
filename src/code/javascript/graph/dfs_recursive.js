@@ -13,5 +13,6 @@ const fn = (graph) => {
     }
 
     let seen = new Set([START_NODE])
+
     return dfs(START_NODE)
 }

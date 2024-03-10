@@ -4,10 +4,12 @@ const fn = (arr, target) => {
 
     while (left <= right) {
         let mid = Math.floor((left + right) / 2)
+
         if (arr[mid] == target) {
             // do something
             return
         }
+
         if (arr[mid] > target) {
             right = mid - 1
         } else {
