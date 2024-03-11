@@ -4,6 +4,7 @@ def backtrack(curr, OTHER_ARGUMENTS...):
         return
 
     ans = 0
+
     for (ITERATE_OVER_INPUT):
         # TODO: modify current state
         ans += backtrack(curr, OTHER_ARGUMENTS...)

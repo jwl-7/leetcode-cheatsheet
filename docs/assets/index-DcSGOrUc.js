@@ -727,6 +727,7 @@ def fn(arr, k):\r
         return\r
 \r
     ans = 0\r
+\r
     for (ITERATE_OVER_INPUT):\r
         # TODO: modify current state\r
         ans += backtrack(curr, OTHER_ARGUMENTS...)\r
