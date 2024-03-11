@@ -8,7 +8,6 @@ def fn(root):
     while queue:
         current_length = len(queue)
         # TODO: logic for current level
-
         for _ in range(current_length):
             node = queue.popleft()
             # TODO: logic

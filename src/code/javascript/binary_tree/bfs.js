@@ -4,9 +4,8 @@ const fn = (root) => {
 
     while (queue.length) {
         let currentLength = queue.length
-        // TODO: logic for current level
-
         let nextQueue = []
+        // TODO: logic for current level
 
         for (let i = 0; i < currentLength; i++) {
             let node = queue[i]

@@ -11,9 +11,9 @@ while heap:
     if curr_dist > distances[node]:
         continue
 
-    for nei, weight in graph[node]:
+    for neighbor, weight in graph[node]:
         dist = curr_dist + weight
 
-        if dist < distances[nei]:
-            distances[nei] = dist
-            heappush(heap, (dist, nei))
+        if dist < distances[neighbor]:
+            distances[neighbor] = dist
+            heappush(heap, (dist, neighbor))
