@@ -5,12 +5,13 @@ def fn(arr):
     ans = 0
 
     for right in range(n):
-        # do logic here to add arr[right] to curr
+        # TODO: add arr[right] to curr
 
         while WINDOW_CONDITION_BROKEN:
-            # remove arr[left] from curr
+            # TODO: remove arr[left] from curr
+
             left += 1
 
-        # update ans
+        # TODO: update ans
 
     return ans
