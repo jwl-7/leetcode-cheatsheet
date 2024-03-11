@@ -1,7 +1,7 @@
 const fn = (graph) => {
     const dfs = (node) => {
         let ans = 0
-        // do some logic
+        // TODO: logic
         for (const neighbor of graph[node]) {
             if (!seen.has(neighbor)) {
                 seen.add(neighbor)

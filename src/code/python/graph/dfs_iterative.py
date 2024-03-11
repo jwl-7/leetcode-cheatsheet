@@ -5,7 +5,7 @@ def fn(graph):
 
     while stack:
         node = stack.pop()
-        # do some logic
+        # TODO: logic
         for neighbor in graph[node]:
             if neighbor not in seen:
                 seen.add(neighbor)

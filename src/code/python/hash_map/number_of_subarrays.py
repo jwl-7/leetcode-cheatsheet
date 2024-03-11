@@ -7,7 +7,7 @@ def fn(arr, k):
     ans = curr = 0
 
     for num in arr:
-        # do logic to change curr
+        # TODO: logic to change curr
         ans += counts[curr - k]
         counts[curr] += 1
 

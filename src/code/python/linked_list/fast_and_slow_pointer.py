@@ -4,7 +4,7 @@ def fn(head):
     ans = 0
 
     while fast and fast.next:
-        # do logic
+        # TODO: logic
         slow = slow.next
         fast = fast.next.next
 

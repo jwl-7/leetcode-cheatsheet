@@ -7,11 +7,11 @@ def fn(root):
 
     while queue:
         current_length = len(queue)
-        # do logic for current level
+        # TODO: logic for current level
 
         for _ in range(current_length):
             node = queue.popleft()
-            # do logic
+            # TODO: logic
             if node.left:
                 queue.append(node.left)
             if node.right:

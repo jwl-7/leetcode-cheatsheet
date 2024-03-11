@@ -1,6 +1,5 @@
 def fn(arr):
     def check(x):
-        # this function is implemented depending on the problem
         return BOOLEAN
 
     left = MINIMUM_POSSIBLE_ANSWER

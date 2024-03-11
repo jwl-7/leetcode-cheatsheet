@@ -4,13 +4,13 @@ const fn = (root) => {
 
     while (queue.length) {
         let currentLength = queue.length
-        // do logic for current level
+        // TODO: logic for current level
 
         let nextQueue = []
 
         for (let i = 0; i < currentLength; i++) {
             let node = queue[i]
-            // do logic
+            // TODO: logic
             if (node.left) {
                 nextQueue.push(node.left)
             }

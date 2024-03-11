@@ -6,7 +6,7 @@ const fn = (arr, target) => {
         let mid = Math.floor((left + right) / 2)
 
         if (arr[mid] == target) {
-            // do something
+            // TODO: logic
             return
         }
 
@@ -17,6 +17,5 @@ const fn = (arr, target) => {
         }
     }
 
-    // left is the insertion point
     return left
 }

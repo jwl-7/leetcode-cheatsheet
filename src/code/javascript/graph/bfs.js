@@ -9,7 +9,7 @@ const fn = (graph) => {
 
         for (let i = 0; i < currentLength; i++) {
             let node = queue[i]
-            // do some logic
+            // TODO: logic
             for (const neighbor of graph[node]) {
                 if (!seen.has(neighbor)) {
                     seen.add(neighbor)

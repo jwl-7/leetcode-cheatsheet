@@ -1,6 +1,5 @@
 const fn = (arr) => {
     const check = (x) => {
-        // this function is implemented depending on the problem
         return BOOLEAN
     }
 

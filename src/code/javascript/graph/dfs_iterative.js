@@ -5,7 +5,7 @@ const fn = (graph) => {
 
     while (stack.length) {
         let node = stack.pop()
-        // do some logic
+        // TODO: logic
         for (const neighbor of graph[node]) {
             if (!seen.has(neighbor)) {
                 seen.add(neighbor)

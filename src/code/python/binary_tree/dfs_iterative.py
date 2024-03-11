@@ -4,7 +4,7 @@ def dfs(root):
 
     while stack:
         node = stack.pop()
-        # do logic
+        # TODO: logic
         if node.left:
             stack.append(node.left)
         if node.right:

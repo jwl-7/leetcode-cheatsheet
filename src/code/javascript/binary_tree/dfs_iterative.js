@@ -4,7 +4,7 @@ const dfs = (root) => {
 
     while (stack.length) {
         let node = stack.pop()
-        // do logic
+        // TODO: logic
         if (node.left) {
             stack.push(node.left)
         }

@@ -5,7 +5,7 @@ const fn = (arr, k) => {
     let curr = 0
 
     for (const num of arr) {
-        // do logic to change curr
+        // TODO: logic to change curr
         ans += counts.get(curr - k) || 0
         counts.set(curr, (counts.get(curr) || 0) + 1)
     }

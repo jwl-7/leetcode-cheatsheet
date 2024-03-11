@@ -4,7 +4,7 @@ const fn = (head) => {
     let fast = head
 
     while (fast && fast.next) {
-        // do logic
+        // TODO: logic
         slow = slow.next
         fast = fast.next.next
     }

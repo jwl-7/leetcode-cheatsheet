@@ -4,7 +4,7 @@ let fn = (arr1, arr2) => {
     let j = 0
 
     while (i < arr1.length && j < arr2.length) {
-        // do some logic here
+        // TODO: logic
         if (CONDITION) {
             i++
         } else {
@@ -13,12 +13,12 @@ let fn = (arr1, arr2) => {
     }
 
     while (i < arr1.length) {
-        // do logic
+        // TODO: logic
         i++
     }
 
     while (j < arr2.length) {
-        // do logic
+        // TODO: logic
         j++
     }
 

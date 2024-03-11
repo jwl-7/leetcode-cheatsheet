@@ -9,7 +9,6 @@ def fn(arr):
 
         while WINDOW_CONDITION_BROKEN:
             # TODO: remove arr[left] from curr
-
             left += 1
 
         # TODO: update ans
