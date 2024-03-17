@@ -6,7 +6,7 @@ import ArrayPY from '@code/python/data_structures/array.py?raw'
 import BinaryTreePY from '@code/python/data_structures/binary_tree.py?raw'
 import BinarySearchTreePY from '@code/python/data_structures/binary_search_tree.py?raw'
 import LinkedListPY from '@code/python/data_structures/linked_list.py?raw'
-import DoublyLinkedLisPY from '@code/python/data_structures/doubly_linked_list.py?raw'
+import DoublyLinkedListPY from '@code/python/data_structures/doubly_linked_list.py?raw'
 import GraphPY from '@code/python/data_structures/graph.py?raw'
 import HashMapPY from '@code/python/data_structures/hash_map.py?raw'
 import TriePY from '@code/python/data_structures/trie.py?raw'
@@ -35,7 +35,7 @@ export default function DataStructures() {
             </section>
             <section id="ds-doubly-linked-list">
                 <Tabs title="doubly linked list">
-                    <Tabs.Tab code={DoublyLinkedLisPY} language="python" />
+                    <Tabs.Tab code={DoublyLinkedListPY} language="python" />
                 </Tabs>
             </section>
             <section id="ds-binary-tree">
