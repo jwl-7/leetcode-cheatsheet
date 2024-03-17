@@ -2,10 +2,10 @@ def pancake_sort(arr: list) -> None:
     n = len(arr)
 
     for size in range(n, 1, -1):
-        max_index = find_max_index(arr, size)
+        max_idx = find_max_index(arr, size)
 
-        if max_index != size - 1:
-            flip(arr, max_index)
+        if max_idx != size - 1:
+            flip(arr, max_idx)
             flip(arr, size - 1)
 
 def flip(arr: list, i: int) -> None:
