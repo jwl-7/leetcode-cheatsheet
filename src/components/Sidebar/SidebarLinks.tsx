@@ -36,7 +36,11 @@ export default function SidebarLinks() {
                 <LinkWithTooltip href="#graph-dfs-recursive" description="DFS (recursive)" />
                 <LinkWithTooltip href="#graph-dfs-iterative" description="DFS (iterative)" />
                 <LinkWithTooltip href="#graph-bfs" description="BFS" />
-                <LinkWithTooltip href="#graph-dijkstra" description="Dijkstra" />
+                <LinkWithTooltip href="#graph-dijkstra" description="Dijkstra (shortest path)" />
+                <LinkWithTooltip href="#graph-bellman-ford" description="Bellman-Ford (shortest path)" />
+                <LinkWithTooltip href="#graph-kruskal" description="Kruskal (mst)" />
+                <LinkWithTooltip href="#graph-prim" description="Prim (mst)" />
+                <LinkWithTooltip href="#graph-kahn" description="Kahn (topological sort)" />
             </Accordion>
             <Accordion title="Heap">
                 <LinkWithTooltip href="#heap-find-top-k-elements" description="find top k elements with heap" />
@@ -52,8 +56,24 @@ export default function SidebarLinks() {
                 <LinkWithTooltip href="#backtracking-backtracking" description="backtracking" />
             </Accordion>
             <Accordion title="Dynamic Programming">
-                <LinkWithTooltip href="#dp-top-down" description="top-down" />
-                <LinkWithTooltip href="#dp-bottom-up" description="bottom-up" />
+                <LinkWithTooltip href="#dp-top-down" description="top-down DP" />
+                <LinkWithTooltip href="#dp-bottom-up" description="bottom-up DP" />
+            </Accordion>
+            <Accordion title="Bit Manipulation">
+                <LinkWithTooltip href="#bitmanipulation-test-kth-bit" description="test kth bit" />
+                <LinkWithTooltip href="#bitmanipulation-set-kth-bit" description="set kth bit" />
+                <LinkWithTooltip href="#bitmanipulation-clear-kth-bit" description="clear kth bit" />
+                <LinkWithTooltip href="#bitmanipulation-get-rightmost-bit" description="get rightmost bit" />
+                <LinkWithTooltip href="#bitmanipulation-count-set-bits" description="count set bits" />
+                <LinkWithTooltip href="#bitmanipulation-multiply-power-of-two" description="multiply by 2^k" />
+                <LinkWithTooltip href="#bitmanipulation-divide-power-of-two" description="divide by 2^k" />
+                <LinkWithTooltip href="#bitmanipulation-check-power-of-two" description="check if number is power of 2" />
+                <LinkWithTooltip href="#bitmanipulation-swap-variables" description="swap two variables" />
+            </Accordion>
+            <Accordion title="Matrix">
+                <LinkWithTooltip href="#matrix-create-copy" description="create / copy" />
+                <LinkWithTooltip href="#matrix-diagonals" description="main / anti diagonals" />
+                <LinkWithTooltip href="#matrix-rotate-transpose" description="rotate / transpose" />
             </Accordion>
             <Accordion title="Data Structures">
                 <LinkWithTooltip href="#ds-array" description="array" />

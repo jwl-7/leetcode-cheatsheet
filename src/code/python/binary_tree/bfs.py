@@ -2,18 +2,18 @@ from collections import deque
 
 
 def fn(root):
-    queue = deque([root])
+    que = deque([root])
     ans = 0
 
-    while queue:
-        current_length = len(queue)
+    while que:
+        current_length = len(que)
         # TODO: logic for current level
         for _ in range(current_length):
-            node = queue.popleft()
+            node = que.popleft()
             # TODO: logic
             if node.left:
-                queue.append(node.left)
+                que.append(node.left)
             if node.right:
-                queue.append(node.right)
+                que.append(node.right)
 
     return ans

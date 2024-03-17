@@ -13,6 +13,8 @@ import Heap from '@sections/Heap'
 import BinarySearch from '@sections/BinarySearch'
 import Backtracking from '@sections/Backtracking'
 import DynamicProgramming from '@sections/DynamicProgramming'
+import BitManipulation from '@/sections/BitManipulation'
+import Matrix from '@/sections/Matrix'
 import DataStructures from '@sections/DataStructures'
 import SortingAlgorithms from '@/sections/SortingAlgorithms'
 
@@ -39,6 +41,8 @@ export default function Content() {
             <BinarySearch />
             <Backtracking />
             <DynamicProgramming />
+            <BitManipulation />
+            <Matrix />
             <DataStructures />
             <SortingAlgorithms />
         </main>

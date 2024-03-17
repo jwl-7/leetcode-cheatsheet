@@ -1,24 +1,24 @@
 const fn = (graph) => {
-    let queue = [START_NODE]
+    let que = [START_NODE]
     let seen = new Set([START_NODE])
     let ans = 0
 
-    while (queue.length) {
-        let currentLength = queue.length
-        let nextQueue = []
+    while (que.length) {
+        let currentLength = que.length
+        let nextQue = []
 
         for (let i = 0; i < currentLength; i++) {
-            let node = queue[i]
+            let node = que[i]
             // TODO: logic
             for (const neighbor of graph[node]) {
                 if (!seen.has(neighbor)) {
                     seen.add(neighbor)
-                    nextQueue.push(neighbor)
+                    nextQue.push(neighbor)
                 }
             }
         }
 
-        queue = nextQueue
+        que = nextQue
     }
 
     return ans

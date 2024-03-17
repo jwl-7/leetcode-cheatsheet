@@ -1,24 +1,24 @@
 const fn = (root) => {
-    let queue = [root]
+    let que = [root]
     let ans = 0
 
-    while (queue.length) {
-        let currentLength = queue.length
-        let nextQueue = []
+    while (que.length) {
+        let currentLength = que.length
+        let nextQue = []
         // TODO: logic for current level
 
         for (let i = 0; i < currentLength; i++) {
-            let node = queue[i]
+            let node = que[i]
             // TODO: logic
             if (node.left) {
-                nextQueue.push(node.left)
+                nextQue.push(node.left)
             }
             if (node.right) {
-                nextQueue.push(node.right)
+                nextQue.push(node.right)
             }
         }
 
-        queue = nextQueue
+        que = nextQue
     }
 
     return ans
