@@ -511,11 +511,11 @@ def prim_mst(n: int, edges: list[tuple[int, int, int]]) -> list[tuple[int, int, 
     pq = [(w, u, v) for w, u, v in edges]\r
 \r
     while pq:\r
-        weight, u, v = heappop(pq)\r
+        w, u, v = heappop(pq)\r
 \r
         if not uf.connected(u, v):\r
             uf.union(u, v)\r
-            mst.append((weight, u, v))\r
+            mst.append((w, u, v))\r
 \r
     return mst\r
 `,Dv=`from collections import defaultdict, deque\r
