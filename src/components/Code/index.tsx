@@ -38,7 +38,7 @@ export default function Code({ code, language }: CodeProps) {
                 const highlightedLine = hljs.highlight(line, { language: language }).value
                 return `<span class=${styles.line} data-line-number=${index + 1}>${highlightedLine}</span>`
             })
-            const parsed = highlighted.join('\n')
+            const parsed = highlighted.join('')
             setParsedCode(parsed)
         }
     }

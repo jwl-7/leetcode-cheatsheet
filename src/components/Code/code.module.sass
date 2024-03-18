@@ -1,6 +1,8 @@
 .code
     border: 0.5px solid var(--code-border-color)
     border-radius: 6px
+    font-size: var(--code-font-size)
+    line-height: var(--code-line-height)
     position: relative
     padding-left: 2em
 
@@ -8,12 +10,9 @@
         background-color: var(--code-line-hover-color)
 
 .line
-    display: inline-block
-    height: 1.5rem
-    width: 100%
+    display: inline
     border-left: 0.5px solid var(--code-line-number-color)
     padding-left: 1em
-    vertical-align: top
 
     &::before
         content: attr(data-line-number)
@@ -23,7 +22,6 @@
         width: 2em
         text-align: center
         user-select: none
-        z-index: 1
 
     &:hover,
     &[focused]
