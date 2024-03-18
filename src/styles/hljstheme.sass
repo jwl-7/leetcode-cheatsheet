@@ -2,45 +2,58 @@
     display: block
     overflow-x: auto
     padding: 0.5em
-    background-color: #2c292d
+    background-color: var(--color-code-dark)
 
-.hljs-built_in,
+.hljs-built_in
+    color: var(--color-code-green)
+
 .hljs-selector-tag,
 .hljs-section,
 .hljs-link
-    color: #78dce8
+    color: var(--color-code-blue)
 
 .hljs-keyword
-    font-style: italic
-    color: #78dce8
+    color: var(--color-code-red)
+
+    &.class_,
+    &.def_
+        color: var(--color-code-blue)
+        font-style: italic
 
 .hljs
-    color: #fdf9f3
+    color: var(--color-code-linen)
 
 .hljs-subst
-    color: #ab9df2
+    color: var(--color-code-purple)
 
-.hljs-title,
 .hljs-attr,
 .hljs-meta-keyword
-    color: #a9dc76
+    color: var(--color-code-green)
+
+.hljs-title
+    color: var(--color-code-green)
+
+    &.class_
+        color: var(--color-code-blue)
+
+.hljs-type
+    color: var(--color-code-blue)
 
 .hljs-string,
 .hljs-meta,
 .hljs-name,
-.hljs-type,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition,
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable
-    color: #ffd866
+    color: var(--color-code-yellow)
 
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion
-    color: #908e8f
+    color: var(--color-code-dull)
 
 .hljs-section,
 .hljs-strong
@@ -49,13 +62,25 @@
 .hljs-doctag,
 .hljs-literal,
 .hljs-number
-    color: #ab9df2
+    color: var(--color-code-purple)
 
 .hljs-emphasis
     font-style: italic
 
 .hljs-params
-    color: #fc9867
+    color: var(--color-code-orange)
+
+    &.self_
+        color: var(--color-code-slate)
+
+    &.comma_
+        color: var(--color-code-venus)
+
+    &.operator_
+        color: var(--color-code-red)
+
+    .hljs-built_in
+        color: var(--color-code-blue)
 
 .hljs-operator
-    color: #ff6188
+    color: var(--color-code-red)
