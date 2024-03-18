@@ -6,10 +6,8 @@ def prim_mst(n: int, edges: list[tuple[int, int, int]]) -> list[tuple[int, int, 
     uf = UnionFind(n)
     edges.sort()
 
-    pq = [(w, u, v) for w, u, v in edges]
-
-    while pq:
-        w, u, v = heappop(pq)
+    while edges:
+        w, u, v = heappop(edges)
 
         if not uf.connected(u, v):
             uf.union(u, v)
