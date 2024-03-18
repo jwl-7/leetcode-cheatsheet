@@ -9,10 +9,10 @@ def prim_mst(n: int, edges: list[tuple[int, int, int]]) -> list[tuple[int, int, 
     pq = [(w, u, v) for w, u, v in edges]
 
     while pq:
-        weight, u, v = heappop(pq)
+        w, u, v = heappop(pq)
 
         if not uf.connected(u, v):
             uf.union(u, v)
-            mst.append((weight, u, v))
+            mst.append((w, u, v))
 
     return mst
