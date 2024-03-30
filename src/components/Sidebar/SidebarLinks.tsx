@@ -26,6 +26,7 @@ export default function SidebarLinks() {
             </Accordion>
             <Accordion title="Stack">
                 <LinkWithTooltip href="#stack-monotonic-increasing" description="monotonic increasing stack" />
+                <LinkWithTooltip href="#stack-monotonic-decreasing" description="monotonic decreasing stack" />
             </Accordion>
             <Accordion title="Binary Tree">
                 <LinkWithTooltip href="#tree-dfs-recursive" description="DFS (recursive)" />
