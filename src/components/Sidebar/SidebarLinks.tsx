@@ -58,6 +58,7 @@ export default function SidebarLinks() {
             <Accordion title="Dynamic Programming">
                 <LinkWithTooltip href="#dp-top-down" description="top-down DP" />
                 <LinkWithTooltip href="#dp-bottom-up" description="bottom-up DP" />
+                <LinkWithTooltip href="#dp-kadane" description="Kadane (max-sum subarray)" />
             </Accordion>
             <Accordion title="Bit Manipulation">
                 <LinkWithTooltip href="#bitmanipulation-test-kth-bit" description="test kth bit" />

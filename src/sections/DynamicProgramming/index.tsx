@@ -4,9 +4,11 @@ import Tabs from '@components/Tabs'
 
 import TopDownPY from '@code/python/dynamic_programming/top_down.py?raw'
 import BottomUpPY from '@code/python/dynamic_programming/bottom_up.py?raw'
+import KadanePY from '@code/python/dynamic_programming/kadane.py?raw'
 
 import TopDownJS from '@code/javascript/dynamic_programming/top_down.js?raw'
 import BottomUpJS from '@code/javascript/dynamic_programming/bottom_up.js?raw'
+import KadaneJS from '@code/javascript/dynamic_programming/kadane.js?raw'
 
 
 export default function DynamicProgramming() {
@@ -23,6 +25,12 @@ export default function DynamicProgramming() {
                 <Tabs title="DP bottom-up">
                     <Tabs.Tab code={BottomUpPY} language="python" />
                     <Tabs.Tab code={BottomUpJS} language="javascript" />
+                </Tabs>
+            </section>
+            <section id="dp-kadane">
+                <Tabs title="Kadane (max-sum subarray)">
+                    <Tabs.Tab code={KadanePY} language="python" />
+                    <Tabs.Tab code={KadaneJS} language="javascript" />
                 </Tabs>
             </section>
         </div>
