@@ -18,7 +18,7 @@ export default function SidebarLinks() {
                 <LinkWithTooltip href="#array-string-building" description="efficient string building" />
             </Accordion>
             <Accordion title="Hash Map">
-                <LinkWithTooltip href="#hashmap-number-of-subarrays" description="find number of subarrays that fit an exact criteria" />
+                <LinkWithTooltip href="#hashmap-find-number-of-subarrays" description="find number of subarrays that fit an exact criteria" />
             </Accordion>
             <Accordion title="Linked List">
                 <LinkWithTooltip href="#linkedlist-fast-and-slow-pointer" description="fast and slow pointer" />
