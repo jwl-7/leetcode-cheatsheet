@@ -1,5 +1,5 @@
-const fn = (arr) => {
-    let window = 0
+function fn(arr) {
+    let window = new Set()
     let ans = 0
     let left = 0
 
@@ -8,7 +8,7 @@ const fn = (arr) => {
 
         while (WINDOW_CONDITION_BROKEN) {
             // TODO: remove arr[left] from window
-            left++
+            left += 1
         }
 
         // TODO: update ans

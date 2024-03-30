@@ -19,6 +19,7 @@ export default function SidebarLinks() {
             </Accordion>
             <Accordion title="Hash Map">
                 <LinkWithTooltip href="#hashmap-find-number-of-subarrays" description="find number of subarrays that fit an exact criteria" />
+                <LinkWithTooltip href="#hashmap-sliding-window" description="sliding window" />
             </Accordion>
             <Accordion title="Linked List">
                 <LinkWithTooltip href="#linkedlist-fast-and-slow-pointer" description="fast and slow pointer" />

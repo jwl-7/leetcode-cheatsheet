@@ -1,10 +1,9 @@
 def fn(arr):
-    n = len(arr)
-    window = 0
-    left = 0
+    window = set()
     ans = 0
+    left = 0
 
-    for right in range(n):
+    for right, ELEMENT in enumerate(arr):
         # TODO: add arr[right] to window
 
         while WINDOW_CONDITION_BROKEN:
