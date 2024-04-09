@@ -40,9 +40,9 @@ export default function SidebarLinks() {
                 <LinkWithTooltip href="#graph-bfs" description="BFS" />
                 <LinkWithTooltip href="#graph-dijkstra" description="Dijkstra (shortest path)" />
                 <LinkWithTooltip href="#graph-bellman-ford" description="Bellman-Ford (shortest path)" />
+                <LinkWithTooltip href="#graph-kahn" description="Kahn (topological sort)" />
                 <LinkWithTooltip href="#graph-kruskal" description="Kruskal (mst)" />
                 <LinkWithTooltip href="#graph-prim" description="Prim (mst)" />
-                <LinkWithTooltip href="#graph-kahn" description="Kahn (topological sort)" />
             </Accordion>
             <Accordion title="Heap">
                 <LinkWithTooltip href="#heap-find-top-k-elements" description="find top k elements with heap" />

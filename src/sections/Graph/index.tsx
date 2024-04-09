@@ -7,18 +7,18 @@ import DFSiterativePY from '@code/python/graph/dfs_iterative.py?raw'
 import BFSPY from '@code/python/graph/bfs.py?raw'
 import DijkstraPY from '@code/python/graph/dijkstra.py?raw'
 import BellmanFordPY from '@code/python/graph/bellman_ford.py?raw'
+import KahnPY from '@code/python/graph/kahn.py?raw'
 import KruskalPY from '@code/python/graph/kruskal.py?raw'
 import PrimPY from '@code/python/graph/prim.py?raw'
-import KahnPY from '@code/python/graph/kahn.py?raw'
 
 import DFSrecursiveJS from '@code/javascript/graph/dfs_recursive.js?raw'
 import DFSiterativeJS from '@code/javascript/graph/dfs_iterative.js?raw'
 import BFSJS from '@code/javascript/graph/bfs.js?raw'
 import DijkstraJS from '@code/javascript/graph/dijkstra.js?raw'
 import BellmanFordJS from '@code/javascript/graph/bellman_ford.js?raw'
+import KahnJS from '@code/javascript/graph/kahn.js?raw'
 import KruskalJS from '@code/javascript/graph/kruskal.js?raw'
 import PrimJS from '@code/javascript/graph/prim.js?raw'
-import KahnJS from '@code/javascript/graph/kahn.js?raw'
 
 
 export default function Graph() {
@@ -55,6 +55,12 @@ export default function Graph() {
                     <Tabs.Tab code={BellmanFordJS} language="javascript" />
                 </Tabs>
             </section>
+            <section id="graph-kahn">
+                <Tabs title="Kahn (topological sort)">
+                    <Tabs.Tab code={KahnPY} language="python" />
+                    <Tabs.Tab code={KahnJS} language="javascript" />
+                </Tabs>
+            </section>
             <section id="graph-kruskal">
                 <Tabs title="Kruskal (mst)">
                     <Tabs.Tab code={KruskalPY} language="python" />
@@ -65,12 +71,6 @@ export default function Graph() {
                 <Tabs title="Prim (mst)">
                     <Tabs.Tab code={PrimPY} language="python" />
                     <Tabs.Tab code={PrimJS} language="javascript" />
-                </Tabs>
-            </section>
-            <section id="graph-kahn">
-                <Tabs title="Kahn (topological sort)">
-                    <Tabs.Tab code={KahnPY} language="python" />
-                    <Tabs.Tab code={KahnJS} language="javascript" />
                 </Tabs>
             </section>
         </div>
