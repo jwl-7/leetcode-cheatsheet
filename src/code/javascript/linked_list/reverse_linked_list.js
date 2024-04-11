@@ -1,12 +1,12 @@
 const fn = (head) => {
-    let curr = head
     let prev = null
+    let curr = head
 
     while (curr) {
-        let nextNode = curr.next
+        let next = curr.next
         curr.next = prev
         prev = curr
-        curr = nextNode
+        curr = next
     }
 
     return prev

@@ -17,42 +17,39 @@ class Trie {
     }
 
     insert(word) {
-        let curr = this.root
+        let node = this.root
 
         for (const char of word) {
-            if (!(char in curr.children)) {
-                curr.children[char] = new TrieNode()
+            if (!(char in node.children)) {
+                node.children[char] = new TrieNode()
             }
-
-            curr = curr.children[char]
+            node = node.children[char]
         }
 
-        curr.isWord = true
+        node.isWord = true
     }
 
     search(word) {
-        let curr = this.root
+        let node = this.root
 
         for (const char of word) {
-            if (!(char in curr.children)) {
+            if (!(char in node.children)) {
                 return false
             }
-
-            curr = curr.children[char]
+            node = node.children[char]
         }
 
-        return curr.isWord
+        return node.isWord
     }
 
     startsWith(prefix) {
-        let curr = this.root
+        let node = this.root
 
         for (const char of prefix) {
-            if (!(char in curr.children)) {
+            if (!(char in node.children)) {
                 return false
             }
-
-            curr = curr.children[char]
+            node = node.children[char]
         }
 
         return true

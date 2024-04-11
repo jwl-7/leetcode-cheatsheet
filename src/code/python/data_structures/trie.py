@@ -13,35 +13,32 @@ class Trie:
             self.insert(word)
 
     def insert(self, word: str) -> None:
-        curr = self.root
+        node = self.root
 
         for char in word:
-            if char not in curr.children:
-                curr.children[char] = TrieNode()
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
 
-            curr = curr.children[char]
-
-        curr.is_word = True
+        node.is_word = True
 
     def search(self, word: str) -> bool:
-        curr = self.root
+        node = self.root
 
         for char in word:
-            if char not in curr.children:
+            if char not in node.children:
                 return False
+            node = node.children[char]
 
-            curr = curr.children[char]
-
-        return curr.is_word
+        return node.is_word
 
     def starts_with(self, prefix: str) -> bool:
-        curr = self.root
+        node = self.root
 
         for char in prefix:
-            if char not in curr.children:
+            if char not in node.children:
                 return False
-
-            curr = curr.children[char]
+            node = node.children[char]
 
         return True
 
