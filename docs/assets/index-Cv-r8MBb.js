@@ -277,14 +277,14 @@ def fn(arr, k):\r
 \r
     return ans\r
 `,yv=`def fn(head):\r
-    curr = head\r
     prev = None\r
+    curr = head\r
 \r
     while curr:\r
-        next_node = curr.next\r
+        nxt = curr.next\r
         curr.next = prev\r
         prev = curr\r
-        curr = next_node\r
+        curr = nxt\r
 \r
     return prev\r
 `,xv=`const fn = (head) => {\r
@@ -301,14 +301,14 @@ def fn(arr, k):\r
     return ans\r
 }\r
 `,_v=`const fn = (head) => {\r
-    let curr = head\r
     let prev = null\r
+    let curr = head\r
 \r
     while (curr) {\r
-        let nextNode = curr.next\r
+        let next = curr.next\r
         curr.next = prev\r
         prev = curr\r
-        curr = nextNode\r
+        curr = next\r
     }\r
 \r
     return prev\r
@@ -1445,35 +1445,32 @@ class Trie:\r
             self.insert(word)\r
 \r
     def insert(self, word: str) -> None:\r
-        curr = self.root\r
+        node = self.root\r
 \r
         for char in word:\r
-            if char not in curr.children:\r
-                curr.children[char] = TrieNode()\r
+            if char not in node.children:\r
+                node.children[char] = TrieNode()\r
+            node = node.children[char]\r
 \r
-            curr = curr.children[char]\r
-\r
-        curr.is_word = True\r
+        node.is_word = True\r
 \r
     def search(self, word: str) -> bool:\r
-        curr = self.root\r
+        node = self.root\r
 \r
         for char in word:\r
-            if char not in curr.children:\r
+            if char not in node.children:\r
                 return False\r
+            node = node.children[char]\r
 \r
-            curr = curr.children[char]\r
-\r
-        return curr.is_word\r
+        return node.is_word\r
 \r
     def starts_with(self, prefix: str) -> bool:\r
-        curr = self.root\r
+        node = self.root\r
 \r
         for char in prefix:\r
-            if char not in curr.children:\r
+            if char not in node.children:\r
                 return False\r
-\r
-            curr = curr.children[char]\r
+            node = node.children[char]\r
 \r
         return True\r
 \r
@@ -1957,42 +1954,39 @@ class Trie {\r
     }\r
 \r
     insert(word) {\r
-        let curr = this.root\r
+        let node = this.root\r
 \r
         for (const char of word) {\r
-            if (!(char in curr.children)) {\r
-                curr.children[char] = new TrieNode()\r
+            if (!(char in node.children)) {\r
+                node.children[char] = new TrieNode()\r
             }\r
-\r
-            curr = curr.children[char]\r
+            node = node.children[char]\r
         }\r
 \r
-        curr.isWord = true\r
+        node.isWord = true\r
     }\r
 \r
     search(word) {\r
-        let curr = this.root\r
+        let node = this.root\r
 \r
         for (const char of word) {\r
-            if (!(char in curr.children)) {\r
+            if (!(char in node.children)) {\r
                 return false\r
             }\r
-\r
-            curr = curr.children[char]\r
+            node = node.children[char]\r
         }\r
 \r
-        return curr.isWord\r
+        return node.isWord\r
     }\r
 \r
     startsWith(prefix) {\r
-        let curr = this.root\r
+        let node = this.root\r
 \r
         for (const char of prefix) {\r
-            if (!(char in curr.children)) {\r
+            if (!(char in node.children)) {\r
                 return false\r
             }\r
-\r
-            curr = curr.children[char]\r
+            node = node.children[char]\r
         }\r
 \r
         return true\r
