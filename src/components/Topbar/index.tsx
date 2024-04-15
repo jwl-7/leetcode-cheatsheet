@@ -31,6 +31,7 @@ export default function Topbar({ forwardedRef }: TopbarProps) {
 
     const handleTitleClick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
+        window.history.replaceState({}, '', window.location.pathname)
         scrollToTop()
     }
     const handleHamburgerClick = () => toggleSidebar()
