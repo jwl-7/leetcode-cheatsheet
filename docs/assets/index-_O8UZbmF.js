@@ -2259,7 +2259,7 @@ def merge(left: list, right: list) -> list:\r
 `,k1=`def pancake_sort(arr: list) -> None:\r
     n = len(arr)\r
 \r
-    for size in range(n, 1, -1):\r
+    for size in reversed(range(2, n + 1)):\r
         max_idx = find_max_index(arr, size)\r
 \r
         if max_idx != size - 1:\r
