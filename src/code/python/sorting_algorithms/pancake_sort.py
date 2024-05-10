@@ -1,7 +1,7 @@
 def pancake_sort(arr: list) -> None:
     n = len(arr)
 
-    for size in range(n, 1, -1):
+    for size in reversed(range(2, n + 1)):
         max_idx = find_max_index(arr, size)
 
         if max_idx != size - 1:
