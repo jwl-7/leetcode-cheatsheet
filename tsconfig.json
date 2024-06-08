@@ -8,8 +8,10 @@
             "DOM",
             "DOM.Iterable"
         ],
-        "module": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "composite": true,
         "skipLibCheck": true,
+        "module": "ESNext",
         "types": ["node", "vite/client"],
 
         // Paths
@@ -43,7 +45,7 @@
     },
     "include": [
         "src",
-        "@styles/styles.d.ts"
-    ],
-    "references": [{ "path": "./tsconfig.node.json" }]
+        "@styles/styles.d.ts",
+        "vite.config.ts"
+    ]
 }
