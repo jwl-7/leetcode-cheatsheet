@@ -6,9 +6,10 @@ import java.util.Map;
 import java.util.Queue;
 
 
-public List<Integer> kahnTopologicalSort(Map<Integer, List<Integer>> graph) {
+public static List<Integer> kahnTopologicalSort(Map<Integer, List<Integer>> graph) {
     List<Integer> result = new ArrayList<>();
     Map<Integer, Integer> indegree = new HashMap<>();
+    Queue<Integer> que = new LinkedList<>();
 
     for (List<Integer> vertices : graph.values()) {
         for (int v : vertices) {
@@ -16,15 +17,14 @@ public List<Integer> kahnTopologicalSort(Map<Integer, List<Integer>> graph) {
         }
     }
 
-    Queue<Integer> queue = new LinkedList<>();
     for (Integer node : graph.keySet()) {
         if (!indegree.containsKey(node)) {
-            queue.offer(node);
+            que.offer(node);
         }
     }
 
-    while (!queue.isEmpty()) {
-        int node = queue.poll();
+    while (!que.isEmpty()) {
+        int node = que.poll();
         result.add(node);
 
         if (graph.containsKey(node)) {
@@ -32,7 +32,7 @@ public List<Integer> kahnTopologicalSort(Map<Integer, List<Integer>> graph) {
                 indegree.put(neighbor, indegree.get(neighbor) - 1);
 
                 if (indegree.get(neighbor) == 0) {
-                    queue.offer(neighbor);
+                    que.offer(neighbor);
                 }
             }
         }

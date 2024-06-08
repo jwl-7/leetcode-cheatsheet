@@ -1,4 +1,8 @@
-public static int[] bellmanFord(int n, List<int[]> edges, int source) {
+import java.util.Arrays;
+import java.util.List;
+
+
+public int[] bellmanFord(int n, List<int[]> edges, int source) {
     int[] distances = new int[n];
     Arrays.fill(distances, Integer.MAX_VALUE);
     distances[source] = 0;
@@ -8,6 +12,7 @@ public static int[] bellmanFord(int n, List<int[]> edges, int source) {
             int u = edge[0];
             int v = edge[1];
             int w = edge[2];
+
             if (distances[u] != Integer.MAX_VALUE && distances[u] + w < distances[v]) {
                 distances[v] = distances[u] + w;
             }
@@ -18,6 +23,7 @@ public static int[] bellmanFord(int n, List<int[]> edges, int source) {
         int u = edge[0];
         int v = edge[1];
         int w = edge[2];
+
         if (distances[u] != Integer.MAX_VALUE && distances[u] + w < distances[v]) {
             return new int[]{};
         }

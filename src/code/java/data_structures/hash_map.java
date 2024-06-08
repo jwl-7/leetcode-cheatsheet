@@ -1,6 +1,3 @@
-import java.util.HashMap;
-
-
 public class HashMap {
     private int size;
     private Object[] bucket;

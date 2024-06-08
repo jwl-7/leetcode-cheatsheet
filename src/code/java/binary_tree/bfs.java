@@ -11,7 +11,7 @@ public int fn(TreeNode root) {
         int currentLength = que.size();
         // TODO: logic for current level
         for (int i = 0; i < currentLength; i++) {
-            TreeNode node = que.poll();
+            TreeNode node = que.remove();
             // TODO: logic
             if (node.left != null) {
                 que.add(node.left);

@@ -1,3 +1,6 @@
+import java.util.Arrays;
+
+
 public int fn(int[] arr) {
     if (BASE_CASE) {
         return 0;

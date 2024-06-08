@@ -1,11 +1,13 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
-import java.util.Map;
 
 
-public static int fn(Map<Integer, List<Integer>> graph) {
+public int fn(int[][] graph) {
     Queue<Integer> que = new LinkedList<>();
     Set<Integer> seen = new HashSet<>();
     que.offer(START_NODE);
@@ -13,13 +15,12 @@ public static int fn(Map<Integer, List<Integer>> graph) {
     int ans = 0;
 
     while (!que.isEmpty()) {
-        int node = que.poll();
+        int node = que.remove();
         // TODO: Logic
-        List<Integer> neighbors = graph.getOrDefault(node, new ArrayList<>());
-        for (int neighbor : neighbors) {
+        for (int neighbor: graph[node]) {
             if (!seen.contains(neighbor)) {
                 seen.add(neighbor);
-                que.offer(neighbor);
+                que.add(neighbor);
             }
         }
     }

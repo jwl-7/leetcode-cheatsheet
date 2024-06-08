@@ -1,8 +1,9 @@
 public String fn(char[] strs) {
-    StringBuilder ans = new StringBuilder();
+    StringBuilder sb = new StringBuilder();
+
     for (char c: strs) {
-        ans.append(c);
+        sb.append(c);
     }
 
-    return ans.toString();
+    return sb.toString();
 }

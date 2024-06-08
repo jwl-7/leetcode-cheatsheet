@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class UnionFind {
     private int[] root;
 
@@ -36,13 +37,16 @@ public class UnionFind {
 
         for (int i = 0; i < n; i++) {
             int root = find(i);
+
             if (!componentMap.containsKey(root)) {
                 componentMap.put(root, new ArrayList<>());
             }
+
             componentMap.get(root).add(i);
         }
 
         StringBuilder sb = new StringBuilder();
+
         for (List<Integer> component : componentMap.values()) {
             sb.append(" - ").append(component);
         }

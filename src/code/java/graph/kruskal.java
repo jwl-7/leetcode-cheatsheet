@@ -12,6 +12,7 @@ public List<int[]> kruskalMST(int n, List<int[]> edges) {
         int weight = edge[0];
         int u = edge[1];
         int v = edge[2];
+
         if (!uf.connected(u, v)) {
             uf.union(u, v);
             mst.add(edge);

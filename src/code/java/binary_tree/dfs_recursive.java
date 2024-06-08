@@ -1,6 +1,6 @@
 public int dfs(TreeNode root) {
     if (root == null) {
-        return;
+        return 0;
     }
 
     int ans = 0;

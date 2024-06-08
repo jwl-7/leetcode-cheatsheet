@@ -1,33 +1,39 @@
-import java.util.Pair;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.List;
 
 
+public int[] dijkstras(List<List<int[]>> graph, int source) {
+    int n = graph.size();
+    int[] distances = new int[n];
+    Arrays.fill(distances, Integer.MAX_VALUE);
+    distances[source] = 0;
 
-int[] distances = new int[n];
-Arrays.fill(distances, Integer.MAX_VALUE);
-distances[source] = 0;
+    PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
+    pq.offer(new int[]{source, 0});
 
-Queue<Pair<Integer, Integer>> heap = new PriorityQueue<Pair<Integer,Integer>>(Comparator.comparing(Pair::getKey));
-heap.add(new Pair(0, source));
+    while (!pq.isEmpty()) {
+        int[] curr = pq.poll();
+        int node = curr[0];
+        int dist = curr[1];
 
-while (!heap.isEmpty()) {
-    Pair<Integer, Integer> curr = heap.remove();
-    int currDist = curr.getKey();
-    int node = curr.getValue();
+        if (dist > distances[node]) {
+            continue;
+        }
 
-    if (currDist > distances[node]) {
-        continue;
-    }
+        for (int[] edge : graph.get(node)) {
+            int neighbor = edge[0];
+            int weight = edge[1];
+            int newDist = dist + weight;
 
-    for (Pair<Integer, Integer> edge: graph.get(node)) {
-        int neighbor = edge.getKey();
-        int weight = edge.getValue();
-        int dist = currDist + weight;
-
-        if (dist < distances[neighbor]) {
-            distances[neighbor] = dist;
-            heap.add(new Pair(dist, neighbor));
+            if (newDist < distances[neighbor]) {
+                distances[neighbor] = newDist;
+                pq.offer(new int[]{neighbor, newDist});
+            }
         }
     }
+
+    return distances;
 }

@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.Map;
+
+
 Map<STATE, Integer> memo = new HashMap<>();
 
 public int fn(int[] arr) {

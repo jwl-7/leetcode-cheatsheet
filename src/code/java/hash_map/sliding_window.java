@@ -1,8 +1,9 @@
+import java.util.HashSet;
 import java.util.Set;
 
 
 public int fn(int[] arr) {
-    Set window = new Set<>();
+    Set<Integer> window = new HashSet<>();
     int ans = 0;
     int left = 0;
 

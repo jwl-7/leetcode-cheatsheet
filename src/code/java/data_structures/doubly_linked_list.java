@@ -29,6 +29,7 @@ public class DoublyLinkedList<T> {
         }
 
         ListNode<T> curr = head;
+
         while (curr.next != null) {
             curr = curr.next;
         }
@@ -52,6 +53,7 @@ public class DoublyLinkedList<T> {
         }
 
         ListNode<T> curr = head;
+
         while (curr != null) {
             if (curr.data.equals(data)) {
                 ListNode<T> prevNode = curr.prev;
@@ -88,10 +90,12 @@ public class DoublyLinkedList<T> {
 
         StringBuilder sb = new StringBuilder();
         ListNode<T> curr = head;
+
         while (curr != null) {
             sb.append(curr.toString()).append(" <-> ");
             curr = curr.next;
         }
+
         sb.append("None");
         return sb.toString();
     }

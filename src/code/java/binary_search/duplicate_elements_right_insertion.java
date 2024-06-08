@@ -3,7 +3,7 @@ public int fn(int[] arr, int target) {
     int right = arr.length;
 
     while (left < right) {
-        int mid = (left + right) / 2;
+        int mid = left + (right - left) / 2;
 
         if (arr[mid] > target) {
             right = mid;

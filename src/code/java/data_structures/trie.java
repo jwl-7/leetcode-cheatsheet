@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
 
 class TrieNode {
     Map<Character, TrieNode> children;
@@ -79,7 +82,7 @@ class Trie {
 
     @Override
     public String toString() {
-        return "Trie:\n" + printTrie(root);
+        return "Trie:\n" + printTrie(root, 0, null);
     }
 
     private String printTrie(TrieNode node, int level, String prefix) {
@@ -95,6 +98,7 @@ class Trie {
         }
 
         int i = 0;
+
         for (Map.Entry<Character, TrieNode> entry : node.children.entrySet()) {
             boolean isLast = i == node.children.size() - 1;
             String marker = isLast ? "└─ " : "├─ ";

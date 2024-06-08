@@ -3,7 +3,7 @@ public int fn(int[] arr) {
     int right = MAXIMUM_POSSIBLE_ANSWER;
 
     while (left <= right) {
-        int mid = (left + right) / 2;
+        int mid = left + (right - left) / 2;
 
         if (check(mid)) {
             left = mid + 1;
@@ -13,4 +13,8 @@ public int fn(int[] arr) {
     }
 
     return right;
+}
+
+public boolean check(int x) {
+    return BOOLEAN
 }
