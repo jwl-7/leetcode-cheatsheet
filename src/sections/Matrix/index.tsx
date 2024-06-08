@@ -10,6 +10,14 @@ import CreateCopyJS from '@code/javascript/matrix/create_copy.js?raw'
 import DiagonalsJS from '@code/javascript/matrix/diagonals.js?raw'
 import RotateTransposeJS from '@code/javascript/matrix/rotate_transpose.js?raw'
 
+import CreateCopyJAVA from '@code/java/matrix/create_copy.java?raw'
+import DiagonalsJAVA from '@code/java/matrix/diagonals.java?raw'
+import RotateTransposeJAVA from '@code/java/matrix/rotate_transpose.java?raw'
+
+import CreateCopyCPP from '@code/cpp/matrix/create_copy.cpp?raw'
+import DiagonalsCPP from '@code/cpp/matrix/diagonals.cpp?raw'
+import RotateTransposeCPP from '@code/cpp/matrix/rotate_transpose.cpp?raw'
+
 
 export default function Matrix() {
     return (
@@ -19,18 +27,24 @@ export default function Matrix() {
                 <Tabs title="create / copy">
                     <Tabs.Tab code={CreateCopyPY} language="python" />
                     <Tabs.Tab code={CreateCopyJS} language="javascript" />
+                    <Tabs.Tab code={CreateCopyJAVA} language="java" />
+                    <Tabs.Tab code={CreateCopyCPP} language="cpp" />
                 </Tabs>
             </section>
             <section id="matrix-diagonals">
                 <Tabs title="diagonals / anti-diagonals">
                     <Tabs.Tab code={DiagonalsPY} language="python" />
                     <Tabs.Tab code={DiagonalsJS} language="javascript" />
+                    <Tabs.Tab code={DiagonalsJAVA} language="java" />
+                    <Tabs.Tab code={DiagonalsCPP} language="cpp" />
                 </Tabs>
             </section>
             <section id="matrix-rotate-transpose">
                 <Tabs title="rotate / transpose">
                     <Tabs.Tab code={RotateTransposePY} language="python" />
                     <Tabs.Tab code={RotateTransposeJS} language="javascript" />
+                    <Tabs.Tab code={RotateTransposeJAVA} language="java" />
+                    <Tabs.Tab code={RotateTransposeCPP} language="cpp" />
                 </Tabs>
             </section>
         </div>

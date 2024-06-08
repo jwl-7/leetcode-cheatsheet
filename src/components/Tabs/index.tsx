@@ -18,7 +18,7 @@ interface TabsProps {
 
 interface TabProps {
     code: string
-    language: 'python' | 'javascript' | 'cpp' | 'java'
+    language: 'python' | 'javascript' | 'java' | 'cpp'
 }
 
 

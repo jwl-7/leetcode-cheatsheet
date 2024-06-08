@@ -14,6 +14,18 @@ import DuplicateElementsRightInsertionJS from '@code/javascript/binary_search/du
 import GreedyMinimumJS from '@code/javascript/binary_search/greedy_minimum.js?raw'
 import GreedyMaximumJS from '@code/javascript/binary_search/greedy_maximum.js?raw'
 
+import BinarySearchJAVA from '@code/java/binary_search/binary_search.java?raw'
+import DuplicateElementsLeftInsertionJAVA from '@code/java/binary_search/duplicate_elements_left_insertion.java?raw'
+import DuplicateElementsRightInsertionJAVA from '@code/java/binary_search/duplicate_elements_right_insertion.java?raw'
+import GreedyMinimumJAVA from '@code/java/binary_search/greedy_minimum.java?raw'
+import GreedyMaximumJAVA from '@code/java/binary_search/greedy_maximum.java?raw'
+
+import BinarySearchCPP from '@code/cpp/binary_search/binary_search.cpp?raw'
+import DuplicateElementsLeftInsertionCPP from '@code/cpp/binary_search/duplicate_elements_left_insertion.cpp?raw'
+import DuplicateElementsRightInsertionCPP from '@code/cpp/binary_search/duplicate_elements_right_insertion.cpp?raw'
+import GreedyMinimumCPP from '@code/cpp/binary_search/greedy_minimum.cpp?raw'
+import GreedyMaximumCPP from '@code/cpp/binary_search/greedy_maximum.cpp?raw'
+
 
 export default function BinarySearch() {
     return (
@@ -23,30 +35,40 @@ export default function BinarySearch() {
                 <Tabs title="binary search">
                     <Tabs.Tab code={BinarySearchPY} language="python" />
                     <Tabs.Tab code={BinarySearchJS} language="javascript" />
+                    <Tabs.Tab code={BinarySearchJAVA} language="java" />
+                    <Tabs.Tab code={BinarySearchCPP} language="cpp" />
                 </Tabs>
             </section>
             <section id="binarysearch-duplicate-elements-left-insertion">
                 <Tabs title="duplicate elements, left-most insertion point">
                     <Tabs.Tab code={DuplicateElementsLeftInsertionPY} language="python" />
                     <Tabs.Tab code={DuplicateElementsLeftInsertionJS} language="javascript" />
+                    <Tabs.Tab code={DuplicateElementsLeftInsertionJAVA} language="java" />
+                    <Tabs.Tab code={DuplicateElementsLeftInsertionCPP} language="cpp" />
                 </Tabs>
             </section>
             <section id="binarysearch-duplicate-elements-right-insertion">
                 <Tabs title="duplicate elements, right-most insertion point">
                     <Tabs.Tab code={DuplicateElementsRightInsertionPY} language="python" />
                     <Tabs.Tab code={DuplicateElementsRightInsertionJS} language="javascript" />
+                    <Tabs.Tab code={DuplicateElementsRightInsertionJAVA} language="java" />
+                    <Tabs.Tab code={DuplicateElementsRightInsertionCPP} language="cpp" />
                 </Tabs>
             </section>
             <section id="binarysearch-greedy-minimum">
                 <Tabs title="greedy (minimum)">
                     <Tabs.Tab code={GreedyMinimumPY} language="python" />
                     <Tabs.Tab code={GreedyMinimumJS} language="javascript" />
+                    <Tabs.Tab code={GreedyMinimumJAVA} language="java" />
+                    <Tabs.Tab code={GreedyMinimumCPP} language="cpp" />
                 </Tabs>
             </section>
             <section id="binarysearch-greedy-maximum">
                 <Tabs title="greedy (maximum)">
                     <Tabs.Tab code={GreedyMaximumPY} language="python" />
                     <Tabs.Tab code={GreedyMaximumJS} language="javascript" />
+                    <Tabs.Tab code={GreedyMaximumJAVA} language="java" />
+                    <Tabs.Tab code={GreedyMaximumCPP} language="cpp" />
                 </Tabs>
             </section>
         </div>

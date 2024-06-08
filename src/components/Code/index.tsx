@@ -3,19 +3,23 @@ import styles from './code.module.sass'
 import { useEffect, useRef, useState } from 'react'
 import { useClickOutside } from '@/hooks/useClickOutside'
 
+import clsx from '@utils/clsx'
+import cpp from 'highlight.js/lib/languages/cpp'
 import hljs from 'highlight.js/lib/core'
+import java from 'highlight.js/lib/languages/java'
 import javascript from 'highlight.js/lib/languages/javascript'
 import python from './python'
-import clsx from '@utils/clsx'
 
 
 hljs.registerLanguage('python', python)
 hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('java', java)
+hljs.registerLanguage('cpp', cpp)
 
 
 interface CodeProps {
     code: string
-    language: 'python' | 'javascript' | 'cpp' | 'java'
+    language: 'python' | 'javascript' | 'java' | 'cpp'
 }
 
 
