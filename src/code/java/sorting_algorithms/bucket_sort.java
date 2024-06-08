@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
-public List<Integer> bucketSort(List<Integer> arr) {
+public static int[] bucketSort(int[] arr) {
     int numBuckets = 10;
-    int minNum = Collections.min(arr);
-    int maxNum = Collections.max(arr);
+    int index;
+    int[] result = new int[arr.length];
+    int minNum = Arrays.stream(arr).min().getAsInt();
+    int maxNum = Arrays.stream(arr).max().getAsInt();
     double bucketSize = (double) (maxNum - minNum) / numBuckets;
     List<List<Integer>> buckets = new ArrayList<>(numBuckets);
 
@@ -15,14 +18,18 @@ public List<Integer> bucketSort(List<Integer> arr) {
     }
 
     for (int num : arr) {
-        int index = Math.min((int) ((num - minNum) / bucketSize), numBuckets - 1);
+        index = Math.min((int) ((num - minNum) / bucketSize), numBuckets - 1);
         buckets.get(index).add(num);
     }
 
-    List<Integer> result = new ArrayList<>();
+    index = 0;
+
     for (List<Integer> bucket : buckets) {
         Collections.sort(bucket);
-        result.addAll(bucket);
+
+        for (int num : bucket) {
+            result[index++] = num;
+        }
     }
 
     return result;

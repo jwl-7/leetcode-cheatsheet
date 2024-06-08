@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 
-public void bogoSort(int[] arr) {
+public static void bogoSort(int[] arr) {
     int[] target = Arrays.copyOf(arr, arr.length);
     Arrays.sort(target);
 
@@ -11,8 +11,9 @@ public void bogoSort(int[] arr) {
     }
 }
 
-public void shuffleArray(int[] arr) {
+public static void shuffleArray(int[] arr) {
     Random rnd = new Random();
+
     for (int i = arr.length - 1; i > 0; i--) {
         int index = rnd.nextInt(i + 1);
         int temp = arr[index];

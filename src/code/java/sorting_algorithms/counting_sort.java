@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 
-public int[] countingSort(int[] arr) {
+public static int[] countingSort(int[] arr) {
     int maxNum = Arrays.stream(arr).max().orElse(Integer.MIN_VALUE);
     int minNum = Arrays.stream(arr).min().orElse(Integer.MAX_VALUE);
     int countRange = maxNum - minNum + 1;

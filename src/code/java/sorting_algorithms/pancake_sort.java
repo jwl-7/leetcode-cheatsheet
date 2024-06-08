@@ -1,4 +1,4 @@
-public void pancakeSort(int[] arr) {
+public static void pancakeSort(int[] arr) {
     int n = arr.length;
 
     for (int size = n; size >= 2; size--) {
@@ -11,7 +11,7 @@ public void pancakeSort(int[] arr) {
     }
 }
 
-public void flip(int[] arr, int i) {
+public static void flip(int[] arr, int i) {
     int left = 0;
 
     while (left < i) {
@@ -23,7 +23,7 @@ public void flip(int[] arr, int i) {
     }
 }
 
-public int findMaxIndex(int[] arr, int n) {
+public static int findMaxIndex(int[] arr, int n) {
     int maxIdx = 0;
 
     for (int i = 0; i < n; i++) {

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 
-public void radixSort(int[] arr) {
+public static void radixSort(int[] arr) {
     int maxVal = Arrays.stream(arr).max().getAsInt();
     int exp = 1;
 
@@ -11,7 +11,7 @@ public void radixSort(int[] arr) {
     }
 }
 
-public void countingSort(int[] arr, int exp) {
+public static void countingSort(int[] arr, int exp) {
     int n = arr.length;
     int[] output = new int[n];
     int[] count = new int[10];

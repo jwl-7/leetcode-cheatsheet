@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public int[] sleepSort(int[] arr) {
+public static int[] sleepSort(int[] arr) {
     List<Integer> sortedArr = new ArrayList<>();
     List<Thread> threads = new ArrayList<>();
 
@@ -26,7 +26,7 @@ public int[] sleepSort(int[] arr) {
     return sortedArr.stream().mapToInt(i -> i).toArray();
 }
 
-public void snorlax(int num, List<Integer> arr) {
+public static void snorlax(int num, List<Integer> arr) {
     try {
         Thread.sleep(num);
     } catch (InterruptedException e) {

@@ -1,4 +1,4 @@
-public void bubbleSort(int[] arr) {
+public static void bubbleSort(int[] arr) {
     int n = arr.length;
 
     for (int i = 0; i < n; i++) {

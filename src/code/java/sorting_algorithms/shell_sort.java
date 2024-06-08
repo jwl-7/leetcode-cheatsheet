@@ -1,4 +1,4 @@
-public void shellSort(int[] arr) {
+public static void shellSort(int[] arr) {
     int n = arr.length;
     int[] gaps = {701, 301, 132, 57, 23, 10, 4, 1};
 

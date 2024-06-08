@@ -1,4 +1,4 @@
-public int[] timSort(int[] arr) {
+public static int[] timSort(int[] arr) {
     int n = arr.length;
     int minRun = 32;
 
@@ -21,7 +21,7 @@ public int[] timSort(int[] arr) {
     return arr;
 }
 
-public void insertionSort(int[] arr, int left, int right) {
+public static void insertionSort(int[] arr, int left, int right) {
     for (int i = left + 1; i <= right; i++) {
         int key = arr[i];
         int j = i - 1;
@@ -35,7 +35,7 @@ public void insertionSort(int[] arr, int left, int right) {
     }
 }
 
-public int[] merge(int[] arr, int left, int mid, int right) {
+public static int[] merge(int[] arr, int left, int mid, int right) {
     int[] output = new int[right - left + 1];
     int i = left, j = mid + 1, k = 0;
 

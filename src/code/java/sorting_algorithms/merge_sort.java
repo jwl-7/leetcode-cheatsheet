@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 
-public int[] mergeSort(int[] arr) {
+public static int[] mergeSort(int[] arr) {
     int n = arr.length;
 
     if (n <= 1) {
@@ -18,7 +18,7 @@ public int[] mergeSort(int[] arr) {
     return merge(left, right);
 }
 
-public int[] merge(int[] left, int[] right) {
+public static int[] merge(int[] left, int[] right) {
     int[] output = new int[left.length + right.length];
     int i = 0, j = 0, k = 0;
 
