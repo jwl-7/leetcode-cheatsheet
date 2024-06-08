@@ -19,6 +19,5 @@ export default function App() {
                 </div>
             </SidebarProvider>
         </React.StrictMode>
-
     )
 }
