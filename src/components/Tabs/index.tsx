@@ -7,6 +7,8 @@ import CopyButton from '@components/CopyButton'
 
 import SvgPython from '@icons/Python'
 import SvgJavascript from '@/icons/Javascript'
+import SvgCpp from '@icons/Cpp'
+import SvgJava from '@/icons/Java'
 
 
 interface TabsProps {
@@ -16,7 +18,15 @@ interface TabsProps {
 
 interface TabProps {
     code: string
-    language: 'python' | 'javascript'
+    language: 'python' | 'javascript' | 'cpp' | 'java'
+}
+
+
+const LANGUAGE_ICONS = {
+    python: SvgPython,
+    javascript: SvgJavascript,
+    cpp: SvgCpp,
+    java: SvgJava
 }
 
 
@@ -31,9 +41,7 @@ export default function Tabs({ title, children }: TabsProps) {
 
     const renderTabButtons = () => {
         return tabs.map((tab, index) => {
-            const LanguageIcon = tab.props.language === 'python'
-                ? SvgPython
-                : SvgJavascript
+            const LanguageIcon = LANGUAGE_ICONS[tab.props.language]
             const label = `view ${tab.props.language} code`
 
             return (

@@ -15,7 +15,7 @@ hljs.registerLanguage('javascript', javascript)
 
 interface CodeProps {
     code: string
-    language: 'python' | 'javascript'
+    language: 'python' | 'javascript' | 'cpp' | 'java'
 }
 
 
