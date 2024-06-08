@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void heapify(vector<int>& arr, int n, int i) {
+void Heapify(vector<int>& arr, int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -16,18 +16,18 @@ void heapify(vector<int>& arr, int n, int i) {
     }
     if (largest != i) {
         swap(arr[i], arr[largest]);
-        heapify(arr, n, largest);
+        Heapify(arr, n, largest);
     }
 }
 
-void heap_sort(vector<int>& arr) {
+void HeapSort(vector<int>& arr) {
     int n = arr.size();
 
     for (int i = n / 2 - 1; i >= 0; --i) {
-        heapify(arr, n, i);
+        Heapify(arr, n, i);
     }
     for (int i = n - 1; i > 0; --i) {
         swap(arr[0], arr[i]);
-        heapify(arr, i, 0);
+        Heapify(arr, i, 0);
     }
 }

@@ -10,7 +10,6 @@ int fn(vector<int>& arr) {
     int left = 0;
 
     for (int right = 0; right < arr.size(); right++) {
-        int ELEMENT = arr[right];
         // TODO: add arr[right] to window
 
         while (WINDOW_CONDITION_BROKEN) {

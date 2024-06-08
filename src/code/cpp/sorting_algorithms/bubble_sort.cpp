@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void bubble_sort(vector<int>& arr) {
+void BubbleSort(vector<int>& arr) {
     int n = arr.size();
 
     for (int i = 0; i < n; ++i) {

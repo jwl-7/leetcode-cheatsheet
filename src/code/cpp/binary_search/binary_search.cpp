@@ -12,7 +12,7 @@ int fn(vector<int>& arr, int target) {
 
         if (arr[mid] == target) {
             // TODO: logic
-            return;
+            return mid;
         }
         if (arr[mid] > target) {
             right = mid - 1;

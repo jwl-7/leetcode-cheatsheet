@@ -3,8 +3,8 @@
 
 using namespace std;
 
-unordered_set<int> seen;
 
+unordered_set<int> seen;
 
 int fn(vector<vector<int>>& graph) {
     seen.insert(START_NODE);

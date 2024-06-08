@@ -1,4 +1,4 @@
-int backtrack(int curr, OTHER_ARGUMENTS...) {
+int backtrack(STATE curr, OTHER_ARGUMENTS...) {
     if (BASE_CASE) {
         // TODO: modify answer
         return 0;

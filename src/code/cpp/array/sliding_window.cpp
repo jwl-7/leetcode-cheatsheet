@@ -11,12 +11,10 @@ int fn(vector<int>& arr) {
 
     for (int right = 0; right < n; right++) {
         // TODO: add arr[right] to window
-        window += arr[right];
 
         while (WINDOW_CONDITION_BROKEN) {
             // TODO: remove arr[left] from window
-            window -= arr[left];
-            left += 1;
+            left++;
         }
 
         // TODO: update ans

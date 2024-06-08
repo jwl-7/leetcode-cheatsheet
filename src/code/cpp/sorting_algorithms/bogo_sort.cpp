@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void bogo_sort(vector<int>& arr) {
+void BogoSort(vector<int>& arr) {
     vector<int> target = arr;
     sort(target.begin(), target.end());
 

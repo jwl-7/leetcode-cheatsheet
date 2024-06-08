@@ -11,9 +11,9 @@ int fn(vector<int>& arr) {
     while (left < right) {
         // TODO: logic with left and right
         if (CONDITION) {
-            left += 1;
+            left++;
         } else {
-            right -= 1;
+            right--;
         }
     }
 

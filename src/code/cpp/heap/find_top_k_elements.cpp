@@ -6,6 +6,7 @@ using namespace std;
 
 vector<int> fn(vector<int>& arr, int k) {
     priority_queue<int, vector<int>, greater<int>> min_heap;
+    vector<int> result;
 
     for (int num : arr) {
         // TODO: logic to push onto heap according to problem's criteria
@@ -16,7 +17,6 @@ vector<int> fn(vector<int>& arr, int k) {
         }
     }
 
-    vector<int> result;
     while (!min_heap.empty()) {
         result.push_back(min_heap.top());
         min_heap.pop();

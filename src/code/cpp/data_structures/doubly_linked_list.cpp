@@ -30,6 +30,7 @@ public:
         }
 
         auto curr = head;
+
         while (curr->next) {
             curr = curr->next;
         }
@@ -53,13 +54,16 @@ public:
         }
 
         auto curr = head;
+
         while (curr) {
             if (curr->data == data) {
                 auto prev_node = curr->prev;
                 prev_node->next = curr->next;
+
                 if (curr->next) {
                     curr->next->prev = prev_node;
                 }
+
                 return;
             }
             curr = curr->next;
@@ -91,9 +95,11 @@ public:
 
         while (curr) {
             result += "[" + to_string(curr->data) + "]";
+
             if (curr->next) {
                 result += " <-> ";
             }
+
             curr = curr->next;
         }
 

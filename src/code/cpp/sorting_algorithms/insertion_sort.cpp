@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void insertion_sort(vector<int>& arr) {
+void InsertionSort(vector<int>& arr) {
     int n = arr.size();
 
     for (int i = 1; i < n; ++i) {

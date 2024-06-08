@@ -5,7 +5,6 @@ using namespace std;
 
 
 template<typename T>
-
 class Array {
 private:
     T* data;
@@ -50,13 +49,3 @@ public:
         return os;
     }
 };
-
-int main() {
-    Array<int> arr(5);
-    for (size_t i = 0; i < arr.len(); ++i) {
-        arr[i] = i * 10;
-    }
-    std::cout << "Array: " << arr << std::endl;
-
-    return 0;
-}

@@ -32,15 +32,19 @@ public:
 
     string toString() {
         string output;
+
         for (const auto& [vertex, neighbors] : graph) {
             output += vertex + " - ";
+
             for (const auto& neighbor : neighbors) {
                 output += neighbor + " - ";
             }
+
             output.pop_back();
             output.pop_back();
             output += "\n";
         }
+
         return output;
     }
 };

@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void shell_sort(vector<int>& arr) {
+void ShellSort(vector<int>& arr) {
     int n = arr.size();
     vector<int> gaps = {701, 301, 132, 57, 23, 10, 4, 1};
 

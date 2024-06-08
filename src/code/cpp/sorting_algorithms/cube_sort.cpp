@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void cube_sort(vector<int>& arr, int processors) {
+void CubeSort(vector<int>& arr, int processors) {
     int n = arr.size();
     vector<vector<int>> subarrays;
     int subarray_size = n / processors;

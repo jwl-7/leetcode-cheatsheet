@@ -14,6 +14,7 @@ vector<int> bellman_ford(int n, vector<pair<pair<int, int>, int>>& edges, int so
             int u = edge.first.first;
             int v = edge.first.second;
             int w = edge.second;
+
             if (distances[u] != numeric_limits<int>::max() && distances[u] + w < distances[v]) {
                 distances[v] = distances[u] + w;
             }
@@ -24,6 +25,7 @@ vector<int> bellman_ford(int n, vector<pair<pair<int, int>, int>>& edges, int so
         int u = edge.first.first;
         int v = edge.first.second;
         int w = edge.second;
+
         if (distances[u] != numeric_limits<int>::max() && distances[u] + w < distances[v]) {
             return vector<int>();
         }

@@ -11,20 +11,20 @@ int fn(vector<int>& arr1, vector<int>& arr2) {
     while (i < arr1.size() && j < arr2.size()) {
         // TODO: logic
         if (CONDITION) {
-            i += 1;
+            i++;
         } else {
-            j += 1;
+            j++;
         }
     }
 
     while (i < arr1.size()) {
         // TODO: logic
-        i += 1;
+        i++;
     }
 
     while (j < arr2.size()) {
         // TODO: logic
-        j += 1;
+        j++;
     }
 
     return ans;

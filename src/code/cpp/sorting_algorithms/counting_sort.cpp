@@ -4,7 +4,7 @@
 using namespace std;
 
 
-vector<int> counting_sort(vector<int>& arr) {
+vector<int> CountingSort(vector<int>& arr) {
     int max_num = *max_element(arr.begin(), arr.end());
     int min_num = *min_element(arr.begin(), arr.end());
     int count_range = max_num - min_num + 1;

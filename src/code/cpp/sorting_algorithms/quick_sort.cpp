@@ -3,7 +3,7 @@
 using namespace std;
 
 
-vector<int> quick_sort(vector<int>& arr) {
+vector<int> QuickSort(vector<int>& arr) {
     int n = arr.size();
 
     if (n <= 1) {
@@ -21,8 +21,8 @@ vector<int> quick_sort(vector<int>& arr) {
         }
     }
 
-    left = quick_sort(left);
-    right = quick_sort(right);
+    left = QuickSort(left);
+    right = QuickSort(right);
 
     left.push_back(pivot);
     left.insert(left.end(), right.begin(), right.end());

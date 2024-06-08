@@ -27,6 +27,7 @@ public:
         }
 
         ListNode<T>* curr = head;
+
         while (curr->next) {
             curr = curr->next;
         }
@@ -77,6 +78,7 @@ public:
 
     ~LinkedList() {
         ListNode<T>* curr = head;
+
         while (curr) {
             ListNode<T>* temp = curr;
             curr = curr->next;
@@ -86,6 +88,7 @@ public:
 
     void display() {
         ListNode<T>* curr = head;
+
         while (curr) {
             cout << "[" << curr->data << "]";
             if (curr->next) {
@@ -93,6 +96,7 @@ public:
             }
             curr = curr->next;
         }
+
         cout << " -> None" << endl;
     }
 };

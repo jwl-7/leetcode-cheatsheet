@@ -3,24 +3,7 @@
 using namespace std;
 
 
-vector<int> merge_sort(vector<int>& arr) {
-    int n = arr.size();
-
-    if (n <= 1) {
-        return arr;
-    }
-
-    int mid = n / 2;
-    vector<int> left(arr.begin(), arr.begin() + mid);
-    vector<int> right(arr.begin() + mid, arr.end());
-
-    left = merge_sort(left);
-    right = merge_sort(right);
-
-    return merge(left, right);
-}
-
-vector<int> merge(vector<int>& left, vector<int>& right) {
+vector<int> Merge(vector<int>& left, vector<int>& right) {
     vector<int> output;
 
     while (!left.empty() && !right.empty()) {
@@ -38,4 +21,21 @@ vector<int> merge(vector<int>& left, vector<int>& right) {
     output.insert(output.end(), right.begin(), right.end());
 
     return output;
+}
+
+vector<int> MergeSort(vector<int>& arr) {
+    int n = arr.size();
+
+    if (n <= 1) {
+        return arr;
+    }
+
+    int mid = n / 2;
+    vector<int> left(arr.begin(), arr.begin() + mid);
+    vector<int> right(arr.begin() + mid, arr.end());
+
+    left = MergeSort(left);
+    right = MergeSort(right);
+
+    return Merge(left, right);
 }

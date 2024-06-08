@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void selection_sort(vector<int>& arr) {
+void SelectionSort(vector<int>& arr) {
     int n = arr.size();
 
     for (int i = 0; i < n; ++i) {
