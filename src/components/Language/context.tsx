@@ -17,9 +17,13 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
     undefined
 )
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+interface LanguageProviderProps {
+    children: ReactNode
+}
+
+export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     // Get the language from localStorage or default to 'python'
-    const initialLanguage =
+    const initialLanguage: Language =
         (localStorage.getItem('selectedLanguage') as Language) || 'python'
 
     const [selectedLanguage, setSelectedLanguage] =
@@ -38,10 +42,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     )
 }
 
-export const useLanguage = () => {
+export function useLanguage() {
     const context = useContext(LanguageContext)
-    if (!context) {
+
+    if (context === undefined) {
         throw new Error('useLanguage must be used within a LanguageProvider')
     }
-    return context
+
+    return context as LanguageContextType
 }
