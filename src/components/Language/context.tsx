@@ -6,6 +6,7 @@ import {
     useEffect,
 } from 'react'
 
+
 type Language = 'python' | 'javascript' | 'java' | 'cpp'
 
 interface LanguageContextType {
@@ -21,13 +22,12 @@ interface LanguageProviderProps {
     children: ReactNode
 }
 
+
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-    // Get the language from localStorage or default to 'python'
     const initialLanguage: Language =
         (localStorage.getItem('selectedLanguage') as Language) || 'python'
 
-    const [selectedLanguage, setSelectedLanguage] =
-        useState<Language>(initialLanguage)
+    const [selectedLanguage, setSelectedLanguage] = useState<Language>(initialLanguage)
 
     useEffect(() => {
         localStorage.setItem('selectedLanguage', selectedLanguage)
