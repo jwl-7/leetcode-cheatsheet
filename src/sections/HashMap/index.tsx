@@ -14,6 +14,8 @@ import SlidingWindowJAVA from '@code/java/hash_map/sliding_window.java?raw'
 import FindNumberOfSubarraysCPP from '@code/cpp/hash_map/find_number_of_subarrays.cpp?raw'
 import SlidingWindowCPP from '@code/cpp/hash_map/sliding_window.cpp?raw'
 
+import FindNumberOfSubarraysRuby from '@code/ruby/hash_map/find_number_of_subarrays.rb?raw'
+import SlidingWindowRuby from '@code/ruby/hash_map/sliding_window.rb?raw'
 
 export default function HashMap() {
     return (
@@ -25,6 +27,7 @@ export default function HashMap() {
                     <Tabs.Tab code={FindNumberOfSubarraysJS} language="javascript" />
                     <Tabs.Tab code={FindNumberOfSubarraysJAVA} language="java" />
                     <Tabs.Tab code={FindNumberOfSubarraysCPP} language="cpp" />
+                    <Tabs.Tab code={FindNumberOfSubarraysRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="hashmap-sliding-window">
@@ -33,6 +36,7 @@ export default function HashMap() {
                     <Tabs.Tab code={SlidingWindowJS} language="javascript" />
                     <Tabs.Tab code={SlidingWindowJAVA} language="java" />
                     <Tabs.Tab code={SlidingWindowCPP} language="cpp" />
+                    <Tabs.Tab code={SlidingWindowRuby} language="ruby" />
                 </Tabs>
             </section>
         </div>

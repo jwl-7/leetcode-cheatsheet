@@ -46,6 +46,16 @@ import DivideByPowerOfTwoCPP from '@code/cpp/bit_manipulation/divide_power_of_tw
 import CheckPowerOfTwoCPP from '@code/cpp/bit_manipulation/check_power_of_two.cpp?raw'
 import SwapVariablesCPP from '@code/cpp/bit_manipulation/swap_variables.cpp?raw'
 
+import TestKthBitRuby from '@code/ruby/bit_manipulation/test_kth_bit.rb?raw'
+import SetKthBitRuby from '@code/ruby/bit_manipulation/set_kth_bit.rb?raw'
+import ClearKthBitRuby from '@code/ruby/bit_manipulation/clear_kth_bit.rb?raw'
+import ToggleKthBitRuby from '@code/ruby/bit_manipulation/toggle_kth_bit.rb?raw'
+import GetRightmostBitRuby from '@code/ruby/bit_manipulation/get_rightmost_bit.rb?raw'
+import CountSetBitsRuby from '@code/ruby/bit_manipulation/count_set_bits.rb?raw'
+import MultiplyByPowerOfTwoRuby from '@code/ruby/bit_manipulation/multiply_power_of_two.rb?raw'
+import DivideByPowerOfTwoRuby from '@code/ruby/bit_manipulation/divide_power_of_two.rb?raw'
+import CheckPowerOfTwoRuby from '@code/ruby/bit_manipulation/check_power_of_two.rb?raw'
+import SwapVariablesRuby from '@code/ruby/bit_manipulation/swap_variables.rb?raw'
 
 export default function BitManipulation() {
     return (
@@ -57,6 +67,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={TestKthBitJS} language="javascript" />
                     <Tabs.Tab code={TestKthBitJAVA} language="java" />
                     <Tabs.Tab code={TestKthBitCPP} language="cpp" />
+                    <Tabs.Tab code={TestKthBitRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-set-kth-bit">
@@ -65,6 +76,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={SetKthBitJS} language="javascript" />
                     <Tabs.Tab code={SetKthBitJAVA} language="java" />
                     <Tabs.Tab code={SetKthBitCPP} language="cpp" />
+                    <Tabs.Tab code={SetKthBitRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-clear-kth-bit">
@@ -73,6 +85,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={ClearKthBitJS} language="javascript" />
                     <Tabs.Tab code={ClearKthBitJAVA} language="java" />
                     <Tabs.Tab code={ClearKthBitCPP} language="cpp" />
+                    <Tabs.Tab code={ClearKthBitRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-toggle-kth-bit">
@@ -81,6 +94,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={ToggleKthBitJS} language="javascript" />
                     <Tabs.Tab code={ToggleKthBitJAVA} language="java" />
                     <Tabs.Tab code={ToggleKthBitCPP} language="cpp" />
+                    <Tabs.Tab code={ToggleKthBitRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-get-rightmost-bit">
@@ -89,6 +103,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={GetRightmostBitJS} language="javascript" />
                     <Tabs.Tab code={GetRightmostBitJAVA} language="java" />
                     <Tabs.Tab code={GetRightmostBitCPP} language="cpp" />
+                    <Tabs.Tab code={GetRightmostBitRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-count-set-bits">
@@ -97,6 +112,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={CountSetBitsJS} language="javascript" />
                     <Tabs.Tab code={CountSetBitsJAVA} language="java" />
                     <Tabs.Tab code={CountSetBitsCPP} language="cpp" />
+                    <Tabs.Tab code={CountSetBitsRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-multiply-power-of-two">
@@ -105,6 +121,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={MultiplyByPowerOfTwoJS} language="javascript" />
                     <Tabs.Tab code={MultiplyByPowerOfTwoJAVA} language="java" />
                     <Tabs.Tab code={MultiplyByPowerOfTwoCPP} language="cpp" />
+                    <Tabs.Tab code={MultiplyByPowerOfTwoRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-divide-power-of-two">
@@ -113,6 +130,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={DivideByPowerOfTwoJS} language="javascript" />
                     <Tabs.Tab code={DivideByPowerOfTwoJAVA} language="java" />
                     <Tabs.Tab code={DivideByPowerOfTwoCPP} language="cpp" />
+                    <Tabs.Tab code={DivideByPowerOfTwoRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-check-power-of-two">
@@ -121,6 +139,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={CheckPowerOfTwoJS} language="javascript" />
                     <Tabs.Tab code={CheckPowerOfTwoJAVA} language="java" />
                     <Tabs.Tab code={CheckPowerOfTwoCPP} language="cpp" />
+                    <Tabs.Tab code={CheckPowerOfTwoRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="bitmanipulation-swap-variables">
@@ -129,6 +148,7 @@ export default function BitManipulation() {
                     <Tabs.Tab code={SwapVariablesJS} language="javascript" />
                     <Tabs.Tab code={SwapVariablesJAVA} language="java" />
                     <Tabs.Tab code={SwapVariablesCPP} language="cpp" />
+                    <Tabs.Tab code={SwapVariablesRuby} language="ruby" />
                 </Tabs>
             </section>
         </div>
