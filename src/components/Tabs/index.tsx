@@ -1,6 +1,6 @@
 import styles from './tabs.module.sass'
 
-import { Children, ReactElement, ReactNode } from 'react'
+import {Children, ReactElement, ReactNode} from 'react'
 
 import Code from '@components/Code'
 import CopyButton from '@components/CopyButton'
@@ -9,6 +9,7 @@ import SvgPython from '@icons/Python'
 import SvgJavascript from '@/icons/Javascript'
 import SvgCpp from '@icons/Cpp'
 import SvgJava from '@/icons/Java'
+import SvgRuby from '@/icons/Ruby'
 import { useLanguage } from '@components/Language/context'
 
 interface TabsProps {
@@ -18,7 +19,7 @@ interface TabsProps {
 
 interface TabProps {
     code: string
-    language: 'python' | 'javascript' | 'java' | 'cpp'
+    language: 'python' | 'javascript' | 'java' | 'cpp' | 'ruby'
 }
 
 const LANGUAGE_ICONS = {
@@ -26,6 +27,7 @@ const LANGUAGE_ICONS = {
     javascript: SvgJavascript,
     cpp: SvgCpp,
     java: SvgJava,
+    ruby: SvgRuby,
 }
 
 export default function Tabs({ title, children }: TabsProps) {
@@ -34,7 +36,13 @@ export default function Tabs({ title, children }: TabsProps) {
     const activeIndex = tabs.findIndex(
         (tab) => tab.props.language === selectedLanguage
     )
-    const code = tabs[activeIndex].props.code
+    let code = ''
+    try{
+     code = tabs[activeIndex].props.code
+    }catch(e)
+    {
+        // debugger
+    }
     const language = tabs[activeIndex].props.language
 
     const changeTab = (index: number) => {

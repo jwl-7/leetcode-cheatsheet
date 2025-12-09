@@ -18,6 +18,9 @@ import CreateCopyCPP from '@code/cpp/matrix/create_copy.cpp?raw'
 import DiagonalsCPP from '@code/cpp/matrix/diagonals.cpp?raw'
 import RotateTransposeCPP from '@code/cpp/matrix/rotate_transpose.cpp?raw'
 
+import CreateCopyRuby from '@code/ruby/matrix/create_copy.rb?raw'
+import DiagonalsRuby from '@code/ruby/matrix/diagonals.rb?raw'
+import RotateTransposeRuby from '@code/ruby/matrix/rotate_transpose.rb?raw'
 
 export default function Matrix() {
     return (
@@ -29,6 +32,7 @@ export default function Matrix() {
                     <Tabs.Tab code={CreateCopyJS} language="javascript" />
                     <Tabs.Tab code={CreateCopyJAVA} language="java" />
                     <Tabs.Tab code={CreateCopyCPP} language="cpp" />
+                    <Tabs.Tab code={CreateCopyRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="matrix-diagonals">
@@ -37,6 +41,7 @@ export default function Matrix() {
                     <Tabs.Tab code={DiagonalsJS} language="javascript" />
                     <Tabs.Tab code={DiagonalsJAVA} language="java" />
                     <Tabs.Tab code={DiagonalsCPP} language="cpp" />
+                    <Tabs.Tab code={DiagonalsRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="matrix-rotate-transpose">
@@ -45,6 +50,7 @@ export default function Matrix() {
                     <Tabs.Tab code={RotateTransposeJS} language="javascript" />
                     <Tabs.Tab code={RotateTransposeJAVA} language="java" />
                     <Tabs.Tab code={RotateTransposeCPP} language="cpp" />
+                    <Tabs.Tab code={RotateTransposeRuby} language="ruby" />
                 </Tabs>
             </section>
         </div>

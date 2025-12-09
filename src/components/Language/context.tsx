@@ -7,7 +7,7 @@ import {
 } from 'react'
 
 
-type Language = 'python' | 'javascript' | 'java' | 'cpp'
+type Language = 'python' | 'javascript' | 'java' | 'cpp' | 'ruby'
 
 interface LanguageContextType {
     selectedLanguage: Language

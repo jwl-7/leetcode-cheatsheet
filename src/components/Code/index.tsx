@@ -7,6 +7,7 @@ import clsx from '@utils/clsx'
 import cpp from 'highlight.js/lib/languages/cpp'
 import hljs from 'highlight.js/lib/core'
 import java from 'highlight.js/lib/languages/java'
+import ruby from 'highlight.js/lib/languages/ruby'
 import javascript from 'highlight.js/lib/languages/javascript'
 import python from './python'
 
@@ -15,11 +16,12 @@ hljs.registerLanguage('python', python)
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('java', java)
 hljs.registerLanguage('cpp', cpp)
+hljs.registerLanguage('ruby', ruby)
 
 
 interface CodeProps {
     code: string
-    language: 'python' | 'javascript' | 'java' | 'cpp'
+    language: 'python' | 'javascript' | 'java' | 'cpp' | 'ruby'
 }
 
 

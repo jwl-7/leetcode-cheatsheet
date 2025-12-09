@@ -26,6 +26,11 @@ import DuplicateElementsRightInsertionCPP from '@code/cpp/binary_search/duplicat
 import GreedyMinimumCPP from '@code/cpp/binary_search/greedy_minimum.cpp?raw'
 import GreedyMaximumCPP from '@code/cpp/binary_search/greedy_maximum.cpp?raw'
 
+import BinarySearchRuby from '@code/ruby/binary_search/binary_search.rb?raw'
+import DuplicateElementsLeftInsertionRuby from '@code/ruby/binary_search/duplicate_elements_left_insertion.rb?raw'
+import DuplicateElementsRightInsertionRuby from '@code/ruby/binary_search/duplicate_elements_right_insertion.rb?raw'
+import GreedyMinimumRuby from '@code/ruby/binary_search/greedy_minimum.rb?raw'
+import GreedyMaximumRuby from '@code/ruby/binary_search/greedy_maximum.rb?raw'
 
 export default function BinarySearch() {
     return (
@@ -37,6 +42,7 @@ export default function BinarySearch() {
                     <Tabs.Tab code={BinarySearchJS} language="javascript" />
                     <Tabs.Tab code={BinarySearchJAVA} language="java" />
                     <Tabs.Tab code={BinarySearchCPP} language="cpp" />
+                    <Tabs.Tab code={BinarySearchRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="binarysearch-duplicate-elements-left-insertion">
@@ -45,6 +51,7 @@ export default function BinarySearch() {
                     <Tabs.Tab code={DuplicateElementsLeftInsertionJS} language="javascript" />
                     <Tabs.Tab code={DuplicateElementsLeftInsertionJAVA} language="java" />
                     <Tabs.Tab code={DuplicateElementsLeftInsertionCPP} language="cpp" />
+                    <Tabs.Tab code={DuplicateElementsLeftInsertionRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="binarysearch-duplicate-elements-right-insertion">
@@ -53,6 +60,7 @@ export default function BinarySearch() {
                     <Tabs.Tab code={DuplicateElementsRightInsertionJS} language="javascript" />
                     <Tabs.Tab code={DuplicateElementsRightInsertionJAVA} language="java" />
                     <Tabs.Tab code={DuplicateElementsRightInsertionCPP} language="cpp" />
+                    <Tabs.Tab code={DuplicateElementsRightInsertionRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="binarysearch-greedy-minimum">
@@ -61,6 +69,7 @@ export default function BinarySearch() {
                     <Tabs.Tab code={GreedyMinimumJS} language="javascript" />
                     <Tabs.Tab code={GreedyMinimumJAVA} language="java" />
                     <Tabs.Tab code={GreedyMinimumCPP} language="cpp" />
+                    <Tabs.Tab code={GreedyMinimumRuby} language="ruby" />
                 </Tabs>
             </section>
             <section id="binarysearch-greedy-maximum">
@@ -69,6 +78,7 @@ export default function BinarySearch() {
                     <Tabs.Tab code={GreedyMaximumJS} language="javascript" />
                     <Tabs.Tab code={GreedyMaximumJAVA} language="java" />
                     <Tabs.Tab code={GreedyMaximumCPP} language="cpp" />
+                    <Tabs.Tab code={GreedyMaximumRuby} language="ruby" />
                 </Tabs>
             </section>
         </div>
