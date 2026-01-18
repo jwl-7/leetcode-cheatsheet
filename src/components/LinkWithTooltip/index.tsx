@@ -15,7 +15,7 @@ interface LinkWithTooltipProps {
 export default function LinkWithTooltip({ href, description }: LinkWithTooltipProps) {
     const ref = useRef<HTMLAnchorElement>(null)
     const [showTooltip, setShowTooltip] = useState<boolean>(false)
-    const scrollToDestination = useScrollTo({ selector: href, offset: 72 })
+    const scrollToDestination = useScrollTo({ selector: href })
     let hoverTimer: NodeJS.Timeout
 
     const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -23,7 +23,10 @@ export default function LinkWithTooltip({ href, description }: LinkWithTooltipPr
         window.history.replaceState({}, '', href)
         clearTimeout(hoverTimer)
         setShowTooltip(false)
-        scrollToDestination()
+        const topbarHeight = parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue('--topbar-height')
+        ) || 72
+        scrollToDestination(topbarHeight + 8)
     }
 
     const handleMouseEnter = () => {

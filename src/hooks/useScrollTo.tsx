@@ -29,15 +29,15 @@ export function useScrollTo({
 
     const handleInterrupt = () => userInterrupt.current = true
 
-    const scrollTo = useCallback(() => {
+    const scrollTo = useCallback((callbackOffset?: number) => {
         if (!targetRef.current) return
         cancel()
-
+        const activeOffset = callbackOffset !== undefined ? callbackOffset : offset
         userInterrupt.current = false
         const targetElement = targetRef.current
         const targetPosition = targetElement.offsetTop
         const currentPosition = window.scrollY
-        const distance = targetPosition - currentPosition - offset
+        const distance = targetPosition - currentPosition - activeOffset
         const startTime = performance.now()
 
         if (!distance) return
