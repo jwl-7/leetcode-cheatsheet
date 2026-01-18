@@ -1,6 +1,6 @@
 import styles from './topbar.module.sass'
 
-import { MouseEvent, RefObject, useRef } from 'react'
+import { useLayoutEffect, MouseEvent, RefObject, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useScrollTo } from '@/hooks/useScrollTo'
 import { useSidebar } from '@components/Sidebar/context'
@@ -15,12 +15,9 @@ interface TopbarProps {
     forwardedRef: RefObject<HTMLDivElement>
 }
 
-const TOP_BAR_HEIGHT = 72
-
-
 export default function Topbar({ forwardedRef }: TopbarProps) {
     const ref = useRef<HTMLElement | null>(null)
-    const scrollToTop = useScrollTo({ selector: 'main', offset: TOP_BAR_HEIGHT })
+    const scrollToTop = useScrollTo({ selector: 'main' })
     const { isSidebarOpen, toggleSidebar } = useSidebar()
     const isScreenMd = useMediaQuery({ maxWidth: 768 })
 
@@ -28,6 +25,20 @@ export default function Topbar({ forwardedRef }: TopbarProps) {
         styles.hamburgerIcon,
         !isSidebarOpen && styles.collapsed
     )
+
+    useLayoutEffect(() => {
+        if (!ref.current) return
+
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                const height = entry.borderBoxSize[0].blockSize
+                document.documentElement.style.setProperty('--topbar-height', `${height}px`)
+            }
+        })
+
+        observer.observe(ref.current)
+        return () => observer.disconnect()
+    }, [])
 
     const handleTitleClick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
