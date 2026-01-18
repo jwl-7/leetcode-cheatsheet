@@ -1,5 +1,4 @@
-import styles from './bigo.module.sass'
-
+import styles from './BigO.module.sass'
 
 export default function Chart() {
     const colors = {

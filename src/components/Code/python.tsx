@@ -1,6 +1,5 @@
 import { HLJSApi, Language } from 'highlight.js'
 
-
 export default function python(hljs: HLJSApi): Language {
     const regex = hljs.regex
     const IDENT_RE = /[\p{XID_Start}_]\p{XID_Continue}*/u

@@ -1,8 +1,7 @@
-import styles from './bigo.module.sass'
+import styles from './BigO.module.sass'
 
 import { MouseEvent, useRef, useState } from 'react'
 import { useClickOutside } from '@/hooks/useClickOutside'
-
 
 export default function SortingAlgorithmsTable() {
     const ref = useRef<HTMLTableElement>(null)

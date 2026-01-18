@@ -1,12 +1,10 @@
 import { useCallback, useEffect, useRef } from 'react'
 
-
 interface ScrollToProps {
     selector: string
     duration?: number
     offset?: number
 }
-
 
 function easeInOutQuad(t: number): number {
     return t < 0.5

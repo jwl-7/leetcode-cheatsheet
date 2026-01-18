@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 
-
 export function useTheme() {
     const htmlElement = document.documentElement
     const [theme, setTheme] = useState('light')

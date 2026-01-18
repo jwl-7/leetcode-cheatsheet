@@ -1,6 +1,5 @@
 import { RefObject, useEffect } from 'react'
 
-
 export function useClickOutside(
     refs: RefObject<HTMLElement> | RefObject<HTMLElement>[],
     handler: VoidFunction

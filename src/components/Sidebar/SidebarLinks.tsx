@@ -1,6 +1,5 @@
-import Accordion from '@components/Accordion'
-import LinkWithTooltip from '@components/LinkWithTooltip'
-
+import Accordion from '@components/Accordion/Accordion'
+import LinkWithTooltip from '@components/LinkWithTooltip/LinkWithTooltip'
 
 export default function SidebarLinks() {
     return (
