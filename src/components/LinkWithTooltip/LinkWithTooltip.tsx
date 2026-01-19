@@ -14,15 +14,18 @@ export default function LinkWithTooltip({ href, description }: LinkWithTooltipPr
     const scrollToDestination = useScrollTo({ selector: href })
     let hoverTimer: NodeJS.Timeout
 
+    const getTopbarHeight = (): number => {
+        const root = document.documentElement
+        const height = getComputedStyle(root).getPropertyValue('--navbar-height')
+        return parseFloat(height) || 76
+    }
+
     const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
         window.history.replaceState({}, '', href)
         clearTimeout(hoverTimer)
         setShowTooltip(false)
-        const topbarHeight = parseFloat(
-            getComputedStyle(document.documentElement).getPropertyValue('--topbar-height')
-        ) || 72
-        scrollToDestination(topbarHeight + 8)
+        scrollToDestination(getTopbarHeight() + 8)
     }
 
     const handleMouseEnter = () => {
