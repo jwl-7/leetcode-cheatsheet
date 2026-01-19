@@ -1,12 +1,7 @@
-import { useTheme } from '@hooks/useTheme'
-
 export default function SvgGithub() {
-    const theme = useTheme()
-    const color = theme === 'dark' ? '#FFFFFF' : '#181616'
-
     return (
         <svg viewBox="0 0 128 128">
-            <g fill={color}>
+            <g fill="var(--svg-github-fill)">
                 <path
                     clipRule="evenodd"
                     fillRule="evenodd"
