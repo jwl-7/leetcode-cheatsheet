@@ -16,7 +16,7 @@ export default function LinkWithTooltip({ href, description }: LinkWithTooltipPr
 
     const getTopbarHeight = (): number => {
         const root = document.documentElement
-        const height = getComputedStyle(root).getPropertyValue('--navbar-height')
+        const height = getComputedStyle(root).getPropertyValue('--topbar-height')
         return parseFloat(height) || 76
     }
 
